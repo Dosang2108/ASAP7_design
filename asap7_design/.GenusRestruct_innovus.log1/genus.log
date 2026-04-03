@@ -1,0 +1,41 @@
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (32 seconds elapsed).
+
+#@ Processing -execute option
+@genus 1> encrypt -tcl coeGenusHelpers.tcl > coeGenusHelpers.enc; tcl_source coeGenusInit.tcl
+  Setting attribute of root '/': 'flow_verbose' = false
+  Setting attribute of root '/': 'metric_enable' = false
+Warning : Partition Based Synthesis (PBS) is turned off. Expect very long runtime. [PBS-3]
+  Setting attribute of root '/': 'partition_based_synthesis' = false
+  Setting attribute of root '/': 'pbs_debug_level' = 0
+  Setting attribute of root '/': 'tinfo_tstamp_file' = 
+  Setting attribute of root '/': 'write_verification_files' = false
+  Setting attribute of root '/': 'write_vlog_bit_blast_bus_connections' = true
+  Setting attribute of root '/': 'write_vlog_line_wrap_limit' = 3990
+  Setting attribute of root '/': 'metric_auto_capture' = false
+  Setting attribute of root '/': 'power_unit' = nW
+  Setting attribute of root '/': 'power_format' = %.4f
+  Setting attribute of root '/': 'avoid_tied_inputs' = false
+  Setting attribute of root '/': 'joules_silent' = true
+  Setting attribute of root '/': 'read_lef_ver60' = true
+  Setting attribute of root '/': 'ifca_lef_allow_backside_layers' = true
+Warning : This attribute will be obsolete in a next major release. [TUI-32]
+        : attribute: 'exp_opt_generic_timing_area_aware', object type: 'root'
+  Setting attribute of root '/': 'exp_opt_generic_timing_area_aware' = false
+
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 161s, ST: 53s, FG: 53s, CPU: 0.2%}, MEM {curr: 1.6G, peak: 2.2G, phys curr: 0.8G, phys peak: 1.1G}, SYS {load: 6.7, cpu: 2, total: 31.3G, free: 13.4G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 167s, ST: 53s, FG: 53s, CPU: 0.2%}, MEM {curr: 1.6G, peak: 2.2G, phys curr: 0.8G, phys peak: 1.1G}, SYS {load: 6.7, cpu: 2, total: 31.3G, free: 13.4G}
+Abnormal exit.

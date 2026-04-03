@@ -69,6 +69,7 @@ editTrim -nets {VSS VDD}
 # Ràng bu?c kho?ng cách chân Pin
 setPinConstraint -corner_to_pin_distance 18
 
+source ./tcl/pins.tcl
 ## Step3: (PLACEMENT)
 setPlaceMode -reset
 setPlaceMode -place_global_uniform_density true \
@@ -119,7 +120,7 @@ optDesign -prefix postCTS -postCTS -setup -hold
 ## BU?C 5: ÐI DÂY (ROUTING)
 setNanoRouteMode -quiet -routeWithSiDriven true \
 -routeWithTimingDriven true -routeWithSiPostRouteFix true \
--routeTdbEffortLevel high -drouteFixAntenna true
+-drouteFixAntenna true
 
 routeDesign
 

@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Fri Apr  3 16:39:53 2026                
+#  Created on Fri Apr  3 18:09:43 2026                
 #                                                     
 #######################################################
 
@@ -42,6 +42,105 @@ addStripe -nets {VSS VDD} -layer M9 -direction horizontal -width 0.8 -spacing 0.
 addStripe -nets {VSS VDD} -layer M10 -direction vertical -width 0.8 -spacing 0.88 -set_to_set_distance 34.56 -start_from left -start_offset 32.48
 editTrim -nets {VSS VDD}
 setPinConstraint -corner_to_pin_distance 18
+setPinAssignMode -pinEditInBatch true
+editPin -pin {iA[31]} -layer M3 -assign {0.0 5.0}
+editPin -pin {iA[30]} -layer M3 -assign {0.0 5.583}
+editPin -pin {iA[29]} -layer M3 -assign {0.0 6.166}
+editPin -pin {iA[28]} -layer M3 -assign {0.0 6.749}
+editPin -pin {iA[27]} -layer M3 -assign {0.0 7.332}
+editPin -pin {iA[26]} -layer M3 -assign {0.0 7.915}
+editPin -pin {iA[25]} -layer M3 -assign {0.0 8.498}
+editPin -pin {iA[24]} -layer M3 -assign {0.0 9.081}
+editPin -pin {iA[23]} -layer M3 -assign {0.0 9.664}
+editPin -pin {iA[22]} -layer M3 -assign {0.0 10.247}
+editPin -pin {iA[21]} -layer M3 -assign {0.0 10.83}
+editPin -pin {iA[20]} -layer M3 -assign {0.0 11.413}
+editPin -pin {iA[19]} -layer M3 -assign {0.0 11.996}
+editPin -pin {iA[18]} -layer M3 -assign {0.0 12.579}
+editPin -pin {iA[17]} -layer M3 -assign {0.0 13.162}
+editPin -pin {iA[16]} -layer M3 -assign {0.0 13.745}
+editPin -pin {iA[15]} -layer M3 -assign {0.0 14.328}
+editPin -pin {iA[14]} -layer M3 -assign {0.0 14.911}
+editPin -pin {iA[13]} -layer M3 -assign {0.0 15.494}
+editPin -pin {iA[12]} -layer M3 -assign {0.0 16.077}
+editPin -pin {iA[11]} -layer M3 -assign {0.0 16.66}
+editPin -pin {iA[10]} -layer M3 -assign {0.0 17.243}
+editPin -pin {iA[9]} -layer M3 -assign {0.0 17.826}
+editPin -pin {iA[8]} -layer M3 -assign {0.0 18.409}
+editPin -pin {iA[7]} -layer M3 -assign {0.0 18.992}
+editPin -pin {iA[6]} -layer M3 -assign {0.0 19.575}
+editPin -pin {iA[5]} -layer M3 -assign {0.0 20.158}
+editPin -pin {iA[4]} -layer M3 -assign {0.0 20.741}
+editPin -pin {iA[3]} -layer M3 -assign {0.0 21.324}
+editPin -pin {iA[2]} -layer M3 -assign {0.0 21.907}
+editPin -pin {iA[1]} -layer M3 -assign {0.0 22.49}
+editPin -pin {iA[0]} -layer M3 -assign {0.0 23.073}
+editPin -pin {iB[31]} -layer M3 -assign {29.088 5.0}
+editPin -pin {iB[30]} -layer M3 -assign {29.088 5.583}
+editPin -pin {iB[29]} -layer M3 -assign {29.088 6.166}
+editPin -pin {iB[28]} -layer M3 -assign {29.088 6.749}
+editPin -pin {iB[27]} -layer M3 -assign {29.088 7.332}
+editPin -pin {iB[26]} -layer M3 -assign {29.088 7.915}
+editPin -pin {iB[25]} -layer M3 -assign {29.088 8.498}
+editPin -pin {iB[24]} -layer M3 -assign {29.088 9.081}
+editPin -pin {iB[23]} -layer M3 -assign {29.088 9.664}
+editPin -pin {iB[22]} -layer M3 -assign {29.088 10.247}
+editPin -pin {iB[21]} -layer M3 -assign {29.088 10.83}
+editPin -pin {iB[20]} -layer M3 -assign {29.088 11.413}
+editPin -pin {iB[19]} -layer M3 -assign {29.088 11.996}
+editPin -pin {iB[18]} -layer M3 -assign {29.088 12.579}
+editPin -pin {iB[17]} -layer M3 -assign {29.088 13.162}
+editPin -pin {iB[16]} -layer M3 -assign {29.088 13.745}
+editPin -pin {iB[15]} -layer M3 -assign {29.088 14.328}
+editPin -pin {iB[14]} -layer M3 -assign {29.088 14.911}
+editPin -pin {iB[13]} -layer M3 -assign {29.088 15.494}
+editPin -pin {iB[12]} -layer M3 -assign {29.088 16.077}
+editPin -pin {iB[11]} -layer M3 -assign {29.088 16.66}
+editPin -pin {iB[10]} -layer M3 -assign {29.088 17.243}
+editPin -pin {iB[9]} -layer M3 -assign {29.088 17.826}
+editPin -pin {iB[8]} -layer M3 -assign {29.088 18.409}
+editPin -pin {iB[7]} -layer M3 -assign {29.088 18.992}
+editPin -pin {iB[6]} -layer M3 -assign {29.088 19.575}
+editPin -pin {iB[5]} -layer M3 -assign {29.088 20.158}
+editPin -pin {iB[4]} -layer M3 -assign {29.088 20.741}
+editPin -pin {iB[3]} -layer M3 -assign {29.088 21.324}
+editPin -pin {iB[2]} -layer M3 -assign {29.088 21.907}
+editPin -pin {iB[1]} -layer M3 -assign {29.088 22.49}
+editPin -pin {iB[0]} -layer M3 -assign {29.088 23.073}
+editPin -pin {oS[31]} -layer M4 -assign {5.0 28.656}
+editPin -pin {oS[30]} -layer M4 -assign {5.5965 28.656}
+editPin -pin {oS[29]} -layer M4 -assign {6.193 28.656}
+editPin -pin {oS[28]} -layer M4 -assign {6.7895 28.656}
+editPin -pin {oS[27]} -layer M4 -assign {7.386 28.656}
+editPin -pin {oS[26]} -layer M4 -assign {7.9825 28.656}
+editPin -pin {oS[25]} -layer M4 -assign {8.579 28.656}
+editPin -pin {oS[24]} -layer M4 -assign {9.1755 28.656}
+editPin -pin {oS[23]} -layer M4 -assign {9.772 28.656}
+editPin -pin {oS[22]} -layer M4 -assign {10.3685 28.656}
+editPin -pin {oS[21]} -layer M4 -assign {10.965 28.656}
+editPin -pin {oS[20]} -layer M4 -assign {11.5615 28.656}
+editPin -pin {oS[19]} -layer M4 -assign {12.158 28.656}
+editPin -pin {oS[18]} -layer M4 -assign {12.7545 28.656}
+editPin -pin {oS[17]} -layer M4 -assign {13.351 28.656}
+editPin -pin {oS[16]} -layer M4 -assign {13.9475 28.656}
+editPin -pin {oS[15]} -layer M4 -assign {14.544 28.656}
+editPin -pin {oS[14]} -layer M4 -assign {15.1405 28.656}
+editPin -pin {oS[13]} -layer M4 -assign {15.737 28.656}
+editPin -pin {oS[12]} -layer M4 -assign {16.3335 28.656}
+editPin -pin {oS[11]} -layer M4 -assign {16.93 28.656}
+editPin -pin {oS[10]} -layer M4 -assign {17.5265 28.656}
+editPin -pin {oS[9]} -layer M4 -assign {18.123 28.656}
+editPin -pin {oS[8]} -layer M4 -assign {18.7195 28.656}
+editPin -pin {oS[7]} -layer M4 -assign {19.316 28.656}
+editPin -pin {oS[6]} -layer M4 -assign {19.9125 28.656}
+editPin -pin {oS[5]} -layer M4 -assign {20.509 28.656}
+editPin -pin {oS[4]} -layer M4 -assign {21.1055 28.656}
+editPin -pin {oS[3]} -layer M4 -assign {21.702 28.656}
+editPin -pin {oS[2]} -layer M4 -assign {22.2985 28.656}
+editPin -pin {oS[1]} -layer M4 -assign {22.895 28.656}
+editPin -pin {oS[0]} -layer M4 -assign {23.4915 28.656}
+editPin -pin iClk -layer M4 -assign {14.544 0.0}
+setPinAssignMode -pinEditInBatch false
 setPlaceMode -reset
 setPlaceMode -place_global_uniform_density true -place_global_module_aware_spare true -place_global_auto_blockage_in_channel soft -place_detail_preroute_as_obs {2 3} -place_global_cong_effort high -place_design_refine_macro true
 place_design
@@ -78,10 +177,11 @@ check_ccopt_clock_tree_convergence
 get_ccopt_property auto_design_state_for_ilms
 ccopt_design -prefix postCTS
 optDesign -prefix postCTS -postCTS -setup -hold
-setNanoRouteMode -quiet -routeWithSiDriven true -routeWithTimingDriven true -routeWithSiPostRouteFix true -routeTdbEffortLevel high -drouteFixAntenna true
+setNanoRouteMode -quiet -routeWithSiDriven true -routeWithTimingDriven true -routeWithSiPostRouteFix true -drouteFixAntenna true
+routeDesign
+verify_drc -report ./verify_rpt/drc.rpt
+verifyConnectivity -type all -error 1000 -warning 50 -report ./verify_rpt/connectivity.rpt
+optDesign -postRoute -setup -hold -prefix postRoute
 win
 set enc_check_rename_command_name 1
 fit
-selectPhyPin 0.0000 0.0000 0.8000 0.8000 10 VSS
-setLayerPreference node_row -isSelectable 1
-setLayerPreference node_row -isSelectable 0

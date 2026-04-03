@@ -1,0 +1,19 @@
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (0 seconds elapsed).
+
+Loading tool scripts...
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 22s, ST: 10s, FG: 10s, CPU: 42.9%}, MEM {curr: 0.9G, peak: 1.0G, phys curr: 0.2G, phys peak: 0.2G}, SYS {load: 6.3, cpu: 2, total: 31.3G, free: 19.0G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 23s, ST: 10s, FG: 10s, CPU: 42.9%}, MEM {curr: 0.9G, peak: 1.0G, phys curr: 0.2G, phys peak: 0.2G}, SYS {load: 6.3, cpu: 2, total: 31.3G, free: 19.0G}
+Abnormal exit.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 24s, ST: -0s, FG: -0s, CPU: 42.9%}, MEM {curr: 0.9G, peak: 1.0G, phys curr: 0.2G, phys peak: 0.2G}, SYS {load: 6.3, cpu: 2, total: 31.3G, free: 19.2G}
