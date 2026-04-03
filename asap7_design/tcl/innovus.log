@@ -1,0 +1,135 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v22.17-s086_1, built Tue Sep 24 10:51:50 PDT 2024
+Options:	-files innovus.tcl 
+Date:		Mon Mar 30 16:28:05 2026
+Host:		vlsiktmt (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (1core*2cpus*Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz 22528KB)
+OS:		CentOS Linux 7 (Core)
+
+License:
+		[16:28:05.222129] Configured Lic search path (22.01-s003): 5280@172.28.10.187
+
+		invs	Innovus Implementation System	22.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 23.11 fill procedures
+Sourcing file "innovus.tcl" ...
+source innovus.tcl
+<CMD> set init_lef_file {../../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ../../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ../../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ../../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ../../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef}
+<CMD> set init_verilog ../outputs/synthesis_net.v
+<CMD> set init_top_cell Adder32
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> set init_layout_view layout
+<CMD> set init_abstract_view abstract
+<CMD> set init_mmmc_file ./viewDefinition.tcl
+<CMD> init_design
+**ERROR: (IMPSYT-6284):	Failed to open file ./viewDefinition.tcl for read.
+
+Loading LEF file ../../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ...
+
+Loading LEF file ../../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ...
+Set DBUPerIGU to M1 pitch 576.
+
+Loading LEF file ../../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ...
+
+Loading LEF file ../../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ...
+
+Loading LEF file ../../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef ...
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from ./viewDefinition.tcl
+*** End library_loading (cpu=0.00min, real=0.00min, mem=0.0M, fe_cpu=0.52min, fe_real=2.28min, fe_mem=1495.4M) ***
+#% Begin Load netlist data ... (date=03/30 16:30:22, mem=1275.1M)
+*** Begin netlist parsing (mem=1495.4M) ***
+Created 0 new cells from 0 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../outputs/synthesis_net.v'
+
+*** Memory Usage v#1 (Current mem = 1499.395M, initial mem = 646.375M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1499.4M) ***
+#% End Load netlist data ... (date=03/30 16:30:22, total cpu=0:00:00.0, real=0:00:00.0, peak res=1279.2M, current mem=1279.2M)
+Set top cell to Adder32.
+Hooked 0 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell Adder32 ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+Set DBUPerIGU to techSite asap7sc7p5t width 864.
+** info: there are 849 modules.
+** info: there are 140 stdCell insts.
+** info: there are 140 stdCell insts with at least one signal pin.
+
+*** Memory Usage v#1 (Current mem = 1539.816M, initial mem = 646.375M) ***
+Start create_tracks
+**WARN: (IMPSYC-2):	Timing information is not defined for cell XOR2xp5_ASAP7_75t_SRAM; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**WARN: (IMPSYC-2):	Timing information is not defined for cell MAJIxp5_ASAP7_75t_SRAM; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**WARN: (IMPSYC-2):	Timing information is not defined for cell XOR2xp5_ASAP7_75t_SL; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**WARN: (IMPSYC-2):	Timing information is not defined for cell OAI21xp33_ASAP7_75t_SL; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**WARN: (IMPSYC-2):	Timing information is not defined for cell NOR2xp33_ASAP7_75t_SL; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**WARN: (IMPSYC-2):	Timing information is not defined for cell NAND2xp33_ASAP7_75t_SL; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**WARN: (IMPSYC-2):	Timing information is not defined for cell HAxp5_ASAP7_75t_SL; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**WARN: (IMPSYC-2):	Timing information is not defined for cell FAx1_ASAP7_75t_SL; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**WARN: (IMPSYC-2):	Timing information is not defined for cell AOI21xp33_ASAP7_75t_SL; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**WARN: (IMPSYC-2):	Timing information is not defined for cell DFFHQNx1_ASAP7_75t_L; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+Type 'man IMPSYC-2' for more detail.
+**ERROR: (IMPSYT-7327):	Active setup and hold analysis views were not provided in either file ./viewDefinition.tcl or by the -setup and -hold arguments to initDesign. The system requires at least one active setup and hold analysis view to be declared before the design can be initialized. You must add a set_analysis_view command to your script, or add the -setup and -hold options to your init_design invocation. You can use the all_analysis_view command to identify the currently available views. If you are using CPF in a physical-only flow, please use 'read_power_intent -cpf' and 'commit_power_intent' after init_design. Do not specify the CPF with the init_cpf_file variable in a physical-only flow.
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'innovus.tcl' was returned and script processing was stopped. Review the following error in 'innovus.tcl' then restart.
+Error info: innovus.tcl: 
+    while executing
+"error [putError $::uiEmsHandleId 7327 $::init_mmmc_file]"
+    (procedure "init_design" line 431)
+    invoked from within
+"init_design"
+    (file "innovus.tcl" line 6)
+    invoked from within
+"::se_source_orig innovus.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig  $args] "
+    (procedure "source" line 224)
+    invoked from within
+"source innovus.tcl"
+    invoked from within
+"::se::run_command_from_console "source innovus.tcl""
+    ("eval" body line 1)
+    invoked from within
+"eval {::se::run_command_from_console "source innovus.tcl"}"
+    (in namespace inscope "::" script line 1)
+    invoked from within
+"namespace inscope :: eval "::se::run_command_from_console \"source $fileName\""".
+<CMD> win
+<CMD> set enc_check_rename_command_name 1
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Mon Mar 30 16:30:48 2026
+  Total CPU time:     0:00:32
+  Total real time:    0:02:45
+  Peak memory (main): 1564.78MB
+
+
+*** Memory Usage v#1 (Current mem = 1793.980M, initial mem = 646.375M) ***
+*** Message Summary: 10 warning(s), 4 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:31.9, real=0:02:43, mem=1794.0M) ---
