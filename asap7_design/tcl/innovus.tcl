@@ -1,0 +1,144 @@
+######################################################################
+## BU?C 0: KH?I T?O MÔI TRU?NG (SETUP)
+######################################################################
+# N?p file c?u hình và kh?i t?o thi?t k?
+source ./tcl/innovus.globals
+init_design
+
+# Thi?t l?p ch? d? ràng bu?c và xung nh?p lan truy?n
+set_interactive_constraint_modes [all_constraint_modes]
+set_propagated_clock [all_clocks]
+
+## Step 1:  (FLOORPLAN)
+set row     [dbGet head.sites.size_y]
+set track   [dbGet head.sites.size_x]
+set pitch   [expr 32 * $row]
+
+# Thi?t l?p m?t d? cell (Density)
+set Density 0.75
+
+# L?nh t?o Floorplan: T? l? 1:1, Margin 4um cho m?i c?nh
+floorPlan -r 1.0 $Density 4 4 4 4
+
+# L?y thông s? kích thu?c sau khi Floorplan
+set CoreSize [dbGet top.fPlan.coreBox_size]
+set FPsize    [dbGet top.fPlan.box_size]
+set FPx       [dbGet top.fPlan.box_sizex]
+set FPy       [dbGet top.fPlan.box_sizey]
+
+# Ghi thông tin kích thu?c ra file
+set fo [open FPlanFinal.size w]
+puts $fo "Core size: \{X Y\} = ${CoreSize}"
+puts $fo "Floorplan size: \{X Y\} = ${FPsize}"
+close $fo
+
+## Step 2:  (POWER PLANNING)
+# T?o vòng ngu?n (Power Ring) bao quanh Core dùng l?p M9 và M10
+addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 0.88 \
+-layer {top M9 bottom M9 left M10 right M10}
+
+# Khai báo các chân Pin ngu?n (PG Pins)
+createPGPin VSS -geom M10 0 0 0.8 0.8
+createPGPin VDD -geom M10 1.68 1.68 2.48 2.48
+
+# K?t n?i lu?i ngu?n toàn c?c (Global Net Connection)
+globalNetConnect VDD -type pgpin -pin VDD -inst * -module {}
+globalNetConnect VSS -type pgpin -pin VSS -inst * -module {}
+
+# Ði dây ngu?n ngang (Special Route) cho các Standard Cell
+setSrouteMode -viaConnectToShape { ring stripe blockring }
+sroute -nets { VSS VDD } -connect corePin -corePinCheckStdcellGeoms \
+-allowJogging 0 -allowLayerChange 0; clearDrc
+
+# Thêm các d?i ngu?n (Stripes) - ÐÃ LO?I B? CÁC CÂU L?NH IF
+setAddStripeMode -break_at block_ring -allow_jog padcore_ring
+
+# Stripe n?m ngang (Horizontal) trên l?p M9
+addStripe -nets {VSS VDD} -layer M9 -direction horizontal \
+-width 0.8 -spacing 0.88 -set_to_set_distance $pitch \
+-start_from bottom -start_offset [expr $pitch - 2.08] 
+
+# Stripe n?m d?c (Vertical) trên l?p M10
+addStripe -nets {VSS VDD} -layer M10 -direction vertical \
+-width 0.8 -spacing 0.88 -set_to_set_distance $pitch \
+-start_from left -start_offset [expr $pitch - 2.08] 
+
+# C?t t?a các do?n dây du th?a
+editTrim -nets {VSS VDD}
+
+# Ràng bu?c kho?ng cách chân Pin
+setPinConstraint -corner_to_pin_distance 18
+
+## Step3: (PLACEMENT)
+setPlaceMode -reset
+setPlaceMode -place_global_uniform_density true \
+-place_global_module_aware_spare true \
+-place_global_auto_blockage_in_channel soft \
+-place_detail_preroute_as_obs {2 3} -place_global_cong_effort high \
+-place_design_refine_macro true
+
+place_design
+refinePlace
+
+# Báo cáo hi?u su?t s? d?ng di?n tích
+checkFPlan -reportUtil -outFile ./verify_rpt/reportUtil.rpt
+
+######################################################################
+## BU?C 4: T?NG H?P CÂY XUNG NH?P (CTS)
+######################################################################
+set BUFCells {BUFx2_ASAP7_75t_R BUFx4_ASAP7_75t_R}
+set INVCells {INVx2_ASAP7_75t_R INVx4_ASAP7_75t_R}
+
+create_route_type -name leaf_rule \
+-bottom_preferred_layer M2 -top_preferred_layer M3
+create_route_type -name trunk_rule -shield_net VSS \
+-bottom_preferred_layer M4 -top_preferred_layer M6
+create_route_type -name top_rule -shield_net VSS \
+-bottom_preferred_layer M7 -top_preferred_layer M8
+
+set_ccopt_property -net_type leaf  route_type leaf_rule
+set_ccopt_property -net_type trunk route_type trunk_rule
+set_ccopt_property -net_type top   route_type top_rule
+set_ccopt_property routing_top_min_fanout 10000
+set_ccopt_property target_max_trans 1ns
+
+set_ccopt_property buffer_cells $BUFCells
+set_ccopt_property inverter_cells $INVCells
+set_ccopt_property use_inverters auto
+
+setOptMode -reclaimArea true -leakageToDynamicRatio 0.5 \
+-powerEffort high -fixFanoutLoad true
+
+# Ch?y CTS
+optDesign -prefix preCTS -preCTS
+create_ccopt_clock_tree_spec -filename ccopt.spec
+source ccopt.spec
+ccopt_design -prefix postCTS
+optDesign -prefix postCTS -postCTS -setup -hold
+
+## BU?C 5: ÐI DÂY (ROUTING)
+setNanoRouteMode -quiet -routeWithSiDriven true \
+-routeWithTimingDriven true -routeWithSiPostRouteFix true \
+-routeTdbEffortLevel high -drouteFixAntenna true
+
+routeDesign
+
+verify_drc -report ./verify_rpt/drc.rpt
+verifyConnectivity -type all -error 1000 -warning 50 \
+-report ./verify_rpt/connectivity.rpt
+
+optDesign -postRoute -setup -hold -prefix postRoute
+
+## BU?C 6: THÊM FILLER CELLS
+add_fillers -cells {FILLER_ASAP7_75t_R FILLER_ASAP7_75t_R_2 FILLER_ASAP7_75t_R_4}
+
+## BU?C 7: XU?T FILE (EXPORT)
+check_connectivity -error 1000 -warning 50
+write_hdl > outputs/adder32_pnr.v
+write_db saved/adder32_final.db
+
+streamOut outputs/adder32.gds -libName WORK -units 1000 -mode ALL
+
+report_area > ./verify_rpt/final_area.rpt
+report_power > ./verify_rpt/final_power.rpt
+report_timing > ./verify_rpt/final_timing.rpt

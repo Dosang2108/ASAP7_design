@@ -1,4 +1,4 @@
-set LIB_PATH "../../../Asap7/asap7/asap7sc7p5t_28/LIB/NLDM"
+set LIB_PATH "../../Asap7/asap7/asap7sc7p5t_28/LIB/NLDM"
 
 # Glob nay se tim dung cac file co so 28 va goc FF nhu trong anh image_0af0c7.png
 create_library_set -name libset_typical \
@@ -11,7 +11,7 @@ create_delay_corner -name delay_corner_typical \
 
 # Dam bao file .sdc nay co ton tai trong folder outputs
 create_constraint_mode -name constraint_typical \
-	-sdc_files {../outputs/synthesis.sdc}
+	-sdc_files {outputs/synthesis.sdc}
 
 create_analysis_view -name view_typical \
 	-constraint_mode constraint_typical \
