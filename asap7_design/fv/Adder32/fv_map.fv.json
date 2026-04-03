@@ -567,20 +567,20 @@
 "object":"/designs/Adder32/instances_seq/oS_reg[1]",
 "type":"instance"},
 {"index": "1", 
- "date": "Fri Apr 03 09:06:29 UTC 2026",
- "seconds": 1775207189.187151,
+ "date": "Fri Apr 03 09:24:02 UTC 2026",
+ "seconds": 1775208242.4439468,
  "netlist": "fv/Adder32/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/data/tkvm2/Asap7design/asap7_design/fv/Adder32/fv_map.v.gz", 
- "netlist_mtime": "1775207185", 
- "netlist_timestamp": "Fri Apr 03 09:06:25 UTC 2026", 
+ "netlist_mtime": "1775208240", 
+ "netlist_timestamp": "Fri Apr 03 09:24:00 UTC 2026", 
  "netlist_size": "2868", 
- "netlist_cksum": "3698258944", 
+ "netlist_cksum": "2019644090", 
  "design_name": "Adder32", 
  "synth_workdir": "/data/tkvm2/Asap7design/asap7_design", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 3.6014239999999997 
+ "write_verif_file_runtime": 1.737944 
  }
 ]
