@@ -2,7 +2,7 @@
 *	Innovus 22.17-s086_1 (64bit) 09/24/2024 10:51 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2026-Apr-03 19:26:01 (2026-Apr-03 12:26:01 GMT)
+* 	Date & Time:	2026-Apr-04 12:58:31 (2026-Apr-04 05:58:31 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -102,55 +102,54 @@
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:        8.74264312 	   65.7940%
-Total Switching Power:       4.54415661 	   34.1977%
-Total Leakage Power:         0.00110511 	    0.0083%
-Total Power:                13.28790484 
+Total Internal Power:        8.71137228 	   63.3342%
+Total Switching Power:       5.04217850 	   36.6581%
+Total Leakage Power:         0.00106206 	    0.0077%
+Total Power:                13.75461285 
 -----------------------------------------------------------------------------------------
 
 
 Group                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-Sequential                           6.3      0.7571   0.0003036       7.057       53.11 
+Sequential                         6.285       1.148   0.0002777       7.434       54.04 
 Macro                                  0           0           0           0           0 
 IO                                     0           0           0           0           0 
-Combinational                      2.443       3.787   0.0008015       6.231       46.89 
+Combinational                      2.426       3.894   0.0007844       6.321       45.96 
 Clock (Combinational)                  0           0           0           0           0 
 Clock (Sequential)                     0           0           0           0           0 
 -----------------------------------------------------------------------------------------
-Total                              8.743       4.544    0.001105       13.29         100 
+Total                              8.711       5.042    0.001062       13.75         100 
 -----------------------------------------------------------------------------------------
 
 
 Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-VDD                      0.77      8.743       4.544    0.001105       13.29         100 
+VDD                      0.77      8.711       5.042    0.001062       13.75         100 
 
 
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
-*                Highest Average Power:                oS_reg[26] (DFFHQNx1_ASAP7_75t_SL):           0.2489 
+*                Highest Average Power:                oS_reg[24] (DFFHQNx1_ASAP7_75t_SL):           0.2649 
 *                Highest Leakage Power:                 oS_reg[1] (DFFHQNx1_ASAP7_75t_SL):        1.446e-05 
-*          Total Cap:      4.9931e-13 F
-*          Total instances in design:   197
+*          Total Cap:      5.77598e-13 F
+*          Total instances in design:   194
 *          Total instances in design with no power:     0
 *          Total instances in design with no activity:     0
 *          Total Fillers and Decap:     0
 -----------------------------------------------------------------------------------------
 
-Total leakage power = 0.00110511 mW
+Total leakage power = 0.00106206 mW
 Cell usage statistics:  
-Library asap7sc7p5t_SIMPLE_LVT_FF_nldm_211120 , 28 cells ( 14.213199%) , 9.39399e-06 mW ( 0.850053%  ) 
-Library asap7sc7p5t_INVBUF_LVT_FF_nldm_211120 , 2 cells ( 1.015228%) , 3.51104e-07 mW ( 0.031771%  ) 
-Library asap7sc7p5t_OA_SLVT_FF_nldm_211120 , 20 cells ( 10.152284%) , 0.000169355 mW ( 15.324792%  ) 
-Library asap7sc7p5t_AO_LVT_FF_nldm_211120 , 1 cells ( 0.507614%) , 3.90284e-07 mW ( 0.035316%  ) 
-Library asap7sc7p5t_AO_SLVT_FF_nldm_211120 , 20 cells ( 10.152284%) , 9.82335e-05 mW ( 8.889055%  ) 
-Library asap7sc7p5t_SIMPLE_RVT_FF_nldm_211120 , 11 cells ( 5.583756%) , 2.5773e-06 mW ( 0.233217%  ) 
-Library asap7sc7p5t_SIMPLE_SRAM_FF_nldm_211120 , 2 cells ( 1.015228%) , 6.82389e-08 mW ( 0.006175%  ) 
-Library asap7sc7p5t_SIMPLE_SLVT_FF_nldm_211120 , 59 cells ( 29.949240%) , 0.000453188 mW ( 41.008551%  ) 
-Library asap7sc7p5t_SEQ_SLVT_FF_nldm_220123 , 20 cells ( 10.152284%) , 0.000289097 mW ( 26.160088%  ) 
-Library asap7sc7p5t_SEQ_LVT_FF_nldm_220123 , 12 cells ( 6.091371%) , 1.45142e-05 mW ( 1.313377%  ) 
-Library asap7sc7p5t_INVBUF_SLVT_FF_nldm_211120 , 21 cells ( 10.659899%) , 6.78854e-05 mW ( 6.142886%  ) 
-Library asap7sc7p5t_AO_RVT_FF_nldm_211120 , 1 cells ( 0.507614%) , 5.21498e-08 mW ( 0.004719%  ) 
+Library asap7sc7p5t_INVBUF_SLVT_FF_nldm_211120 , 23 cells ( 11.855670%) , 7.51833e-05 mW ( 7.078990%  ) 
+Library asap7sc7p5t_SEQ_LVT_FF_nldm_220123 , 14 cells ( 7.216495%) , 1.74826e-05 mW ( 1.646098%  ) 
+Library asap7sc7p5t_SEQ_SLVT_FF_nldm_220123 , 18 cells ( 9.278350%) , 0.000260191 mW ( 24.498709%  ) 
+Library asap7sc7p5t_SIMPLE_SLVT_FF_nldm_211120 , 57 cells ( 29.381443%) , 0.000413179 mW ( 38.903498%  ) 
+Library asap7sc7p5t_SIMPLE_SRAM_FF_nldm_211120 , 2 cells ( 1.030928%) , 6.08094e-08 mW ( 0.005726%  ) 
+Library asap7sc7p5t_SIMPLE_RVT_FF_nldm_211120 , 10 cells ( 5.154639%) , 2.17956e-06 mW ( 0.205220%  ) 
+Library asap7sc7p5t_AO_LVT_FF_nldm_211120 , 2 cells ( 1.030928%) , 7.80568e-07 mW ( 0.073496%  ) 
+Library asap7sc7p5t_AO_SLVT_FF_nldm_211120 , 20 cells ( 10.309278%) , 0.000113853 mW ( 10.719971%  ) 
+Library asap7sc7p5t_OA_SLVT_FF_nldm_211120 , 20 cells ( 10.309278%) , 0.000168938 mW ( 15.906570%  ) 
+Library asap7sc7p5t_INVBUF_LVT_FF_nldm_211120 , 1 cells ( 0.515464%) , 1.65044e-07 mW ( 0.015540%  ) 
+Library asap7sc7p5t_SIMPLE_LVT_FF_nldm_211120 , 27 cells ( 13.917525%) , 1.00491e-05 mW ( 0.946183%  ) 

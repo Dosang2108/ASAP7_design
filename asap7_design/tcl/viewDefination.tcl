@@ -1,6 +1,5 @@
 set LIB_PATH "../../Asap7/asap7/asap7sc7p5t_28/LIB/NLDM"
 
-# Glob nay se tim dung cac file co so 28 va goc FF nhu trong anh image_0af0c7.png
 create_library_set -name libset_typical \
     -timing [glob ${LIB_PATH}/*.lib]
 

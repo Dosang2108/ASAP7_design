@@ -1,66 +1,50 @@
-######################################################################
-## BU?C 0: KH?I T?O MÔI TRU?NG (SETUP)
-######################################################################
-# N?p file c?u hình và kh?i t?o thi?t k?
 source ./tcl/innovus.globals
 init_design
 
-# Thi?t l?p ch? d? ràng bu?c và xung nh?p lan truy?n
 set_interactive_constraint_modes [all_constraint_modes]
 set_propagated_clock [all_clocks]
 
-## Step 1:  (FLOORPLAN)
 set row     [dbGet head.sites.size_y]
 set track   [dbGet head.sites.size_x]
 set pitch   [expr 32 * $row]
 
-# Thi?t l?p m?t d? cell (Density)
 set Density 0.75
 
-# L?nh t?o Floorplan: T? l? 1:1, Margin 4um cho m?i c?nh
-floorPlan -r 1.0 $Density 4 4 4 4
+floorPlan -r 1.0 $Density 12 12 12 12
 
-# L?y thông s? kích thu?c sau khi Floorplan
 set CoreSize [dbGet top.fPlan.coreBox_size]
 set FPsize    [dbGet top.fPlan.box_size]
 set FPx       [dbGet top.fPlan.box_sizex]
 set FPy       [dbGet top.fPlan.box_sizey]
 
-# Ghi thông tin kích thu?c ra file
 set fo [open FPlanFinal.size w]
 puts $fo "Core size: \{X Y\} = ${CoreSize}"
 puts $fo "Floorplan size: \{X Y\} = ${FPsize}"
 close $fo
 
-## Step 2:  (POWER PLANNING)
-# T?o vòng ngu?n (Power Ring) bao quanh Core dùng l?p M9 và M10
-addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 0.88 \
+addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 8.0 \
 -layer {top M9 bottom M9 left M10 right M10}
 
-# Khai báo các chân Pin ngu?n (PG Pins)
 createPGPin VSS -geom M10 0 0 0.8 0.8
-createPGPin VDD -geom M10 1.68 1.68 2.48 2.48
+createPGPin VDD -geom M10 8.8 8.8 9.6 9.6
 
-# K?t n?i lu?i ngu?n toàn c?c (Global Net Connection)
 globalNetConnect VDD -type pgpin -pin VDD -inst * -module {}
 globalNetConnect VSS -type pgpin -pin VSS -inst * -module {}
 
-# Ði dây ngu?n ngang (Special Route) cho các Standard Cell
 setSrouteMode -viaConnectToShape { ring stripe blockring }
 sroute -nets { VSS VDD } -connect corePin -corePinCheckStdcellGeoms \
 -allowJogging 0 -allowLayerChange 0; clearDrc
 
-# Thêm các d?i ngu?n (Stripes) - ÐÃ LO?I B? CÁC CÂU L?NH IF
 setAddStripeMode -break_at block_ring -allow_jog padcore_ring
 
-# Stripe n?m ngang (Horizontal) trên l?p M9
+# S?A L?I 4: Tang Spacing c?a Stripe ngang (M9) lên 8.0
 addStripe -nets {VSS VDD} -layer M9 -direction horizontal \
--width 0.8 -spacing 0.88 -set_to_set_distance $pitch \
+-width 0.8 -spacing 8.0 -set_to_set_distance $pitch \
 -start_from bottom -start_offset [expr $pitch - 2.08] 
 
-# Stripe n?m d?c (Vertical) trên l?p M10
+# S?A L?I 5: Tang Spacing c?a Stripe d?c (M10) lên 8.0
 addStripe -nets {VSS VDD} -layer M10 -direction vertical \
--width 0.8 -spacing 0.88 -set_to_set_distance $pitch \
+-width 0.8 -spacing 8.0 -set_to_set_distance $pitch \
 -start_from left -start_offset [expr $pitch - 2.08] 
 
 # C?t t?a các do?n dây du th?a
@@ -69,8 +53,10 @@ editTrim -nets {VSS VDD}
 # Ràng bu?c kho?ng cách chân Pin
 setPinConstraint -corner_to_pin_distance 18
 
+## S?A L?I 6: G?i script s?p x?p chân I/O tru?c khi làm Placement
 source ./tcl/pins.tcl
-## Step3: (PLACEMENT)
+
+## BU?C 3: S?P X?P LINH KI?N (PLACEMENT)
 setPlaceMode -reset
 setPlaceMode -place_global_uniform_density true \
 -place_global_module_aware_spare true \
@@ -101,7 +87,9 @@ set_ccopt_property -net_type leaf  route_type leaf_rule
 set_ccopt_property -net_type trunk route_type trunk_rule
 set_ccopt_property -net_type top   route_type top_rule
 set_ccopt_property routing_top_min_fanout 10000
-set_ccopt_property target_max_trans 1ns
+
+# Ðã h? Target Max Transition xu?ng 50ps thay vì 1ns cho h?p lý v?i 7nm
+set_ccopt_property target_max_trans 50ps
 
 set_ccopt_property buffer_cells $BUFCells
 set_ccopt_property inverter_cells $INVCells
@@ -118,6 +106,7 @@ ccopt_design -prefix postCTS
 optDesign -prefix postCTS -postCTS -setup -hold
 
 ## BU?C 5: ÐI DÂY (ROUTING)
+# S?A L?I 7: Xóa tham s? "-routeTdbEffortLevel" b? l?i
 setNanoRouteMode -quiet -routeWithSiDriven true \
 -routeWithTimingDriven true -routeWithSiPostRouteFix true \
 -drouteFixAntenna true
