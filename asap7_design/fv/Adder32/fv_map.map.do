@@ -106,38 +106,38 @@ add mapped point oS[0] oS[0] -type PO PO
 
 
 //Sequential Pins
-add mapped point oS[31]/q oS_reg[31]/QN -type DFF DFF
-add mapped point oS[30]/q oS_reg[30]/QN -type DFF DFF
-add mapped point oS[28]/q oS_reg[28]/QN -type DFF DFF
-add mapped point oS[24]/q oS_reg[24]/QN -type DFF DFF
-add mapped point oS[16]/q oS_reg[16]/QN -type DFF DFF
-add mapped point oS[0]/q oS_reg[0]/QN -type DFF DFF
-add mapped point oS[15]/q oS_reg[15]/QN -type DFF DFF
-add mapped point oS[23]/q oS_reg[23]/QN -type DFF DFF
-add mapped point oS[14]/q oS_reg[14]/QN -type DFF DFF
-add mapped point oS[13]/q oS_reg[13]/QN -type DFF DFF
-add mapped point oS[27]/q oS_reg[27]/QN -type DFF DFF
-add mapped point oS[22]/q oS_reg[22]/QN -type DFF DFF
-add mapped point oS[12]/q oS_reg[12]/QN -type DFF DFF
-add mapped point oS[11]/q oS_reg[11]/QN -type DFF DFF
-add mapped point oS[21]/q oS_reg[21]/QN -type DFF DFF
-add mapped point oS[10]/q oS_reg[10]/QN -type DFF DFF
-add mapped point oS[9]/q oS_reg[9]/QN -type DFF DFF
-add mapped point oS[29]/q oS_reg[29]/QN -type DFF DFF
-add mapped point oS[26]/q oS_reg[26]/QN -type DFF DFF
-add mapped point oS[20]/q oS_reg[20]/QN -type DFF DFF
-add mapped point oS[8]/q oS_reg[8]/QN -type DFF DFF
-add mapped point oS[7]/q oS_reg[7]/QN -type DFF DFF
-add mapped point oS[19]/q oS_reg[19]/QN -type DFF DFF
-add mapped point oS[6]/q oS_reg[6]/QN -type DFF DFF
-add mapped point oS[5]/q oS_reg[5]/QN -type DFF DFF
-add mapped point oS[25]/q oS_reg[25]/QN -type DFF DFF
-add mapped point oS[18]/q oS_reg[18]/QN -type DFF DFF
-add mapped point oS[4]/q oS_reg[4]/QN -type DFF DFF
-add mapped point oS[3]/q oS_reg[3]/QN -type DFF DFF
-add mapped point oS[17]/q oS_reg[17]/QN -type DFF DFF
-add mapped point oS[2]/q oS_reg[2]/QN -type DFF DFF
-add mapped point oS[1]/q oS_reg[1]/QN -type DFF DFF
+add mapped point oS[11]/q oS_reg[11]/Q -type DFF DFF
+add mapped point oS[2]/q oS_reg[2]/Q -type DFF DFF
+add mapped point oS[9]/q oS_reg[9]/Q -type DFF DFF
+add mapped point oS[30]/q oS_reg[30]/Q -type DFF DFF
+add mapped point oS[28]/q oS_reg[28]/Q -type DFF DFF
+add mapped point oS[24]/q oS_reg[24]/Q -type DFF DFF
+add mapped point oS[16]/q oS_reg[16]/Q -type DFF DFF
+add mapped point oS[0]/q oS_reg[0]/Q -type DFF DFF
+add mapped point oS[15]/q oS_reg[15]/Q -type DFF DFF
+add mapped point oS[23]/q oS_reg[23]/Q -type DFF DFF
+add mapped point oS[14]/q oS_reg[14]/Q -type DFF DFF
+add mapped point oS[13]/q oS_reg[13]/Q -type DFF DFF
+add mapped point oS[27]/q oS_reg[27]/Q -type DFF DFF
+add mapped point oS[22]/q oS_reg[22]/Q -type DFF DFF
+add mapped point oS[12]/q oS_reg[12]/Q -type DFF DFF
+add mapped point oS[10]/q oS_reg[10]/Q -type DFF DFF
+add mapped point oS[17]/q oS_reg[17]/Q -type DFF DFF
+add mapped point oS[31]/q oS_reg[31]/Q -type DFF DFF
+add mapped point oS[1]/q oS_reg[1]/Q -type DFF DFF
+add mapped point oS[29]/q oS_reg[29]/Q -type DFF DFF
+add mapped point oS[26]/q oS_reg[26]/Q -type DFF DFF
+add mapped point oS[20]/q oS_reg[20]/Q -type DFF DFF
+add mapped point oS[8]/q oS_reg[8]/Q -type DFF DFF
+add mapped point oS[7]/q oS_reg[7]/Q -type DFF DFF
+add mapped point oS[19]/q oS_reg[19]/Q -type DFF DFF
+add mapped point oS[6]/q oS_reg[6]/Q -type DFF DFF
+add mapped point oS[5]/q oS_reg[5]/Q -type DFF DFF
+add mapped point oS[25]/q oS_reg[25]/Q -type DFF DFF
+add mapped point oS[18]/q oS_reg[18]/Q -type DFF DFF
+add mapped point oS[4]/q oS_reg[4]/Q -type DFF DFF
+add mapped point oS[3]/q oS_reg[3]/Q -type DFF DFF
+add mapped point oS[21]/q oS_reg[21]/Q -type DFF DFF
 
 
 
