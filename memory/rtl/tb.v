@@ -56,7 +56,7 @@ module tb_axi_ram;
     reg                   s_axi_rready;
 
     // --- G?i module (Instantiate DUT) ---
-    axi_ram #(
+    top_axi_ram #(
         .ADDR_WIDTH(ADDR_WIDTH),
         .DATA_WIDTH(DATA_WIDTH),
         .ID_WIDTH(ID_WIDTH)

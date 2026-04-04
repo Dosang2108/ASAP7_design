@@ -8,11 +8,14 @@ set STD_LIB  [glob ${LIB_PATH}/*_RVT_TT_*.lib]
 
 # 2. SRAM Macro (Ðã b? d?u ngo?c kép th?a)
 set SRAM_LIB [glob ${ASAP7_DIR}/asap7_sram_0p0/generated/LIB/srambank_256*.lib]
-set SRAM_LEF [glob ${ASAP7_DIR}/asap7_sram_0p0/generated/LEF/4xLEF/srambank_256*.lef] 
+set SRAM_LEF [glob ${ASAP7_DIR}/asap7_sram_0p0/generated/LEF/srambank_256*.lef] 
 
-# 3. N?p thu vi?n (ÐÃ THÊM {*} CHO SRAM_LIB Ð? FIX L?I TUI-24)
-set_db library [list {*}$STD_LIB {*}$SRAM_LIB]
-set_db lef_library [concat $TECH_LEF [glob ${LEF_PATH}/*.lef] $SRAM_LEF]
+
+#set_db library [list {*}$STD_LIB {*}$SRAM_LIB]
+#set_db lef_library [concat $TECH_LEF [glob ${LEF_PATH}/*.lef] $SRAM_LEF]
+set_db library [glob ${LIB_PATH}/*_RVT_TT_*.lib]
+
+set_db lef_library [concat $TECH_LEF [glob ${LEF_PATH}/*.lef]]
 
 # 4. Ð?c mã ngu?n
 read_hdl rtl/axi_ram.v
