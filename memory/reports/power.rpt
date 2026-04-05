@@ -2,7 +2,7 @@
 *	Innovus 22.17-s086_1 (64bit) 09/24/2024 10:51 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2026-Apr-05 20:42:27 (2026-Apr-05 13:42:27 GMT)
+* 	Date & Time:	2026-Apr-05 20:42:47 (2026-Apr-05 13:42:47 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -41,7 +41,7 @@
 *
 *	Time Units = 1e-09 secs 
 *
-*       report_power -outfile ./timingReports/postRoute.power
+*       report_power -outfile ./reports/power.rpt -hierarchy all
 *
 -----------------------------------------------------------------------------------------
 
@@ -69,12 +69,6 @@ Total                            0.00691     0.07254   0.0002713     0.07972    
 -----------------------------------------------------------------------------------------
 
 
-Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
-                                Power      Power         Power         Power  (%)        
------------------------------------------------------------------------------------------
-VDD                       0.7    0.00691     0.07254   0.0002713     0.07972         100 
-
-
 Clock                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
@@ -89,6 +83,26 @@ Clock Static Probability:  0.5000
 
 
 
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       0.7    0.00691     0.07254   0.0002713     0.07972         100 
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        0.00690968 	    8.6673%
+Total Switching Power:       0.07253980 	   90.9923%
+Total Leakage Power:         0.00027135 	    0.3404%
+Total Power:                 0.07972083 
+-----------------------------------------------------------------------------------------
+
+
+Hierarchy                       Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+
+
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
 *                Highest Average Power: u_sram_macro_u_sram_macro (srambank_256x4x32_6t122):         0.006687 
@@ -100,11 +114,3 @@ Clock Static Probability:  0.5000
 *          Total Fillers and Decap:     0
 -----------------------------------------------------------------------------------------
 
-Total leakage power = 0.000271348 mW
-Cell usage statistics:  
-Library srambank_256x4x32_6t122 , 1 cells ( 0.021584%) , 0 mW ( 0.000000%  ) 
-Library asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 , 4352 cells ( 93.934814%) , 0.000236564 mW ( 87.181087%  ) 
-Library asap7sc7p5t_SEQ_RVT_TT_nldm_220123 , 66 cells ( 1.424563%) , 1.52699e-05 mW ( 5.627410%  ) 
-Library asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 , 112 cells ( 2.417440%) , 1.03417e-05 mW ( 3.811221%  ) 
-Library asap7sc7p5t_AO_RVT_TT_nldm_211120 , 88 cells ( 1.899417%) , 7.96945e-06 mW ( 2.936982%  ) 
-Library asap7sc7p5t_OA_RVT_TT_nldm_211120 , 14 cells ( 0.302180%) , 1.20289e-06 mW ( 0.443300%  ) 

@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Sun Apr  5 18:26:05 2026                
+#  Created on Sun Apr  5 19:09:34 2026                
 #                                                     
 #######################################################
 
@@ -34,7 +34,19 @@ place_design -concurrent_macros
 refine_macro_place
 addHaloToBlock 2 2 2 2 -allMacro
 setInstancePlacementStatus -allHardMacros -status fixed
-setInstancePlacementStatus -name u_sram_macro -status fixed
+addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 0.88 -layer {top M9 bottom M9 left M8 right M8}
+createPGPin VSS -geom M8 0 0 0.8 0.8
+createPGPin VDD -geom M8 1.68 1.68 2.48 2.48
+globalNetConnect VDD -type pgpin -pin VDD -inst * -module {}
+globalNetConnect VSS -type pgpin -pin VSS -inst * -module {}
+setSrouteMode -viaConnectToShape { ring stripe blockring }
+sroute -nets { VSS VDD } -connect corePin -corePinCheckStdcellGeoms -allowJogging 0 -allowLayerChange 0
+clearDrc
+setAddStripeMode -break_at block_ring -allow_jog padcore_ring
+addStripe -nets {VSS VDD} -layer M9 -direction horizontal -width 0.8 -spacing 0.88 -set_to_set_distance 34.56 -start_from bottom -start_offset 32.48
+addStripe -nets {VSS VDD} -layer M8 -direction vertical -width 0.8 -spacing 0.88 -set_to_set_distance 34.56 -start_from left -start_offset 32.48
+editTrim -nets {VSS VDD}
+setPinConstraint -corner_to_pin_distance 18
 setPinAssignMode -pinEditInBatch true
 editPin -pin {s_axi_awid[4]} -layer M3 -assign {0.0 5.0}
 editPin -pin {s_axi_awid[3]} -layer M3 -assign {0.0 6.69375700935}
@@ -265,19 +277,6 @@ editPin -pin s_axi_bready -layer M4 -assign {166.735111111 191.232}
 editPin -pin clk -layer M4 -assign {65.6506666667 0.0}
 editPin -pin rst_n -layer M4 -assign {126.301333333 0.0}
 setPinAssignMode -pinEditInBatch false
-setPinConstraint -corner_to_pin_distance 18
-addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 8.0 -layer {top M9 bottom M9 left M8 right M8}
-createPGPin VSS -geom M8 0 0 0.8 0.8
-createPGPin VDD -geom M8 8.8 8.8 9.6 9.6
-globalNetConnect VDD -type pgpin -pin VDD -inst * -module {}
-globalNetConnect VSS -type pgpin -pin VSS -inst * -module {}
-setSrouteMode -viaConnectToShape { ring stripe blockring }
-sroute -nets { VSS VDD } -connect corePin -corePinCheckStdcellGeoms -allowJogging 0 -allowLayerChange 0
-clearDrc
-setAddStripeMode -break_at block_ring -allow_jog padcore_ring
-addStripe -nets {VSS VDD} -layer M9 -direction horizontal -width 0.8 -spacing 8.0 -set_to_set_distance 34.56 -start_from bottom -start_offset 32.48
-addStripe -nets {VSS VDD} -layer M8 -direction vertical -width 0.8 -spacing 8.0 -set_to_set_distance 34.56 -start_from left -start_offset 32.48
-editTrim -nets {VSS VDD}
 setPlaceMode -reset
 setPlaceMode -place_global_uniform_density true -place_global_module_aware_spare true -place_global_auto_blockage_in_channel soft -place_detail_preroute_as_obs {2 3} -place_global_cong_effort high -place_design_refine_macro true
 place_design
@@ -506,17 +505,66 @@ check_ccopt_clock_tree_convergence
 get_ccopt_property auto_design_state_for_ilms
 ccopt_design -prefix postCTS
 optDesign -prefix postCTS -postCTS -setup -hold
-setNanoRouteMode -quiet -routeWithSiDriven true -routeWithTimingDriven true -routeWithSiPostRouteFix true -drouteFixAntenna true
+setNanoRouteMode -reset
+setNanoRouteMode -drouteFixAntenna true -routeInsertAntennaDiode true -routeInsertDiodeForClockNets true -routeAntennaCellName ANTENNA_ASAP7_75t_R -drouteAutoStop false -droutePostRouteSwapVia true -routeReserveSpaceForMultiCut true -routeWithSiDriven true
+setFillerMode -core {FILLER_ASAP7_75t_R FILLER_ASAP7_75t_R_2 FILLER_ASAP7_75t_R_4} -honorPrerouteAsObs true
+addFiller
 routeDesign
-verify_drc -report ./verify_rpt/drc.rpt
-verifyConnectivity -type all -error 1000 -warning 50 -report ./verify_rpt/connectivity.rpt
-optDesign -postRoute -setup -hold -prefix postRoute
+routeDesign -viaOpt -wireOpt -trackOpt
+setAnalysisMode -analysisType onChipVariation -cppr both
+setNanoRouteMode -reset -drouteEndIteration
+setExtractRCMode -engine postRoute -effortLevel low -useShieldingInDetailMode true
+deleteDanglingNet
+optDesign -prefix postRoute -postRoute -setup -hold
+setMetalFill -layer M1 -maxWidth 3.36 -minWidth 0.14 -maxLength 16.8 -minLength 0.14 -decrement 0.14 -activeSpacing 1.5 -gapSpacing 1.5 -maxDensity 70 -minDensity 30 -preferredDensity 50
+setMetalFill -layer { M2 M3 } -maxWidth 3.36 -minWidth 0.155 -maxLength 16.8 -minLength 0.155 -decrement 0.155 -activeSpacing 1.5 -gapSpacing 1.5 -maxDensity 70 -minDensity 30 -preferredDensity 50
+setMetalFill -layer { M4 M5 M6 } -maxWidth 3.36 -minWidth 0.3 -maxLength 16.8 -minLength 0.3 -decrement 0.3 -activeSpacing 1.5 -gapSpacing 1.5 -maxDensity 70 -minDensity 30 -preferredDensity 50
+setMetalFill -layer { M7 M8 M9 } -maxWidth 3.36 -minWidth 0.84 -maxLength 16.8 -minLength 0.84 -decrement 0.84 -activeSpacing 1.5 -gapSpacing 1.5 -maxDensity 70 -minDensity 30 -preferredDensity 50
+addMetalFill -snap -squareShape
+checkPlace ./verify_rpt/checkPlace.rpt
+checkFPlan -reportUtil -outFile ./verify_rpt/reportUtil_postRoute.rpt
+verifyConnectivity -type all -error 1000 -warning 50 -report ./verify_rpt/verifyConnectivity.rpt
+verify_drc -report ./verify_rpt/verify_drc.rpt
+report_power -hierarchy all -outfile ./reports/power.rpt
+report_area -out_file ./reports/area.rpt
+reportGateCount -limit 0 -level 2 -out_file ./reports/gateCount.rpt
 win
 set enc_check_rename_command_name 1
-zoomBox -37.99900 -24.56875 193.45150 185.14325
-zoomBox -109.86925 -62.38675 210.47750 227.87225
-zoomBox -26.04825 -6.06950 205.40250 203.64275
-zoomBox 58.16375 50.51025 200.30375 179.30000
-zoomBox 42.59625 37.94525 209.81975 189.46275
-zoomBox 24.28125 23.16300 221.01500 201.41900
-zoomBox -22.61450 -14.68775 249.68125 232.03325
+zoomBox -65.70775 -55.51650 231.49175 213.76925
+zoomBox -95.45675 -84.58925 254.18975 232.21750
+zoomBox -5.27525 -1.79525 177.24300 163.58050
+zoomBox 4.70775 12.62475 159.84825 153.19400
+zoomBox 13.27900 25.05300 145.14850 144.53700
+zoomBox 20.56450 35.61700 132.65375 137.17850
+zoomBox 46.71200 66.69800 105.22350 119.71400
+zoomBox 60.41275 82.92250 90.95625 110.59725
+zoomBox 64.56475 87.83925 86.63250 107.83425
+zoomBox 68.73600 92.77875 82.28875 105.05850
+zoomBox 62.61075 85.57925 88.57375 109.10375
+zoomBox 46.54425 66.69550 105.05900 119.71450
+zoomBox 10.33525 24.00150 142.21325 143.49325
+zoomBox -71.27050 -72.21975 225.95000 197.08500
+zoomBox -127.61350 -138.65400 283.76450 234.08625
+zoomBox -46.88325 -73.06075 250.33725 196.24400
+zoomBox -15.35500 -47.44400 237.28250 181.46500
+zoomBox 89.07925 48.57900 201.17625 150.14750
+zoomBox 135.35975 91.18475 185.09825 136.25175
+zoomBox 153.00475 107.42825 178.96875 130.95375
+zoomBox 162.21525 115.90775 175.76875 128.18825
+selectMarker 134.7840 125.2440 181.0080 125.3160 -1 3 7
+deselectAll
+selectWire 173.1400 125.4240 173.2320 125.4960 2 CTS_85
+zoomBox 165.51875 119.10525 173.84250 126.64725
+zoomBox 166.30750 119.86850 173.38275 126.27925
+zoomBox 168.03200 121.53775 172.37700 125.47475
+zoomBox 169.09075 122.56275 171.75950 124.98075
+zoomBox 167.94275 120.62300 173.05550 125.25550
+zoomBox 166.43400 118.07300 174.75925 125.61625
+zoomBox 163.97725 113.92075 177.53375 126.20400
+zoomBox 159.97700 107.15975 182.05150 127.16100
+zoomBox 155.99525 100.42975 186.54825 128.11325
+zoomBox 150.48400 91.11500 192.77225 129.43150
+zoomBox 138.00550 70.02425 206.86500 132.41625
+zoomBox 117.68700 35.68200 229.81300 137.27675
+zoomBox 84.60150 -20.23925 267.18000 145.19100
+fit
