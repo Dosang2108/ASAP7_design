@@ -3,58 +3,39 @@
 module sram_macro #(
     parameter DATA_WIDTH        = 32,
     parameter ADDR_WIDTH        = 32,
-    parameter MEM_DEPTH         = 16384,
+    parameter MEM_DEPTH         = 1024,
     parameter INIT_FILE         = ""
 )(
     input  wire                      clk,
     
-    // C?ng Ghi
+    // C?ng Ghi (T? FSM AXI)
     input  wire                      bram_we,
     input  wire [ADDR_WIDTH-1:0]     bram_waddr,
     input  wire [DATA_WIDTH-1:0]     bram_wdata,
-    input  wire [(DATA_WIDTH/8)-1:0] bram_wstrb,
+    input  wire [(DATA_WIDTH/8)-1:0] bram_wstrb, // Macro ASAP7 không h? tr? Byte Enable nên ta b? tr?ng
     
-    // C?ng Ð?c
+    // C?ng Ð?c (T? FSM AXI)
     input  wire                      bram_re,
     input  wire [ADDR_WIDTH-1:0]     bram_raddr,
-    output wire [DATA_WIDTH-1:0]     bram_rdata_out  // Luu ý: S?a 'reg' thành 'wire' ? dây
+    output wire [DATA_WIDTH-1:0]     bram_rdata_out 
 );
 
-// =========================================================================
-// KHU V?C B? ?N KH?I TRÌNH T?NG H?P GENUS (CH? CH?Y TRONG SIMULATION)
-// =========================================================================
-// synthesis translate_off
+    wire [9:0] sram_addr;
+    
+    // Vì SRAM dùng chung 1 c?ng d?a ch? (Single-Port), n?u dang ghi thì uu tiên d?a ch? ghi
+    assign sram_addr = bram_we ? bram_waddr[9:0] : bram_raddr[9:0];
 
-    (* ram_style = "block" *) reg [DATA_WIDTH-1:0] ram_memory [0:MEM_DEPTH-1];
-    reg [DATA_WIDTH-1:0] rdata_reg;
+    // Tín hi?u kích ho?t Bank (banksel) c?a ASAP7 là Active-HIGH (M?c 1 là b?t)
+    wire sram_banksel = bram_we | bram_re; 
 
-    // Kh?i t?o b? nh? n?u có file
-    initial begin
-        if (INIT_FILE != "") begin
-            $readmemh(INIT_FILE, ram_memory);
-        end
-    end
-
-    // Ti?n trình Ghi
-    always @(posedge clk) begin
-        if (bram_we) begin
-            if (bram_wstrb[0]) ram_memory[bram_waddr][7:0]   <= bram_wdata[7:0];
-            if (bram_wstrb[1]) ram_memory[bram_waddr][15:8]  <= bram_wdata[15:8];
-            if (bram_wstrb[2]) ram_memory[bram_waddr][23:16] <= bram_wdata[23:16];
-            if (bram_wstrb[3]) ram_memory[bram_waddr][31:24] <= bram_wdata[31:24];
-        end
-    end
-
-    // Ti?n trình Ð?c
-    always @(posedge clk) begin
-        if (bram_re) begin
-            rdata_reg <= ram_memory[bram_raddr];
-        end
-    end
-
-    assign bram_rdata_out = rdata_reg;
-
-// synthesis translate_on
-// =========================================================================
+    srambank_256x4x32_6t122 u_sram_macro (
+        .clk        (clk),
+        .ADDRESS    (sram_addr),      
+        .wd         (bram_wdata),      // D? li?u ghi 32-bit
+        .banksel    (sram_banksel),    
+        .read       (bram_re),         // L?nh d?c (Active High)
+        .write      (bram_we),         // L?nh ghi (Active High)
+        .dataout    (bram_rdata_out)   // D? li?u d?c ra 32-bit
+    );
 
 endmodule

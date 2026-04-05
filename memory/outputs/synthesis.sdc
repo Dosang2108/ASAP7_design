@@ -1,6 +1,6 @@
 # ####################################################################
 
-#  Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Sun Apr 05 10:35:07 +07 2026
+#  Created by Genus(TM) Synthesis Solution 22.17-s071_1 on Sun Apr 05 11:17:28 +07 2026
 
 # ####################################################################
 
@@ -296,5 +296,6 @@ set_output_delay -clock [get_clocks clk] -add_delay 600.0 [get_ports s_axi_rlast
 set_output_delay -clock [get_clocks clk] -add_delay 600.0 [get_ports s_axi_rvalid]
 set_max_fanout 20.000 [current_design]
 set_max_transition 200.0 [current_design]
+set_dont_touch [get_cells u_sram_macro_u_sram_macro]
 set_clock_uncertainty -setup 100.0 [get_clocks clk]
 set_clock_uncertainty -hold 100.0 [get_clocks clk]

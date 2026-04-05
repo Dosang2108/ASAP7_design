@@ -3,10 +3,9 @@ set LIB_PATH "${ASAP7_DIR}/asap7sc7p5t_28/LIB/NLDM"
 set SRAM_LIB_PATH "${ASAP7_DIR}/asap7_sram_0p0/generated/LIB"
 
 set STD_LIB  [glob ${LIB_PATH}/*_RVT_TT_*.lib]
-set SRAM_LIB [glob ${SRAM_LIB_PATH}/srambank_256*.lib]
+set SRAM_LIB "../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x32_6t122.lib"
+create_library_set -name libset_typical -timing [list {*}$STD_LIB $SRAM_LIB]
 
-create_library_set -name libset_typical \
-    -timing [list {*}$STD_LIB {*}$SRAM_LIB]
 
 create_rc_corner -name rc_typical \
     -T 25

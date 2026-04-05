@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Sun Apr  5 10:26:32 2026                
+#  Created on Sun Apr  5 11:19:41 2026                
 #                                                     
 #######################################################
 
@@ -16,7 +16,7 @@
 set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 suppressMessage ENCEXT-2799
 getVersion
-set init_lef_file {../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x64_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x72_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x74_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x80_6t122.lef}
+set init_lef_file {../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef}
 set init_verilog outputs/synthesis_net.v
 set init_top_cell top_axi_ram
 set init_pwr_net VDD
@@ -27,3 +27,7 @@ set init_mmmc_file tcl/viewDefination.tcl
 init_design
 win
 set enc_check_rename_command_name 1
+zoomBox -0.00850 -0.00375 0.02650 0.02800
+zoomBox -0.01400 -0.00625 0.02750 0.03125
+zoomBox -0.03650 -0.01675 0.03150 0.04475
+zoomBox -0.10900 -0.05025 0.04425 0.08850

@@ -1,473 +1,274 @@
-[04/05 10:25:17      0s] 
-[04/05 10:25:17      0s] Cadence Innovus(TM) Implementation System.
-[04/05 10:25:17      0s] Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
-[04/05 10:25:17      0s] 
-[04/05 10:25:17      0s] Version:	v22.17-s086_1, built Tue Sep 24 10:51:50 PDT 2024
-[04/05 10:25:17      0s] Options:	-files tcl/innovus.tcl 
-[04/05 10:25:17      0s] Date:		Sun Apr  5 10:25:17 2026
-[04/05 10:25:17      0s] Host:		vlsiktmt (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (1core*2cpus*Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz 22528KB)
-[04/05 10:25:17      0s] OS:		CentOS Linux 7 (Core)
-[04/05 10:25:17      0s] 
-[04/05 10:25:17      0s] License:
-[04/05 10:25:17      0s] 		[10:25:17.222081] Configured Lic search path (22.01-s003): 5280@172.28.10.187
+[04/05 11:18:47      0s] 
+[04/05 11:18:47      0s] Cadence Innovus(TM) Implementation System.
+[04/05 11:18:47      0s] Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+[04/05 11:18:47      0s] 
+[04/05 11:18:47      0s] Version:	v22.17-s086_1, built Tue Sep 24 10:51:50 PDT 2024
+[04/05 11:18:47      0s] Options:	-files tcl/innovus.tcl 
+[04/05 11:18:47      0s] Date:		Sun Apr  5 11:18:47 2026
+[04/05 11:18:47      0s] Host:		vlsiktmt (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (1core*2cpus*Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz 22528KB)
+[04/05 11:18:47      0s] OS:		CentOS Linux 7 (Core)
+[04/05 11:18:47      0s] 
+[04/05 11:18:47      0s] License:
+[04/05 11:18:47      0s] 		[11:18:47.222129] Configured Lic search path (22.01-s003): 5280@172.28.10.187
 
-[04/05 10:25:17      0s] 		invs	Innovus Implementation System	22.1	checkout succeeded
-[04/05 10:25:17      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
-[04/05 10:26:21     22s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v22.17-s086_1 (64bit) 09/24/2024 10:51 (Linux 3.10.0-693.el7.x86_64)
-[04/05 10:26:30     25s] @(#)CDS: NanoRoute 22.17-s086_1 NR240905-1647/22_17-UB (database version 18.20.629) {superthreading v2.20}
-[04/05 10:26:30     25s] @(#)CDS: AAE 22.17-s013 (64bit) 09/24/2024 (Linux 3.10.0-693.el7.x86_64)
-[04/05 10:26:30     25s] @(#)CDS: CTE 22.17-s017_1 () Sep 12 2024 04:53:54 ( )
-[04/05 10:26:30     25s] @(#)CDS: SYNTECH 22.17-s006_1 () Aug 12 2024 03:52:27 ( )
-[04/05 10:26:30     25s] @(#)CDS: CPE v22.17-s051
-[04/05 10:26:30     25s] @(#)CDS: IQuantus/TQuantus 21.2.2-s369 (64bit) Tue May 7 14:30:42 PDT 2024 (Linux 3.10.0-693.el7.x86_64)
-[04/05 10:26:30     25s] @(#)CDS: OA 22.60-p095 Wed Apr 17 03:30:14 2024
-[04/05 10:26:30     25s] @(#)CDS: SGN 22.20-d001 (02-Jan-2023) (64 bit executable, TkQt5.9.1)
-[04/05 10:26:30     25s] @(#)CDS: RCDB 11.15.0
-[04/05 10:26:30     25s] @(#)CDS: STYLUS 22.15-s003_1 (04/04/2024 05:58 PDT)
-[04/05 10:26:30     25s] @(#)CDS: IntegrityPlanner-22.17-15746 (22.17) (2024-07-03 11:16:10+0800)
-[04/05 10:26:30     25s] Create and set the environment variable TMPDIR to /data/tkvm2/Asap7design/memory/innovus_temp_2545_c658d179-1974-4d2e-a3ab-86630a5eba3e_vlsiktmt_tkvm2_LDHjOs.
+[04/05 11:18:47      0s] 		invs	Innovus Implementation System	22.1	checkout succeeded
+[04/05 11:18:47      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[04/05 11:19:33     21s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v22.17-s086_1 (64bit) 09/24/2024 10:51 (Linux 3.10.0-693.el7.x86_64)
+[04/05 11:19:39     24s] @(#)CDS: NanoRoute 22.17-s086_1 NR240905-1647/22_17-UB (database version 18.20.629) {superthreading v2.20}
+[04/05 11:19:39     24s] @(#)CDS: AAE 22.17-s013 (64bit) 09/24/2024 (Linux 3.10.0-693.el7.x86_64)
+[04/05 11:19:39     24s] @(#)CDS: CTE 22.17-s017_1 () Sep 12 2024 04:53:54 ( )
+[04/05 11:19:39     24s] @(#)CDS: SYNTECH 22.17-s006_1 () Aug 12 2024 03:52:27 ( )
+[04/05 11:19:39     24s] @(#)CDS: CPE v22.17-s051
+[04/05 11:19:39     24s] @(#)CDS: IQuantus/TQuantus 21.2.2-s369 (64bit) Tue May 7 14:30:42 PDT 2024 (Linux 3.10.0-693.el7.x86_64)
+[04/05 11:19:39     24s] @(#)CDS: OA 22.60-p095 Wed Apr 17 03:30:14 2024
+[04/05 11:19:39     24s] @(#)CDS: SGN 22.20-d001 (02-Jan-2023) (64 bit executable, TkQt5.9.1)
+[04/05 11:19:39     24s] @(#)CDS: RCDB 11.15.0
+[04/05 11:19:39     24s] @(#)CDS: STYLUS 22.15-s003_1 (04/04/2024 05:58 PDT)
+[04/05 11:19:39     24s] @(#)CDS: IntegrityPlanner-22.17-15746 (22.17) (2024-07-03 11:16:10+0800)
+[04/05 11:19:39     24s] Create and set the environment variable TMPDIR to /data/tkvm2/Asap7design/memory/innovus_temp_10685_a7cf9a85-6e46-4ea8-90e4-e441d710f025_vlsiktmt_tkvm2_73Ate2.
 
-[04/05 10:26:31     25s] Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
-[04/05 10:26:36     27s] 
-[04/05 10:26:36     27s] **INFO:  MMMC transition support version v31-84 
-[04/05 10:26:36     27s] 
-[04/05 10:26:36     27s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
-[04/05 10:26:36     27s] <CMD> suppressMessage ENCEXT-2799
-[04/05 10:26:36     27s] <CMD> getVersion
-[04/05 10:26:37     27s] [INFO] Loading PVS 23.11 fill procedures
-[04/05 10:26:38     27s] Sourcing file "tcl/innovus.tcl" ...
-[04/05 10:26:38     27s] source tcl/innovus.tcl
-[04/05 10:26:38     27s] <CMD> set init_lef_file {../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x64_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x72_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x74_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x80_6t122.lef}
-[04/05 10:26:38     27s] <CMD> set init_verilog outputs/synthesis_net.v
-[04/05 10:26:38     27s] <CMD> set init_top_cell top_axi_ram
-[04/05 10:26:38     27s] <CMD> set init_pwr_net VDD
-[04/05 10:26:38     27s] <CMD> set init_gnd_net VSS
-[04/05 10:26:38     27s] <CMD> set init_layout_view layout
-[04/05 10:26:38     27s] <CMD> set init_abstract_view abstract
-[04/05 10:26:38     27s] <CMD> set init_mmmc_file tcl/viewDefination.tcl
-[04/05 10:26:38     27s] <CMD> init_design
-[04/05 10:26:38     27s] #% Begin Load MMMC data ... (date=04/05 10:26:38, mem=1262.9M)
-[04/05 10:26:38     27s] #% End Load MMMC data ... (date=04/05 10:26:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1264.1M, current mem=1264.1M)
-[04/05 10:26:38     27s] 
-[04/05 10:26:38     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ...
-[04/05 10:26:38     27s] 
-[04/05 10:26:38     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ...
-[04/05 10:26:38     27s] Set DBUPerIGU to M1 pitch 576.
-[04/05 10:26:38     27s] 
-[04/05 10:26:38     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ...
-[04/05 10:26:39     27s] 
-[04/05 10:26:39     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ...
-[04/05 10:26:39     27s] 
-[04/05 10:26:39     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef ...
-[04/05 10:26:39     27s] 
-[04/05 10:26:39     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef ...
-[04/05 10:26:39     27s] **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+[04/05 11:19:39     24s] Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+[04/05 11:19:44     26s] 
+[04/05 11:19:44     26s] **INFO:  MMMC transition support version v31-84 
+[04/05 11:19:44     26s] 
+[04/05 11:19:44     26s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[04/05 11:19:44     26s] <CMD> suppressMessage ENCEXT-2799
+[04/05 11:19:44     26s] <CMD> getVersion
+[04/05 11:19:45     26s] [INFO] Loading PVS 23.11 fill procedures
+[04/05 11:19:45     27s] Sourcing file "tcl/innovus.tcl" ...
+[04/05 11:19:45     27s] source tcl/innovus.tcl
+[04/05 11:19:45     27s] <CMD> set init_lef_file {../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef}
+[04/05 11:19:45     27s] <CMD> set init_verilog outputs/synthesis_net.v
+[04/05 11:19:45     27s] <CMD> set init_top_cell top_axi_ram
+[04/05 11:19:45     27s] <CMD> set init_pwr_net VDD
+[04/05 11:19:45     27s] <CMD> set init_gnd_net VSS
+[04/05 11:19:45     27s] <CMD> set init_layout_view layout
+[04/05 11:19:45     27s] <CMD> set init_abstract_view abstract
+[04/05 11:19:45     27s] <CMD> set init_mmmc_file tcl/viewDefination.tcl
+[04/05 11:19:45     27s] <CMD> init_design
+[04/05 11:19:46     27s] #% Begin Load MMMC data ... (date=04/05 11:19:46, mem=1332.9M)
+[04/05 11:19:46     27s] #% End Load MMMC data ... (date=04/05 11:19:46, total cpu=0:00:00.0, real=0:00:00.0, peak res=1334.1M, current mem=1334.1M)
+[04/05 11:19:46     27s] 
+[04/05 11:19:46     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ...
+[04/05 11:19:46     27s] 
+[04/05 11:19:46     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ...
+[04/05 11:19:46     27s] Set DBUPerIGU to M1 pitch 576.
+[04/05 11:19:46     27s] 
+[04/05 11:19:46     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ...
+[04/05 11:19:46     27s] 
+[04/05 11:19:46     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ...
+[04/05 11:19:46     27s] 
+[04/05 11:19:46     27s] Loading LEF file ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef ...
+[04/05 11:19:46     27s] 
+[04/05 11:19:46     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef ...
+[04/05 11:19:46     27s] **ERROR: (IMPLF-82):	The x coordinate value 30.2580
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
-This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
-**ERROR: (IMPLF-82):	The y coordinate value 17.9390
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
-This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
-**ERROR: (IMPLF-82):	The y coordinate value 17.9870
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
-This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
-**ERROR: (IMPLF-82):	The y coordinate value 19.0190
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
-This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
-**ERROR: (IMPLF-82):	The y coordinate value 19.0670
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
-This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
-**ERROR: (IMPLF-82):	The y coordinate value 20.0990
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
-This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
-**ERROR: (IMPLF-82):	The y coordinate value 20.1470
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
-This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
-**ERROR: (IMPLF-82):	The y coordinate value 21.1790
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **ERROR: (IMPLF-82):	The x coordinate value 30.2580
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
-**ERROR: (IMPLF-82):	The y coordinate value 21.2270
-in pin 'VDD' in macro 'srambank_256x4x16_6t122' is not on Manufacturing Grid.
+**ERROR: (IMPLF-82):	The x coordinate value 30.2580
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
+This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
+**ERROR: (IMPLF-82):	The x coordinate value 30.2580
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
+This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
+**ERROR: (IMPLF-82):	The x coordinate value 30.2580
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
+This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
+**ERROR: (IMPLF-82):	The x coordinate value 30.2580
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
+This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
+**ERROR: (IMPLF-82):	The y coordinate value 26.5790
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
+This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
+**ERROR: (IMPLF-82):	The x coordinate value 30.2580
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
+This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
+**ERROR: (IMPLF-82):	The y coordinate value 26.6270
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
+This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
+**ERROR: (IMPLF-82):	The y coordinate value 27.6590
+in pin 'VDD' in macro 'srambank_256x4x32_6t122' is not on Manufacturing Grid.
 This is likely to result in placement/routing that cannot be manufactured. Check the manufacturing grid defined in the technology LEF file (MANUFACTURINGGRID) and make sure the value is an integral multiple of the grid.
 **WARN: (EMS-27):	Message (IMPLF-82) has exceeded the current message display limit of 20.
-[04/05 10:26:39     27s] To increase the message display limit, refer to the product command reference manual.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 835.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 842.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 849.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 856.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 875.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 882.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 889.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 896.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 903.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 910.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 917.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 924.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 931.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 938.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 957.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 964.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 971.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 978.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 985.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef at line 992.
-[04/05 10:26:39     27s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x16_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
+[04/05 11:19:46     27s] To increase the message display limit, refer to the product command reference manual.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1435.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1442.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1449.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1456.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1463.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1470.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1477.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1484.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1503.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1510.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1517.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1524.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1531.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1538.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1545.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1552.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1559.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1566.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1585.
+[04/05 11:19:46     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1592.
+[04/05 11:19:46     27s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x32_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
 Type 'man IMPLF-40' for more detail.
-[04/05 10:26:39     27s] 
-[04/05 10:26:39     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef ...
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 907.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 914.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 933.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 940.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 947.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 954.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 961.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 968.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 975.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 982.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 989.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 996.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 1015.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 1022.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 1029.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 1036.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 1043.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 1050.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 1057.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef at line 1064.
-[04/05 10:26:39     27s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x18_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:39     27s] 
-[04/05 10:26:39     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef ...
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 991.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 998.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1005.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1012.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1019.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1026.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1033.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1040.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1047.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1054.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1073.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1080.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1087.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1094.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1101.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1108.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1115.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1122.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1129.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef at line 1136.
-[04/05 10:26:39     27s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x20_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:39     27s] 
-[04/05 10:26:39     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef ...
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1435.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1442.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1449.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1456.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1463.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1470.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1477.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1484.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1503.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1510.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1517.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1524.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1531.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1538.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1545.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1552.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1559.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1566.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1585.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef at line 1592.
-[04/05 10:26:39     27s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x32_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:39     27s] 
-[04/05 10:26:39     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef ...
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1507.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1514.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1521.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1528.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1535.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1542.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1561.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1568.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1575.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1582.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1589.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1596.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1603.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1610.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1617.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1624.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1643.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1650.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1657.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef at line 1664.
-[04/05 10:26:39     27s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x34_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:39     27s] 
-[04/05 10:26:39     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef ...
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1579.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1586.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1593.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1600.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1619.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1626.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1633.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1640.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1647.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1654.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1661.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1668.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1675.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1682.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1701.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1708.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1715.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1722.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1729.
-[04/05 10:26:39     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef at line 1736.
-[04/05 10:26:39     27s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x36_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:39     27s] 
-[04/05 10:26:39     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef ...
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1735.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1742.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1749.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1756.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1763.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1770.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1777.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1784.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1791.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1798.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1817.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1824.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1831.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1838.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1845.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1852.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1859.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1866.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1873.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef at line 1880.
-[04/05 10:26:40     27s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x40_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:40     27s] 
-[04/05 10:26:40     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef ...
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2023.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2030.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2049.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2056.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2063.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2070.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2077.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2084.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2091.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2098.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2105.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2112.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2131.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2138.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2145.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2152.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2711.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2718.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2737.
-[04/05 10:26:40     27s] WARNING (LEFPARS-2065): Either PATH, RECT or POLYGON statement is a required in MACRO/PIN/PORT. See file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef at line 2744.
-[04/05 10:26:40     27s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x48_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:40     27s] 
-[04/05 10:26:40     27s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x64_6t122.lef ...
-[04/05 10:26:40     28s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x64_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:40     28s] 
-[04/05 10:26:40     28s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x72_6t122.lef ...
-[04/05 10:26:41     28s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x72_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:41     28s] 
-[04/05 10:26:41     28s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x74_6t122.lef ...
-[04/05 10:26:41     28s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x74_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:41     28s] 
-[04/05 10:26:41     28s] Loading LEF file ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x80_6t122.lef ...
-[04/05 10:26:41     28s] **ERROR: (IMPLF-40):	Macro 'srambank_256x4x80_6t122' references a site 'coreSite' that has not been defined. The sites must be defined before they can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the site does not exist or is specified after the one that defines the macro.
-Type 'man IMPLF-40' for more detail.
-[04/05 10:26:41     28s] 
+[04/05 11:19:46     27s] 
 ##  Check design process and node:  
 ##  Both design process and tech node are not set.
 
-[04/05 10:26:41     28s] Loading view definition file from tcl/viewDefination.tcl
-[04/05 10:26:41     28s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib' ...
-[04/05 10:26:46     29s] Read 42 cells in library 'asap7sc7p5t_AO_RVT_TT_nldm_211120' 
-[04/05 10:26:46     29s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib' ...
-[04/05 10:26:46     29s] Read 37 cells in library 'asap7sc7p5t_INVBUF_RVT_TT_nldm_211120' 
-[04/05 10:26:46     29s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib' ...
-[04/05 10:26:50     31s] Read 34 cells in library 'asap7sc7p5t_OA_RVT_TT_nldm_211120' 
-[04/05 10:26:50     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib' ...
-[04/05 10:26:50     31s] Read 33 cells in library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123' 
-[04/05 10:26:50     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib' ...
-[04/05 10:26:50     31s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 11387)
-[04/05 10:26:50     31s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 14287)
-[04/05 10:26:51     31s] Read 56 cells in library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120' 
-[04/05 10:26:51     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x16_6t122.lib' ...
-[04/05 10:26:51     31s] Read 1 cells in library 'srambank_256x4x16_6t122' 
-[04/05 10:26:51     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x18_6t122.lib' ...
-[04/05 10:26:51     31s] Read 1 cells in library 'srambank_256x4x18_6t122' 
-[04/05 10:26:51     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x20_6t122.lib' ...
-[04/05 10:26:51     31s] Read 1 cells in library 'srambank_256x4x20_6t122' 
-[04/05 10:26:51     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x32_6t122.lib' ...
-[04/05 10:26:51     31s] Read 1 cells in library 'srambank_256x4x32_6t122' 
-[04/05 10:26:51     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x34_6t122.lib' ...
-[04/05 10:26:51     31s] Read 1 cells in library 'srambank_256x4x34_6t122' 
-[04/05 10:26:51     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x36_6t122.lib' ...
-[04/05 10:26:51     31s] Read 1 cells in library 'srambank_256x4x36_6t122' 
-[04/05 10:26:51     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x40_6t122.lib' ...
-[04/05 10:26:51     31s] Read 1 cells in library 'srambank_256x4x40_6t122' 
-[04/05 10:26:51     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x48_6t122.lib' ...
-[04/05 10:26:52     31s] Read 1 cells in library 'srambank_256x4x48_6t122' 
-[04/05 10:26:52     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x64_6t122.lib' ...
-[04/05 10:26:52     31s] Read 1 cells in library 'srambank_256x4x64_6t122' 
-[04/05 10:26:52     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x72_6t122.lib' ...
-[04/05 10:26:52     31s] Read 1 cells in library 'srambank_256x4x72_6t122' 
-[04/05 10:26:52     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x74_6t122.lib' ...
-[04/05 10:26:52     31s] Read 1 cells in library 'srambank_256x4x74_6t122' 
-[04/05 10:26:52     31s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x80_6t122.lib' ...
-[04/05 10:26:52     31s] Read 1 cells in library 'srambank_256x4x80_6t122' 
-[04/05 10:26:52     31s] Ending "PreSetAnalysisView" (total cpu=0:00:03.4, real=0:00:11.0, peak res=1421.1M, current mem=1290.9M)
-[04/05 10:26:52     31s] *** End library_loading (cpu=0.06min, real=0.18min, mem=18.0M, fe_cpu=0.53min, fe_real=1.58min, fe_mem=1519.0M) ***
-[04/05 10:26:52     31s] #% Begin Load netlist data ... (date=04/05 10:26:52, mem=1290.9M)
-[04/05 10:26:52     31s] *** Begin netlist parsing (mem=1519.0M) ***
-[04/05 10:26:52     31s] **WARN: (IMPVL-536):	The PG type of pin 'VSS' of cell 'srambank_256x4x16_6t122' doesn't match between the timing library and LEF file. In the timing library the pin is defined as 'ground' pin, but in LEF file it is defined as 'power' pin. Check the library data and make the update accordingly.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'sdel[0]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'sdel[1]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'sdel[2]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'sdel[3]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'sdel[4]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[16]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[17]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[18]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[19]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[20]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[21]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[22]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[23]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[24]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[25]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[26]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[27]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[28]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[29]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (IMPVL-159):	Pin 'dataout[30]' of cell 'srambank_256x4x16_6t122' is defined in LEF but not in the timing library.
-[04/05 10:26:52     31s] Type 'man IMPVL-159' for more detail.
-[04/05 10:26:52     31s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
-[04/05 10:26:52     31s] To increase the message display limit, refer to the product command reference manual.
-[04/05 10:26:52     31s] **ERROR: (IMPDB-2163):	Cell 'srambank_256x4x16_6t122' has inconsistent pin definitions between timing library and LEF.  There are extra bus-bit pins defined in LEF, e.g., 'wd[63]'.  Fix the mismatch and reload the design.
-**ERROR: (IMPDB-2160):	Bus 'wd' of cell 'srambank_256x4x16_6t122' has different definitions between timing library ([15:0]) and LEF ([63:16]).  Fix the mismatch and reload the design.
-#% End Load netlist data ... (date=04/05 10:26:52, total cpu=0:00:00.0, real=0:00:00.0, peak res=1295.8M, current mem=1295.8M)
-[04/05 10:26:52     31s] **ERROR: (IMPVL-902):	Failed to read netlist outputs/synthesis_net.v. See previous error messages for details.  Resolve the issues and reload the design.
-[04/05 10:26:52     31s] **ERROR: (IMPSYT-6692):	Invalid return code while executing 'tcl/innovus.tcl' was returned and script processing was stopped. Review the following error in 'tcl/innovus.tcl' then restart.
-[04/05 10:26:52     31s] Error info: tcl/innovus.tcl: 
-[04/05 10:26:52     31s]     while executing
-[04/05 10:26:52     31s] "error $msg"
-[04/05 10:26:52     31s]     (procedure "apply_design" line 34)
-[04/05 10:26:52     31s]     invoked from within
-[04/05 10:26:52     31s] "apply_design $loadViewDefinition"
-[04/05 10:26:52     31s]     (procedure "init_design" line 408)
-[04/05 10:26:52     31s]     invoked from within
-[04/05 10:26:52     31s] "init_design"
-[04/05 10:26:52     31s]     (file "tcl/innovus.tcl" line 2)
-[04/05 10:26:52     31s]     invoked from within
-[04/05 10:26:52     31s] "::se_source_orig tcl/innovus.tcl"
-[04/05 10:26:52     31s]     ("uplevel" body line 1)
-[04/05 10:26:52     31s]     invoked from within
-[04/05 10:26:52     31s] "uplevel [concat ::se_source_orig  $args] "
-[04/05 10:26:52     31s]     (procedure "source" line 224)
-[04/05 10:26:52     31s]     invoked from within
-[04/05 10:26:52     31s] "source tcl/innovus.tcl"
-[04/05 10:26:52     31s]     invoked from within
-[04/05 10:26:52     31s] "::se::run_command_from_console "source tcl/innovus.tcl""
-[04/05 10:26:52     31s]     ("eval" body line 1)
-[04/05 10:26:52     31s]     invoked from within
-[04/05 10:26:52     31s] "eval {::se::run_command_from_console "source tcl/innovus.tcl"}"
-[04/05 10:26:52     31s]     (in namespace inscope "::" script line 1)
-[04/05 10:26:52     31s]     invoked from within
-[04/05 10:26:52     31s] "namespace inscope :: eval "::se::run_command_from_console \"source $fileName\""".
-[04/05 10:26:52     31s] <CMD> win
-[04/05 10:26:53     31s] <CMD> set enc_check_rename_command_name 1
-[04/05 10:27:56     32s] **INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
-[04/05 10:27:57     32s] Innovus terminated by user interrupt.
-[04/05 10:27:57     32s] 
-[04/05 10:27:57     32s] *** Memory Usage v#1 (Current mem = 1523.352M, initial mem = 646.375M) ***
-[04/05 10:27:57     32s] 
-[04/05 10:27:57     32s] *** Summary of all messages that are not suppressed in this session:
-[04/05 10:27:57     32s] Severity  ID               Count  Summary                                  
-[04/05 10:27:57     32s] ERROR     IMPLF-40            12  Macro '%s' references a site '%s' that h...
-[04/05 10:27:57     32s] ERROR     IMPLF-82         572013  %s is not on Manufacturing Grid. This is...
-[04/05 10:27:57     32s] ERROR     IMPSYT-6692          1  Invalid return code while executing '%s'...
-[04/05 10:27:57     32s] ERROR     IMPVL-902            1  Failed to read netlist %s. See previous ...
-[04/05 10:27:57     32s] WARNING   IMPVL-536            1  The PG type of pin '%s' of cell '%s' doe...
-[04/05 10:27:57     32s] WARNING   IMPVL-159          101  Pin '%s' of cell '%s' is defined in LEF ...
-[04/05 10:27:57     32s] ERROR     IMPDB-2163           1  Cell '%s' has inconsistent pin definitio...
-[04/05 10:27:57     32s] ERROR     IMPDB-2160           1  Bus '%s' of cell '%s' has different defi...
-[04/05 10:27:57     32s] Innovus terminated by internal (SEGV) error/signal.
-[04/05 10:27:57     32s] *** Stack trace:
-[04/05 10:27:57     32s] WARNING   TECHLIB-1277         2  The %s '%s' has been defined for %s %s '...
-[04/05 10:27:57     32s] *** Message Summary: 104 warning(s), 572029 error(s)
-[04/05 10:27:57     32s] 
-[04/05 10:27:57     32s] --- Ending "Innovus" (totcpu=0:00:32.3, real=0:02:40, mem=1523.6M) ---
+[04/05 11:19:46     27s] Loading view definition file from tcl/viewDefination.tcl
+[04/05 11:19:46     27s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib' ...
+[04/05 11:19:50     28s] Read 42 cells in library 'asap7sc7p5t_AO_RVT_TT_nldm_211120' 
+[04/05 11:19:50     28s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib' ...
+[04/05 11:19:50     28s] Read 37 cells in library 'asap7sc7p5t_INVBUF_RVT_TT_nldm_211120' 
+[04/05 11:19:50     28s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib' ...
+[04/05 11:19:52     30s] Read 34 cells in library 'asap7sc7p5t_OA_RVT_TT_nldm_211120' 
+[04/05 11:19:52     30s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib' ...
+[04/05 11:19:53     30s] Read 33 cells in library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123' 
+[04/05 11:19:53     30s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib' ...
+[04/05 11:19:53     30s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 11387)
+[04/05 11:19:53     30s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /data/tkvm2/Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 14287)
+[04/05 11:19:53     30s] Read 56 cells in library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120' 
+[04/05 11:19:53     30s] Reading libset_typical timing library '/data/tkvm2/Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x32_6t122.lib' ...
+[04/05 11:19:53     30s] Read 1 cells in library 'srambank_256x4x32_6t122' 
+[04/05 11:19:53     30s] Ending "PreSetAnalysisView" (total cpu=0:00:03.1, real=0:00:07.0, peak res=1483.2M, current mem=1353.9M)
+[04/05 11:19:53     30s] *** End library_loading (cpu=0.05min, real=0.12min, mem=20.0M, fe_cpu=0.51min, fe_real=1.12min, fe_mem=1516.0M) ***
+[04/05 11:19:53     30s] #% Begin Load netlist data ... (date=04/05 11:19:53, mem=1353.9M)
+[04/05 11:19:53     30s] *** Begin netlist parsing (mem=1516.0M) ***
+[04/05 11:19:53     30s] **WARN: (IMPVL-536):	The PG type of pin 'VSS' of cell 'srambank_256x4x32_6t122' doesn't match between the timing library and LEF file. In the timing library the pin is defined as 'ground' pin, but in LEF file it is defined as 'power' pin. Check the library data and make the update accordingly.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'sdel[0]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'sdel[1]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'sdel[2]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'sdel[3]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'sdel[4]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[32]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[33]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[34]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[35]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[36]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[37]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[38]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[39]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[40]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[41]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[42]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[43]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[44]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[45]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (IMPVL-159):	Pin 'dataout[46]' of cell 'srambank_256x4x32_6t122' is defined in LEF but not in the timing library.
+[04/05 11:19:53     30s] Type 'man IMPVL-159' for more detail.
+[04/05 11:19:53     30s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[04/05 11:19:53     30s] To increase the message display limit, refer to the product command reference manual.
+[04/05 11:19:53     30s] **ERROR: (IMPDB-2163):	Cell 'srambank_256x4x32_6t122' has inconsistent pin definitions between timing library and LEF.  There are extra bus-bit pins defined in LEF, e.g., 'wd[63]'.  Fix the mismatch and reload the design.
+**ERROR: (IMPDB-2160):	Bus 'wd' of cell 'srambank_256x4x32_6t122' has different definitions between timing library ([31:0]) and LEF ([63:32]).  Fix the mismatch and reload the design.
+#% End Load netlist data ... (date=04/05 11:19:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=1358.8M, current mem=1358.8M)
+[04/05 11:19:53     30s] **ERROR: (IMPVL-902):	Failed to read netlist outputs/synthesis_net.v. See previous error messages for details.  Resolve the issues and reload the design.
+[04/05 11:19:53     30s] **ERROR: (IMPSYT-6692):	Invalid return code while executing 'tcl/innovus.tcl' was returned and script processing was stopped. Review the following error in 'tcl/innovus.tcl' then restart.
+[04/05 11:19:53     30s] Error info: tcl/innovus.tcl: 
+[04/05 11:19:53     30s]     while executing
+[04/05 11:19:53     30s] "error $msg"
+[04/05 11:19:53     30s]     (procedure "apply_design" line 34)
+[04/05 11:19:53     30s]     invoked from within
+[04/05 11:19:53     30s] "apply_design $loadViewDefinition"
+[04/05 11:19:53     30s]     (procedure "init_design" line 408)
+[04/05 11:19:53     30s]     invoked from within
+[04/05 11:19:53     30s] "init_design"
+[04/05 11:19:53     30s]     (file "tcl/innovus.tcl" line 2)
+[04/05 11:19:53     30s]     invoked from within
+[04/05 11:19:53     30s] "::se_source_orig tcl/innovus.tcl"
+[04/05 11:19:53     30s]     ("uplevel" body line 1)
+[04/05 11:19:53     30s]     invoked from within
+[04/05 11:19:53     30s] "uplevel [concat ::se_source_orig  $args] "
+[04/05 11:19:53     30s]     (procedure "source" line 224)
+[04/05 11:19:53     30s]     invoked from within
+[04/05 11:19:53     30s] "source tcl/innovus.tcl"
+[04/05 11:19:53     30s]     invoked from within
+[04/05 11:19:53     30s] "::se::run_command_from_console "source tcl/innovus.tcl""
+[04/05 11:19:53     30s]     ("eval" body line 1)
+[04/05 11:19:53     30s]     invoked from within
+[04/05 11:19:53     30s] "eval {::se::run_command_from_console "source tcl/innovus.tcl"}"
+[04/05 11:19:53     30s]     (in namespace inscope "::" script line 1)
+[04/05 11:19:53     30s]     invoked from within
+[04/05 11:19:53     30s] "namespace inscope :: eval "::se::run_command_from_console \"source $fileName\""".
+[04/05 11:19:53     30s] <CMD> win
+[04/05 11:19:54     30s] <CMD> set enc_check_rename_command_name 1
+[04/05 11:20:35     30s] <CMD> zoomBox -0.00850 -0.00375 0.02650 0.02800
+[04/05 11:20:35     30s] <CMD> zoomBox -0.01400 -0.00625 0.02750 0.03125
+[04/05 11:20:35     30s] <CMD> zoomBox -0.03650 -0.01675 0.03150 0.04475
+[04/05 11:20:36     30s] <CMD> zoomBox -0.10900 -0.05025 0.04425 0.08850
+[04/05 11:20:37     30s] 
+--------------------------------------------------------------------------------
+Exiting Innovus on Sun Apr  5 11:20:37 2026
+  Total CPU time:     0:00:32
+  Total real time:    0:01:53
+  Peak memory (main): 1411.47MB
+
+[04/05 11:20:37     30s] 
+[04/05 11:20:37     30s] *** Memory Usage v#1 (Current mem = 1522.414M, initial mem = 646.375M) ***
+[04/05 11:20:37     30s] 
+[04/05 11:20:37     30s] *** Summary of all messages that are not suppressed in this session:
+[04/05 11:20:37     30s] Severity  ID               Count  Summary                                  
+[04/05 11:20:37     30s] ERROR     IMPLF-40             1  Macro '%s' references a site '%s' that h...
+[04/05 11:20:37     30s] ERROR     IMPLF-82         35099  %s is not on Manufacturing Grid. This is...
+[04/05 11:20:37     30s] ERROR     IMPSYT-6692          1  Invalid return code while executing '%s'...
+[04/05 11:20:37     30s] ERROR     IMPVL-902            1  Failed to read netlist %s. See previous ...
+[04/05 11:20:37     30s] WARNING   IMPVL-536            1  The PG type of pin '%s' of cell '%s' doe...
+[04/05 11:20:37     30s] WARNING   IMPVL-159           69  Pin '%s' of cell '%s' is defined in LEF ...
+[04/05 11:20:37     30s] ERROR     IMPDB-2163           1  Cell '%s' has inconsistent pin definitio...
+[04/05 11:20:37     30s] ERROR     IMPDB-2160           1  Bus '%s' of cell '%s' has different defi...
+[04/05 11:20:37     30s] WARNING   TECHLIB-1277         2  The %s '%s' has been defined for %s %s '...
+[04/05 11:20:37     30s] *** Message Summary: 72 warning(s), 35104 error(s)
+[04/05 11:20:37     30s] 
+[04/05 11:20:37     30s] --- Ending "Innovus" (totcpu=0:00:31.0, real=0:01:50, mem=1522.4M) ---
