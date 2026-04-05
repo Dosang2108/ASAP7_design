@@ -8,24 +8,34 @@ module sram_macro #(
 )(
     input  wire                      clk,
     
+    // C?ng Ghi
     input  wire                      bram_we,
     input  wire [ADDR_WIDTH-1:0]     bram_waddr,
     input  wire [DATA_WIDTH-1:0]     bram_wdata,
     input  wire [(DATA_WIDTH/8)-1:0] bram_wstrb,
     
+    // C?ng Ð?c
     input  wire                      bram_re,
     input  wire [ADDR_WIDTH-1:0]     bram_raddr,
-    output reg  [DATA_WIDTH-1:0]     bram_rdata_out
+    output wire [DATA_WIDTH-1:0]     bram_rdata_out  // Luu ý: S?a 'reg' thành 'wire' ? dây
 );
 
-    (* ram_style = "block" *) reg [DATA_WIDTH-1:0] ram_memory [0:MEM_DEPTH-1];
+// =========================================================================
+// KHU V?C B? ?N KH?I TRÌNH T?NG H?P GENUS (CH? CH?Y TRONG SIMULATION)
+// =========================================================================
+// synthesis translate_off
 
+    (* ram_style = "block" *) reg [DATA_WIDTH-1:0] ram_memory [0:MEM_DEPTH-1];
+    reg [DATA_WIDTH-1:0] rdata_reg;
+
+    // Kh?i t?o b? nh? n?u có file
     initial begin
         if (INIT_FILE != "") begin
             $readmemh(INIT_FILE, ram_memory);
         end
     end
 
+    // Ti?n trình Ghi
     always @(posedge clk) begin
         if (bram_we) begin
             if (bram_wstrb[0]) ram_memory[bram_waddr][7:0]   <= bram_wdata[7:0];
@@ -35,10 +45,16 @@ module sram_macro #(
         end
     end
 
+    // Ti?n trình Ð?c
     always @(posedge clk) begin
         if (bram_re) begin
-            bram_rdata_out <= ram_memory[bram_raddr];
+            rdata_reg <= ram_memory[bram_raddr];
         end
     end
+
+    assign bram_rdata_out = rdata_reg;
+
+// synthesis translate_on
+// =========================================================================
 
 endmodule

@@ -1,14 +1,20 @@
-set ASAP7_ROOT "../../Asap7/asap7/asap7sc7p5t_28"
+set ASAP7_BASE "../../Asap7/asap7"
+set ASAP7_ROOT "$ASAP7_BASE/asap7sc7p5t_28"
+set SRAM_ROOT  "$ASAP7_BASE/asap7_sram_0p0/generated"
 
-set tech_lef [glob $ASAP7_ROOT/techlef_misc/asap7_tech_4x_*.lef]
-
+set tech_lef  [glob $ASAP7_ROOT/techlef_misc/asap7_tech_4x_*.lef]
 set cell_lefs [glob $ASAP7_ROOT/LEF/scaled/*.lef]
-set init_lef_file [concat $tech_lef $cell_lefs]
+set sram_lefs [glob $SRAM_ROOT/LEF/srambank_256*.lef]
+
+set init_lef_file [concat $tech_lef $cell_lefs $sram_lefs]
 
 set init_verilog "outputs/synthesis_net.v"
-set init_top_cell "Adder32"
+set init_top_cell "top_axi_ram"
+
 set init_pwr_net {VDD}
 set init_gnd_net {VSS}
+
 set init_layout_view {layout}
 set init_abstract_view {abstract}
-set init_mmmc_file {./tcl/viewDefination.tcl}
+
+set init_mmmc_file {tcl/viewDefination.tcl}

@@ -1,8 +1,5 @@
 setPinAssignMode -pinEditInBatch true
 
-# =========================================
-# GET CORE BOUNDARY
-# =========================================
 set coreBox [lindex [dbGet top.fPlan.box] 0]
 set x_min [lindex $coreBox 0]
 set y_min [lindex $coreBox 1]
@@ -11,71 +8,75 @@ set y_max [lindex $coreBox 3]
 
 puts "CoreBBox: $coreBox"
 
-# Offset tránh sát mép
 set offset 5.0
 
-# =========================================
-# LEFT SIDE: iA* (S?a a* thành iA* cho kh?p Verilog)
-# =========================================
-set pins_a [dbGet top.terms.name iA*]
-# THÊM ÐI?U KI?N CH?N L?I 0x0
-if {$pins_a != "0x0" && [llength $pins_a] > 0} {
-    set n [llength $pins_a]
+set pins_left_raw [concat [dbGet top.terms.name s_axi_aw*] [dbGet top.terms.name s_axi_w*]]
+set pins_left {}
+foreach p $pins_left_raw { if {$p != "0x0"} { lappend pins_left $p } }
+
+if {[llength $pins_left] > 0} {
+    set n [llength $pins_left]
     set step [expr ($y_max - $y_min - 2*$offset)/$n]
     set i 0
-    foreach pin $pins_a {                   
-        set y [expr $y_min + $offset + $i*$step]                             
+    foreach pin $pins_left {
+        set y [expr $y_min + $offset + $i*$step]
         editPin -pin $pin -layer M3 -assign [list $x_min $y]
         incr i
-    }                                                                         
+    }
 } else {
-    puts "WARNING: Không tìm th?y chân iA*"
+    puts "WARNING: Not found the signal Write channel (s_axi_aw* ho?c s_axi_w*)"
 }
 
-# =========================================                    
-# RIGHT SIDE: iB* (S?a b* thành iB* cho kh?p Verilog)
-# =========================================                                                                        
-set pins_b [dbGet top.terms.name iB*]                                                                        
-if {$pins_b != "0x0" && [llength $pins_b] > 0} {                                                                           
-    set n [llength $pins_b]
-    set step [expr ($y_max - $y_min - 2*$offset)/$n]                                  
-    set i 0                                                                                     
-    foreach pin $pins_b {                                                                                      
-        set y [expr $y_min + $offset + $i*$step]                                                                                                   
-        editPin -pin $pin -layer M3 -assign [list $x_max $y]                                                                                  
-        incr i                                                                                                                       
-    }                                                                       
-} else {
-    puts "WARNING: Không tìm th?y chân iB*"
-}                                                                                                       
+set pins_right_raw [concat [dbGet top.terms.name s_axi_ar*] [dbGet top.terms.name s_axi_r*]]
+set pins_right {}
+foreach p $pins_right_raw { if {$p != "0x0"} { lappend pins_right $p } }
 
-# =========================================                    
-# TOP SIDE: oS* (S?a oSum* thành oS*)
-# =========================================
-set pins_sum [dbGet top.terms.name oS*]                                                                                                   
-if {$pins_sum != "0x0" && [llength $pins_sum] > 0} {
-    set n [llength $pins_sum]
-    set step [expr ($x_max - $x_min - 2*$offset)/$n]                                                                                                            
-    set i 0                                                                                                                                    
-    foreach pin $pins_sum {                                                                                                                           
-        set x [expr $x_min + $offset + $i*$step]                                                                                                    
-        editPin -pin $pin -layer M4 -assign [list $x $y_max]                                                                                                              
-        incr i                                                                                                                                  
-    }                                                                                                                
+if {[llength $pins_right] > 0} {
+    set n [llength $pins_right]
+    set step [expr ($y_max - $y_min - 2*$offset)/$n]
+    set i 0
+    foreach pin $pins_right {
+        set y [expr $y_min + $offset + $i*$step]
+        editPin -pin $pin -layer M3 -assign [list $x_max $y]
+        incr i
+    }
 } else {
-    puts "WARNING: not found signal oS*"
-}                                                         
+    puts "WARNING: Not found signal Read channel (s_axi_ar* ho?c s_axi_r*)"
+}
 
-# =========================================                    
-# BOTTOM SIDE: iClk                                                                        
-# =========================================
-set clk_pin [dbGet top.terms.name iClk]
-if {$clk_pin != "0x0" && [llength $clk_pin] > 0} {                                                                                     
-    set clk_x [expr ($x_min + $x_max)/2.0]                                                                                                        
-    editPin -pin $clk_pin -layer M4 -assign [list $clk_x $y_min]                                                                    
+set pins_top_raw [dbGet top.terms.name s_axi_b*]
+set pins_top {}
+foreach p $pins_top_raw { if {$p != "0x0"} { lappend pins_top $p } }
+
+if {[llength $pins_top] > 0} {
+    set n [llength $pins_top]
+    set step [expr ($x_max - $x_min - 2*$offset)/$n]
+    set i 0
+    foreach pin $pins_top {
+        set x [expr $x_min + $offset + $i*$step]
+        editPin -pin $pin -layer M4 -assign [list $x $y_max]
+        incr i
+    }
 } else {
-    puts "WARNING: Không tìm th?y chân iClk"
-}                                                                                                            
+    puts "WARNING: No found signal Response channel (s_axi_b*)"
+}
 
-setPinAssignMode -pinEditInBatch false                                                                                                                    
+set pins_bot_raw [concat [dbGet top.terms.name clk] [dbGet top.terms.name rst_n]]
+set pins_bottom {}
+foreach p $pins_bot_raw { if {$p != "0x0"} { lappend pins_bottom $p } }
+
+if {[llength $pins_bottom] > 0} {
+    set n [llength $pins_bottom]
+    set step [expr ($x_max - $x_min - 2*$offset)/($n + 1)]
+    set i 1
+    foreach pin $pins_bottom {
+        set x [expr $x_min + $offset + $i*$step]
+        editPin -pin $pin -layer M4 -assign [list $x $y_min]
+        incr i
+    }
+} else {
+    puts "WARNING: No found signal clk or rst_n"
+}
+
+setPinAssignMode -pinEditInBatch false
 puts ">>> Pin assignment DONE"

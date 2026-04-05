@@ -1,4 +1,3 @@
-
 source ./tcl/innovus.globals
 init_design
 
@@ -7,23 +6,32 @@ setAnalysisMode -analysisType onChipVariation -cppr both
 set_interactive_constraint_modes [all_constraint_modes]
 set_propagated_clock [all_clocks]
 
+# Tính toán cao d? (Pitch) d?a trên thu vi?n ASAP7
 set row     [dbGet head.sites.size_y]
 set track   [dbGet head.sites.size_x]
 set pitch   [expr 32 * $row]
 
 set Density 0.75
-
 floorPlan -r 1.0 $Density 12 12 12 12
 
 set CoreSize [dbGet top.fPlan.coreBox_size]
-set FPsize    [dbGet top.fPlan.box_size]
-set FPx       [dbGet top.fPlan.box_sizex]
-set FPy       [dbGet top.fPlan.box_sizey]
+set FPsize   [dbGet top.fPlan.box_size]
+set FPx      [dbGet top.fPlan.box_sizex]
+set FPy      [dbGet top.fPlan.box_sizey]
 
-set fo [open FPlanFinal.size w]
+set fo [open outputs/FPlanFinal.size w]
 puts $fo "Core size: \{X Y\} = ${CoreSize}"
 puts $fo "Floorplan size: \{X Y\} = ${FPsize}"
 close $fo
+
+place_design -concurrent_macros
+
+addHaloToBlock 2 2 2 2 -allMacro
+
+setObjFPlanBox Instance *u_sram_macro* -fixed true
+
+source ./tcl/pins.tcl
+setPinConstraint -corner_to_pin_distance 18
 
 addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 8.0 \
 -layer {top M9 bottom M9 left M10 right M10}
@@ -40,26 +48,16 @@ sroute -nets { VSS VDD } -connect corePin -corePinCheckStdcellGeoms \
 
 setAddStripeMode -break_at block_ring -allow_jog padcore_ring
 
-# S?A L?I 4: Tang Spacing c?a Stripe ngang (M9) lên 8.0
 addStripe -nets {VSS VDD} -layer M9 -direction horizontal \
 -width 0.8 -spacing 8.0 -set_to_set_distance $pitch \
 -start_from bottom -start_offset [expr $pitch - 2.08] 
 
-# S?A L?I 5: Tang Spacing c?a Stripe d?c (M10) lên 8.0
 addStripe -nets {VSS VDD} -layer M10 -direction vertical \
 -width 0.8 -spacing 8.0 -set_to_set_distance $pitch \
 -start_from left -start_offset [expr $pitch - 2.08] 
 
-# C?t t?a các do?n dây du th?a
 editTrim -nets {VSS VDD}
 
-# Ràng bu?c kho?ng cách chân Pin
-setPinConstraint -corner_to_pin_distance 18
-
-## S?A L?I 6: G?i script s?p x?p chân I/O tru?c khi làm Placement
-source ./tcl/pins.tcl
-
-## BU?C 3: S?P X?P LINH KI?N (PLACEMENT)
 setPlaceMode -reset
 setPlaceMode -place_global_uniform_density true \
 -place_global_module_aware_spare true \
@@ -70,12 +68,9 @@ setPlaceMode -place_global_uniform_density true \
 place_design
 refinePlace
 
-# Báo cáo hi?u su?t s? d?ng di?n tích
+exec mkdir -p verify_rpt
 checkFPlan -reportUtil -outFile ./verify_rpt/reportUtil.rpt
 
-######################################################################
-## BU?C 4: T?NG H?P CÂY XUNG NH?P (CTS)
-######################################################################
 set BUFCells {BUFx2_ASAP7_75t_R BUFx4_ASAP7_75t_R}
 set INVCells {INVx2_ASAP7_75t_R INVx4_ASAP7_75t_R}
 
@@ -91,7 +86,6 @@ set_ccopt_property -net_type trunk route_type trunk_rule
 set_ccopt_property -net_type top   route_type top_rule
 set_ccopt_property routing_top_min_fanout 10000
 
-# Ðã h? Target Max Transition xu?ng 50ps thay vì 1ns cho h?p lý v?i 7nm
 set_ccopt_property target_max_trans 50ps
 
 set_ccopt_property buffer_cells $BUFCells
@@ -101,15 +95,12 @@ set_ccopt_property use_inverters auto
 setOptMode -reclaimArea true -leakageToDynamicRatio 0.5 \
 -powerEffort high -fixFanoutLoad true
 
-# Ch?y CTS
 optDesign -prefix preCTS -preCTS
-create_ccopt_clock_tree_spec -filename ccopt.spec
-source ccopt.spec
+create_ccopt_clock_tree_spec -filename outputs/ccopt.spec
+source outputs/ccopt.spec
 ccopt_design -prefix postCTS
 optDesign -prefix postCTS -postCTS -setup -hold
 
-## BU?C 5: ÐI DÂY (ROUTING)
-# S?A L?I 7: Xóa tham s? "-routeTdbEffortLevel" b? l?i
 setNanoRouteMode -quiet -routeWithSiDriven true \
 -routeWithTimingDriven true -routeWithSiPostRouteFix true \
 -drouteFixAntenna true
@@ -122,16 +113,17 @@ verifyConnectivity -type all -error 1000 -warning 50 \
 
 optDesign -postRoute -setup -hold -prefix postRoute
 
-## BU?C 6: THÊM FILLER CELLS
 add_fillers -cells {FILLER_ASAP7_75t_R FILLER_ASAP7_75t_R_2 FILLER_ASAP7_75t_R_4}
 
-## BU?C 7: XU?T FILE (EXPORT)
 check_connectivity -error 1000 -warning 50
-write_hdl > outputs/adder32_pnr.v
-write_db saved/adder32_final.db
 
-streamOut outputs/adder32.gds -libName WORK -units 1000 -mode ALL
+write_hdl > outputs/top_axi_ram_pnr.v
+write_db saved/top_axi_ram_final.db
 
-report_area > ./verify_rpt/final_area.rpt
-report_power > ./verify_rpt/final_power.rpt
+streamOut outputs/top_axi_ram.gds -libName WORK -units 1000 -mode ALL
+
+report_area   > ./verify_rpt/final_area.rpt
+report_power  > ./verify_rpt/final_power.rpt
 report_timing > ./verify_rpt/final_timing.rpt
+
+puts "=== RUN INNOVUS COMPLETED ==="
