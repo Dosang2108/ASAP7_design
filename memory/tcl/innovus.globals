@@ -4,7 +4,7 @@ set SRAM_ROOT  "$ASAP7_BASE/asap7_sram_0p0/generated"
 
 set tech_lef  [glob $ASAP7_ROOT/techlef_misc/asap7_tech_4x_*.lef]
 set cell_lefs [glob $ASAP7_ROOT/LEF/scaled/*.lef]
-set sram_lefs "../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef"
+set sram_lefs "../../Asap7/asap7/asap7_sram_0p0/generated/LEF/4xLEF/srambank_256x4x32_6t122.lef.4x.lef"
 set init_lef_file [concat $tech_lef $cell_lefs $sram_lefs]
 
 

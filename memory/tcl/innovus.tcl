@@ -12,7 +12,7 @@ set track   [dbGet head.sites.size_x]
 set pitch   [expr 32 * $row]
 
 set Density 0.75
-floorPlan -r 1.0 $Density 12 12 12 12
+floorPlan -r 1.0 $Density 10.8 10.8 10.8 10.8
 
 set CoreSize [dbGet top.fPlan.coreBox_size]
 set FPsize   [dbGet top.fPlan.box_size]
@@ -37,10 +37,10 @@ source ./tcl/pins.tcl
 setPinConstraint -corner_to_pin_distance 18
 
 addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 8.0 \
--layer {top M9 bottom M9 left M10 right M10}
+-layer {top M9 bottom M9 left M8 right M8}
 
-createPGPin VSS -geom M10 0 0 0.8 0.8
-createPGPin VDD -geom M10 8.8 8.8 9.6 9.6
+createPGPin VSS -geom M8 0 0 0.8 0.8
+createPGPin VDD -geom M8 8.8 8.8 9.6 9.6
 
 globalNetConnect VDD -type pgpin -pin VDD -inst * -module {}
 globalNetConnect VSS -type pgpin -pin VSS -inst * -module {}
@@ -55,10 +55,9 @@ addStripe -nets {VSS VDD} -layer M9 -direction horizontal \
 -width 0.8 -spacing 8.0 -set_to_set_distance $pitch \
 -start_from bottom -start_offset [expr $pitch - 2.08] 
 
-addStripe -nets {VSS VDD} -layer M10 -direction vertical \
+addStripe -nets {VSS VDD} -layer M8 -direction vertical \
 -width 0.8 -spacing 8.0 -set_to_set_distance $pitch \
--start_from left -start_offset [expr $pitch - 2.08] 
-
+-start_from left -start_offset [expr $pitch - 2.08]
 editTrim -nets {VSS VDD}
 
 setPlaceMode -reset

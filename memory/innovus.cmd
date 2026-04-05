@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Sun Apr  5 12:42:00 2026                
+#  Created on Sun Apr  5 18:26:05 2026                
 #                                                     
 #######################################################
 
@@ -16,7 +16,7 @@
 set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 suppressMessage ENCEXT-2799
 getVersion
-set init_lef_file {../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef}
+set init_lef_file {../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_L_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SL_4x_220121a.lef ../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_SRAM_4x_220121a.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/4xLEF/srambank_256x4x32_6t122.lef.4x.lef}
 set init_verilog outputs/synthesis_net.v
 set init_top_cell top_axi_ram
 set init_pwr_net VDD
@@ -29,7 +29,7 @@ setAnalysisMode -analysisType onChipVariation -cppr both
 all_constraint_modes
 set_interactive_constraint_modes [all_constraint_modes]
 set_propagated_clock [all_clocks]
-floorPlan -r 1.0 0.75 12 12 12 12
+floorPlan -r 1.0 0.75 10.8 10.8 10.8 10.8
 place_design -concurrent_macros
 refine_macro_place
 addHaloToBlock 2 2 2 2 -allMacro
@@ -37,238 +37,238 @@ setInstancePlacementStatus -allHardMacros -status fixed
 setInstancePlacementStatus -name u_sram_macro -status fixed
 setPinAssignMode -pinEditInBatch true
 editPin -pin {s_axi_awid[4]} -layer M3 -assign {0.0 5.0}
-editPin -pin {s_axi_awid[3]} -layer M3 -assign {0.0 5.60770093458}
-editPin -pin {s_axi_awid[2]} -layer M3 -assign {0.0 6.21540186916}
-editPin -pin {s_axi_awid[1]} -layer M3 -assign {0.0 6.82310280374}
-editPin -pin {s_axi_awid[0]} -layer M3 -assign {0.0 7.43080373832}
-editPin -pin {s_axi_awaddr[31]} -layer M3 -assign {0.0 8.03850467289}
-editPin -pin {s_axi_awaddr[30]} -layer M3 -assign {0.0 8.64620560747}
-editPin -pin {s_axi_awaddr[29]} -layer M3 -assign {0.0 9.25390654205}
-editPin -pin {s_axi_awaddr[28]} -layer M3 -assign {0.0 9.86160747663}
-editPin -pin {s_axi_awaddr[27]} -layer M3 -assign {0.0 10.4693084112}
-editPin -pin {s_axi_awaddr[26]} -layer M3 -assign {0.0 11.0770093458}
-editPin -pin {s_axi_awaddr[25]} -layer M3 -assign {0.0 11.6847102804}
-editPin -pin {s_axi_awaddr[24]} -layer M3 -assign {0.0 12.2924112149}
-editPin -pin {s_axi_awaddr[23]} -layer M3 -assign {0.0 12.9001121495}
-editPin -pin {s_axi_awaddr[22]} -layer M3 -assign {0.0 13.5078130841}
-editPin -pin {s_axi_awaddr[21]} -layer M3 -assign {0.0 14.1155140187}
-editPin -pin {s_axi_awaddr[20]} -layer M3 -assign {0.0 14.7232149533}
-editPin -pin {s_axi_awaddr[19]} -layer M3 -assign {0.0 15.3309158878}
-editPin -pin {s_axi_awaddr[18]} -layer M3 -assign {0.0 15.9386168224}
-editPin -pin {s_axi_awaddr[17]} -layer M3 -assign {0.0 16.546317757}
-editPin -pin {s_axi_awaddr[16]} -layer M3 -assign {0.0 17.1540186916}
-editPin -pin {s_axi_awaddr[15]} -layer M3 -assign {0.0 17.7617196262}
-editPin -pin {s_axi_awaddr[14]} -layer M3 -assign {0.0 18.3694205607}
-editPin -pin {s_axi_awaddr[13]} -layer M3 -assign {0.0 18.9771214953}
-editPin -pin {s_axi_awaddr[12]} -layer M3 -assign {0.0 19.5848224299}
-editPin -pin {s_axi_awaddr[11]} -layer M3 -assign {0.0 20.1925233645}
-editPin -pin {s_axi_awaddr[10]} -layer M3 -assign {0.0 20.8002242991}
-editPin -pin {s_axi_awaddr[9]} -layer M3 -assign {0.0 21.4079252336}
-editPin -pin {s_axi_awaddr[8]} -layer M3 -assign {0.0 22.0156261682}
-editPin -pin {s_axi_awaddr[7]} -layer M3 -assign {0.0 22.6233271028}
-editPin -pin {s_axi_awaddr[6]} -layer M3 -assign {0.0 23.2310280374}
-editPin -pin {s_axi_awaddr[5]} -layer M3 -assign {0.0 23.8387289719}
-editPin -pin {s_axi_awaddr[4]} -layer M3 -assign {0.0 24.4464299065}
-editPin -pin {s_axi_awaddr[3]} -layer M3 -assign {0.0 25.0541308411}
-editPin -pin {s_axi_awaddr[2]} -layer M3 -assign {0.0 25.6618317757}
-editPin -pin {s_axi_awaddr[1]} -layer M3 -assign {0.0 26.2695327103}
-editPin -pin {s_axi_awaddr[0]} -layer M3 -assign {0.0 26.8772336448}
-editPin -pin {s_axi_awlen[7]} -layer M3 -assign {0.0 27.4849345794}
-editPin -pin {s_axi_awlen[6]} -layer M3 -assign {0.0 28.092635514}
-editPin -pin {s_axi_awlen[5]} -layer M3 -assign {0.0 28.7003364486}
-editPin -pin {s_axi_awlen[4]} -layer M3 -assign {0.0 29.3080373832}
-editPin -pin {s_axi_awlen[3]} -layer M3 -assign {0.0 29.9157383177}
-editPin -pin {s_axi_awlen[2]} -layer M3 -assign {0.0 30.5234392523}
-editPin -pin {s_axi_awlen[1]} -layer M3 -assign {0.0 31.1311401869}
-editPin -pin {s_axi_awlen[0]} -layer M3 -assign {0.0 31.7388411215}
-editPin -pin {s_axi_awsize[2]} -layer M3 -assign {0.0 32.3465420561}
-editPin -pin {s_axi_awsize[1]} -layer M3 -assign {0.0 32.9542429906}
-editPin -pin {s_axi_awsize[0]} -layer M3 -assign {0.0 33.5619439252}
-editPin -pin {s_axi_awburst[1]} -layer M3 -assign {0.0 34.1696448598}
-editPin -pin {s_axi_awburst[0]} -layer M3 -assign {0.0 34.7773457944}
-editPin -pin s_axi_awlock -layer M3 -assign {0.0 35.385046729}
-editPin -pin {s_axi_awcache[3]} -layer M3 -assign {0.0 35.9927476635}
-editPin -pin {s_axi_awcache[2]} -layer M3 -assign {0.0 36.6004485981}
-editPin -pin {s_axi_awcache[1]} -layer M3 -assign {0.0 37.2081495327}
-editPin -pin {s_axi_awcache[0]} -layer M3 -assign {0.0 37.8158504673}
-editPin -pin {s_axi_awprot[2]} -layer M3 -assign {0.0 38.4235514018}
-editPin -pin {s_axi_awprot[1]} -layer M3 -assign {0.0 39.0312523364}
-editPin -pin {s_axi_awprot[0]} -layer M3 -assign {0.0 39.638953271}
-editPin -pin {s_axi_awqos[3]} -layer M3 -assign {0.0 40.2466542056}
-editPin -pin {s_axi_awqos[2]} -layer M3 -assign {0.0 40.8543551402}
-editPin -pin {s_axi_awqos[1]} -layer M3 -assign {0.0 41.4620560747}
-editPin -pin {s_axi_awqos[0]} -layer M3 -assign {0.0 42.0697570093}
-editPin -pin {s_axi_awregion[3]} -layer M3 -assign {0.0 42.6774579439}
-editPin -pin {s_axi_awregion[2]} -layer M3 -assign {0.0 43.2851588785}
-editPin -pin {s_axi_awregion[1]} -layer M3 -assign {0.0 43.8928598131}
-editPin -pin {s_axi_awregion[0]} -layer M3 -assign {0.0 44.5005607476}
-editPin -pin s_axi_awvalid -layer M3 -assign {0.0 45.1082616822}
-editPin -pin s_axi_awready -layer M3 -assign {0.0 45.7159626168}
-editPin -pin {s_axi_wdata[31]} -layer M3 -assign {0.0 46.3236635514}
-editPin -pin {s_axi_wdata[30]} -layer M3 -assign {0.0 46.931364486}
-editPin -pin {s_axi_wdata[29]} -layer M3 -assign {0.0 47.5390654205}
-editPin -pin {s_axi_wdata[28]} -layer M3 -assign {0.0 48.1467663551}
-editPin -pin {s_axi_wdata[27]} -layer M3 -assign {0.0 48.7544672897}
-editPin -pin {s_axi_wdata[26]} -layer M3 -assign {0.0 49.3621682243}
-editPin -pin {s_axi_wdata[25]} -layer M3 -assign {0.0 49.9698691588}
-editPin -pin {s_axi_wdata[24]} -layer M3 -assign {0.0 50.5775700934}
-editPin -pin {s_axi_wdata[23]} -layer M3 -assign {0.0 51.185271028}
-editPin -pin {s_axi_wdata[22]} -layer M3 -assign {0.0 51.7929719626}
-editPin -pin {s_axi_wdata[21]} -layer M3 -assign {0.0 52.4006728972}
-editPin -pin {s_axi_wdata[20]} -layer M3 -assign {0.0 53.0083738317}
-editPin -pin {s_axi_wdata[19]} -layer M3 -assign {0.0 53.6160747663}
-editPin -pin {s_axi_wdata[18]} -layer M3 -assign {0.0 54.2237757009}
-editPin -pin {s_axi_wdata[17]} -layer M3 -assign {0.0 54.8314766355}
-editPin -pin {s_axi_wdata[16]} -layer M3 -assign {0.0 55.4391775701}
-editPin -pin {s_axi_wdata[15]} -layer M3 -assign {0.0 56.0468785046}
-editPin -pin {s_axi_wdata[14]} -layer M3 -assign {0.0 56.6545794392}
-editPin -pin {s_axi_wdata[13]} -layer M3 -assign {0.0 57.2622803738}
-editPin -pin {s_axi_wdata[12]} -layer M3 -assign {0.0 57.8699813084}
-editPin -pin {s_axi_wdata[11]} -layer M3 -assign {0.0 58.477682243}
-editPin -pin {s_axi_wdata[10]} -layer M3 -assign {0.0 59.0853831775}
-editPin -pin {s_axi_wdata[9]} -layer M3 -assign {0.0 59.6930841121}
-editPin -pin {s_axi_wdata[8]} -layer M3 -assign {0.0 60.3007850467}
-editPin -pin {s_axi_wdata[7]} -layer M3 -assign {0.0 60.9084859813}
-editPin -pin {s_axi_wdata[6]} -layer M3 -assign {0.0 61.5161869158}
-editPin -pin {s_axi_wdata[5]} -layer M3 -assign {0.0 62.1238878504}
-editPin -pin {s_axi_wdata[4]} -layer M3 -assign {0.0 62.731588785}
-editPin -pin {s_axi_wdata[3]} -layer M3 -assign {0.0 63.3392897196}
-editPin -pin {s_axi_wdata[2]} -layer M3 -assign {0.0 63.9469906542}
-editPin -pin {s_axi_wdata[1]} -layer M3 -assign {0.0 64.5546915887}
-editPin -pin {s_axi_wdata[0]} -layer M3 -assign {0.0 65.1623925233}
-editPin -pin {s_axi_wstrb[3]} -layer M3 -assign {0.0 65.7700934579}
-editPin -pin {s_axi_wstrb[2]} -layer M3 -assign {0.0 66.3777943925}
-editPin -pin {s_axi_wstrb[1]} -layer M3 -assign {0.0 66.9854953271}
-editPin -pin {s_axi_wstrb[0]} -layer M3 -assign {0.0 67.5931962616}
-editPin -pin s_axi_wlast -layer M3 -assign {0.0 68.2008971962}
-editPin -pin s_axi_wvalid -layer M3 -assign {0.0 68.8085981308}
-editPin -pin s_axi_wready -layer M3 -assign {0.0 69.4162990654}
-editPin -pin {s_axi_arid[4]} -layer M3 -assign {76.752 5.0}
-editPin -pin {s_axi_arid[3]} -layer M3 -assign {76.752 5.59112727273}
-editPin -pin {s_axi_arid[2]} -layer M3 -assign {76.752 6.18225454545}
-editPin -pin {s_axi_arid[1]} -layer M3 -assign {76.752 6.77338181818}
-editPin -pin {s_axi_arid[0]} -layer M3 -assign {76.752 7.36450909091}
-editPin -pin {s_axi_araddr[31]} -layer M3 -assign {76.752 7.95563636364}
-editPin -pin {s_axi_araddr[30]} -layer M3 -assign {76.752 8.54676363636}
-editPin -pin {s_axi_araddr[29]} -layer M3 -assign {76.752 9.13789090909}
-editPin -pin {s_axi_araddr[28]} -layer M3 -assign {76.752 9.72901818182}
-editPin -pin {s_axi_araddr[27]} -layer M3 -assign {76.752 10.3201454545}
-editPin -pin {s_axi_araddr[26]} -layer M3 -assign {76.752 10.9112727273}
-editPin -pin {s_axi_araddr[25]} -layer M3 -assign {76.752 11.5024}
-editPin -pin {s_axi_araddr[24]} -layer M3 -assign {76.752 12.0935272727}
-editPin -pin {s_axi_araddr[23]} -layer M3 -assign {76.752 12.6846545455}
-editPin -pin {s_axi_araddr[22]} -layer M3 -assign {76.752 13.2757818182}
-editPin -pin {s_axi_araddr[21]} -layer M3 -assign {76.752 13.8669090909}
-editPin -pin {s_axi_araddr[20]} -layer M3 -assign {76.752 14.4580363636}
-editPin -pin {s_axi_araddr[19]} -layer M3 -assign {76.752 15.0491636364}
-editPin -pin {s_axi_araddr[18]} -layer M3 -assign {76.752 15.6402909091}
-editPin -pin {s_axi_araddr[17]} -layer M3 -assign {76.752 16.2314181818}
-editPin -pin {s_axi_araddr[16]} -layer M3 -assign {76.752 16.8225454545}
-editPin -pin {s_axi_araddr[15]} -layer M3 -assign {76.752 17.4136727273}
-editPin -pin {s_axi_araddr[14]} -layer M3 -assign {76.752 18.0048}
-editPin -pin {s_axi_araddr[13]} -layer M3 -assign {76.752 18.5959272727}
-editPin -pin {s_axi_araddr[12]} -layer M3 -assign {76.752 19.1870545454}
-editPin -pin {s_axi_araddr[11]} -layer M3 -assign {76.752 19.7781818182}
-editPin -pin {s_axi_araddr[10]} -layer M3 -assign {76.752 20.3693090909}
-editPin -pin {s_axi_araddr[9]} -layer M3 -assign {76.752 20.9604363636}
-editPin -pin {s_axi_araddr[8]} -layer M3 -assign {76.752 21.5515636364}
-editPin -pin {s_axi_araddr[7]} -layer M3 -assign {76.752 22.1426909091}
-editPin -pin {s_axi_araddr[6]} -layer M3 -assign {76.752 22.7338181818}
-editPin -pin {s_axi_araddr[5]} -layer M3 -assign {76.752 23.3249454545}
-editPin -pin {s_axi_araddr[4]} -layer M3 -assign {76.752 23.9160727273}
-editPin -pin {s_axi_araddr[3]} -layer M3 -assign {76.752 24.5072}
-editPin -pin {s_axi_araddr[2]} -layer M3 -assign {76.752 25.0983272727}
-editPin -pin {s_axi_araddr[1]} -layer M3 -assign {76.752 25.6894545454}
-editPin -pin {s_axi_araddr[0]} -layer M3 -assign {76.752 26.2805818182}
-editPin -pin {s_axi_arlen[7]} -layer M3 -assign {76.752 26.8717090909}
-editPin -pin {s_axi_arlen[6]} -layer M3 -assign {76.752 27.4628363636}
-editPin -pin {s_axi_arlen[5]} -layer M3 -assign {76.752 28.0539636364}
-editPin -pin {s_axi_arlen[4]} -layer M3 -assign {76.752 28.6450909091}
-editPin -pin {s_axi_arlen[3]} -layer M3 -assign {76.752 29.2362181818}
-editPin -pin {s_axi_arlen[2]} -layer M3 -assign {76.752 29.8273454545}
-editPin -pin {s_axi_arlen[1]} -layer M3 -assign {76.752 30.4184727273}
-editPin -pin {s_axi_arlen[0]} -layer M3 -assign {76.752 31.0096}
-editPin -pin {s_axi_arsize[2]} -layer M3 -assign {76.752 31.6007272727}
-editPin -pin {s_axi_arsize[1]} -layer M3 -assign {76.752 32.1918545454}
-editPin -pin {s_axi_arsize[0]} -layer M3 -assign {76.752 32.7829818182}
-editPin -pin {s_axi_arburst[1]} -layer M3 -assign {76.752 33.3741090909}
-editPin -pin {s_axi_arburst[0]} -layer M3 -assign {76.752 33.9652363636}
-editPin -pin s_axi_arlock -layer M3 -assign {76.752 34.5563636363}
-editPin -pin {s_axi_arcache[3]} -layer M3 -assign {76.752 35.1474909091}
-editPin -pin {s_axi_arcache[2]} -layer M3 -assign {76.752 35.7386181818}
-editPin -pin {s_axi_arcache[1]} -layer M3 -assign {76.752 36.3297454545}
-editPin -pin {s_axi_arcache[0]} -layer M3 -assign {76.752 36.9208727273}
-editPin -pin {s_axi_arprot[2]} -layer M3 -assign {76.752 37.512}
-editPin -pin {s_axi_arprot[1]} -layer M3 -assign {76.752 38.1031272727}
-editPin -pin {s_axi_arprot[0]} -layer M3 -assign {76.752 38.6942545454}
-editPin -pin {s_axi_arqos[3]} -layer M3 -assign {76.752 39.2853818182}
-editPin -pin {s_axi_arqos[2]} -layer M3 -assign {76.752 39.8765090909}
-editPin -pin {s_axi_arqos[1]} -layer M3 -assign {76.752 40.4676363636}
-editPin -pin {s_axi_arqos[0]} -layer M3 -assign {76.752 41.0587636363}
-editPin -pin {s_axi_arregion[3]} -layer M3 -assign {76.752 41.6498909091}
-editPin -pin {s_axi_arregion[2]} -layer M3 -assign {76.752 42.2410181818}
-editPin -pin {s_axi_arregion[1]} -layer M3 -assign {76.752 42.8321454545}
-editPin -pin {s_axi_arregion[0]} -layer M3 -assign {76.752 43.4232727273}
-editPin -pin s_axi_arvalid -layer M3 -assign {76.752 44.0144}
-editPin -pin s_axi_arready -layer M3 -assign {76.752 44.6055272727}
-editPin -pin {s_axi_rid[4]} -layer M3 -assign {76.752 45.1966545454}
-editPin -pin {s_axi_rid[3]} -layer M3 -assign {76.752 45.7877818182}
-editPin -pin {s_axi_rid[2]} -layer M3 -assign {76.752 46.3789090909}
-editPin -pin {s_axi_rid[1]} -layer M3 -assign {76.752 46.9700363636}
-editPin -pin {s_axi_rid[0]} -layer M3 -assign {76.752 47.5611636363}
-editPin -pin {s_axi_rdata[31]} -layer M3 -assign {76.752 48.1522909091}
-editPin -pin {s_axi_rdata[30]} -layer M3 -assign {76.752 48.7434181818}
-editPin -pin {s_axi_rdata[29]} -layer M3 -assign {76.752 49.3345454545}
-editPin -pin {s_axi_rdata[28]} -layer M3 -assign {76.752 49.9256727273}
-editPin -pin {s_axi_rdata[27]} -layer M3 -assign {76.752 50.5168}
-editPin -pin {s_axi_rdata[26]} -layer M3 -assign {76.752 51.1079272727}
-editPin -pin {s_axi_rdata[25]} -layer M3 -assign {76.752 51.6990545454}
-editPin -pin {s_axi_rdata[24]} -layer M3 -assign {76.752 52.2901818182}
-editPin -pin {s_axi_rdata[23]} -layer M3 -assign {76.752 52.8813090909}
-editPin -pin {s_axi_rdata[22]} -layer M3 -assign {76.752 53.4724363636}
-editPin -pin {s_axi_rdata[21]} -layer M3 -assign {76.752 54.0635636363}
-editPin -pin {s_axi_rdata[20]} -layer M3 -assign {76.752 54.6546909091}
-editPin -pin {s_axi_rdata[19]} -layer M3 -assign {76.752 55.2458181818}
-editPin -pin {s_axi_rdata[18]} -layer M3 -assign {76.752 55.8369454545}
-editPin -pin {s_axi_rdata[17]} -layer M3 -assign {76.752 56.4280727272}
-editPin -pin {s_axi_rdata[16]} -layer M3 -assign {76.752 57.0192}
-editPin -pin {s_axi_rdata[15]} -layer M3 -assign {76.752 57.6103272727}
-editPin -pin {s_axi_rdata[14]} -layer M3 -assign {76.752 58.2014545454}
-editPin -pin {s_axi_rdata[13]} -layer M3 -assign {76.752 58.7925818182}
-editPin -pin {s_axi_rdata[12]} -layer M3 -assign {76.752 59.3837090909}
-editPin -pin {s_axi_rdata[11]} -layer M3 -assign {76.752 59.9748363636}
-editPin -pin {s_axi_rdata[10]} -layer M3 -assign {76.752 60.5659636363}
-editPin -pin {s_axi_rdata[9]} -layer M3 -assign {76.752 61.1570909091}
-editPin -pin {s_axi_rdata[8]} -layer M3 -assign {76.752 61.7482181818}
-editPin -pin {s_axi_rdata[7]} -layer M3 -assign {76.752 62.3393454545}
-editPin -pin {s_axi_rdata[6]} -layer M3 -assign {76.752 62.9304727272}
-editPin -pin {s_axi_rdata[5]} -layer M3 -assign {76.752 63.5216}
-editPin -pin {s_axi_rdata[4]} -layer M3 -assign {76.752 64.1127272727}
-editPin -pin {s_axi_rdata[3]} -layer M3 -assign {76.752 64.7038545454}
-editPin -pin {s_axi_rdata[2]} -layer M3 -assign {76.752 65.2949818182}
-editPin -pin {s_axi_rdata[1]} -layer M3 -assign {76.752 65.8861090909}
-editPin -pin {s_axi_rdata[0]} -layer M3 -assign {76.752 66.4772363636}
-editPin -pin {s_axi_rresp[1]} -layer M3 -assign {76.752 67.0683636363}
-editPin -pin {s_axi_rresp[0]} -layer M3 -assign {76.752 67.6594909091}
-editPin -pin s_axi_rlast -layer M3 -assign {76.752 68.2506181818}
-editPin -pin s_axi_rvalid -layer M3 -assign {76.752 68.8417454545}
-editPin -pin s_axi_rready -layer M3 -assign {76.752 69.4328727272}
-editPin -pin {s_axi_bid[4]} -layer M4 -assign {5.0 75.024}
-editPin -pin {s_axi_bid[3]} -layer M4 -assign {12.4168888889 75.024}
-editPin -pin {s_axi_bid[2]} -layer M4 -assign {19.8337777778 75.024}
-editPin -pin {s_axi_bid[1]} -layer M4 -assign {27.2506666667 75.024}
-editPin -pin {s_axi_bid[0]} -layer M4 -assign {34.6675555556 75.024}
-editPin -pin {s_axi_bresp[1]} -layer M4 -assign {42.0844444444 75.024}
-editPin -pin {s_axi_bresp[0]} -layer M4 -assign {49.5013333333 75.024}
-editPin -pin s_axi_bvalid -layer M4 -assign {56.9182222222 75.024}
-editPin -pin s_axi_bready -layer M4 -assign {64.3351111111 75.024}
-editPin -pin clk -layer M4 -assign {27.2506666667 0.0}
-editPin -pin rst_n -layer M4 -assign {49.5013333334 0.0}
+editPin -pin {s_axi_awid[3]} -layer M3 -assign {0.0 6.69375700935}
+editPin -pin {s_axi_awid[2]} -layer M3 -assign {0.0 8.3875140187}
+editPin -pin {s_axi_awid[1]} -layer M3 -assign {0.0 10.0812710281}
+editPin -pin {s_axi_awid[0]} -layer M3 -assign {0.0 11.7750280374}
+editPin -pin {s_axi_awaddr[31]} -layer M3 -assign {0.0 13.4687850467}
+editPin -pin {s_axi_awaddr[30]} -layer M3 -assign {0.0 15.1625420561}
+editPin -pin {s_axi_awaddr[29]} -layer M3 -assign {0.0 16.8562990655}
+editPin -pin {s_axi_awaddr[28]} -layer M3 -assign {0.0 18.5500560748}
+editPin -pin {s_axi_awaddr[27]} -layer M3 -assign {0.0 20.2438130841}
+editPin -pin {s_axi_awaddr[26]} -layer M3 -assign {0.0 21.9375700935}
+editPin -pin {s_axi_awaddr[25]} -layer M3 -assign {0.0 23.6313271029}
+editPin -pin {s_axi_awaddr[24]} -layer M3 -assign {0.0 25.3250841122}
+editPin -pin {s_axi_awaddr[23]} -layer M3 -assign {0.0 27.0188411216}
+editPin -pin {s_axi_awaddr[22]} -layer M3 -assign {0.0 28.7125981309}
+editPin -pin {s_axi_awaddr[21]} -layer M3 -assign {0.0 30.4063551402}
+editPin -pin {s_axi_awaddr[20]} -layer M3 -assign {0.0 32.1001121496}
+editPin -pin {s_axi_awaddr[19]} -layer M3 -assign {0.0 33.793869159}
+editPin -pin {s_axi_awaddr[18]} -layer M3 -assign {0.0 35.4876261683}
+editPin -pin {s_axi_awaddr[17]} -layer M3 -assign {0.0 37.1813831776}
+editPin -pin {s_axi_awaddr[16]} -layer M3 -assign {0.0 38.875140187}
+editPin -pin {s_axi_awaddr[15]} -layer M3 -assign {0.0 40.5688971964}
+editPin -pin {s_axi_awaddr[14]} -layer M3 -assign {0.0 42.2626542057}
+editPin -pin {s_axi_awaddr[13]} -layer M3 -assign {0.0 43.9564112151}
+editPin -pin {s_axi_awaddr[12]} -layer M3 -assign {0.0 45.6501682244}
+editPin -pin {s_axi_awaddr[11]} -layer M3 -assign {0.0 47.3439252337}
+editPin -pin {s_axi_awaddr[10]} -layer M3 -assign {0.0 49.0376822431}
+editPin -pin {s_axi_awaddr[9]} -layer M3 -assign {0.0 50.7314392525}
+editPin -pin {s_axi_awaddr[8]} -layer M3 -assign {0.0 52.4251962618}
+editPin -pin {s_axi_awaddr[7]} -layer M3 -assign {0.0 54.1189532712}
+editPin -pin {s_axi_awaddr[6]} -layer M3 -assign {0.0 55.8127102805}
+editPin -pin {s_axi_awaddr[5]} -layer M3 -assign {0.0 57.5064672899}
+editPin -pin {s_axi_awaddr[4]} -layer M3 -assign {0.0 59.2002242992}
+editPin -pin {s_axi_awaddr[3]} -layer M3 -assign {0.0 60.8939813086}
+editPin -pin {s_axi_awaddr[2]} -layer M3 -assign {0.0 62.5877383179}
+editPin -pin {s_axi_awaddr[1]} -layer M3 -assign {0.0 64.2814953272}
+editPin -pin {s_axi_awaddr[0]} -layer M3 -assign {0.0 65.9752523366}
+editPin -pin {s_axi_awlen[7]} -layer M3 -assign {0.0 67.669009346}
+editPin -pin {s_axi_awlen[6]} -layer M3 -assign {0.0 69.3627663553}
+editPin -pin {s_axi_awlen[5]} -layer M3 -assign {0.0 71.0565233647}
+editPin -pin {s_axi_awlen[4]} -layer M3 -assign {0.0 72.750280374}
+editPin -pin {s_axi_awlen[3]} -layer M3 -assign {0.0 74.4440373834}
+editPin -pin {s_axi_awlen[2]} -layer M3 -assign {0.0 76.1377943927}
+editPin -pin {s_axi_awlen[1]} -layer M3 -assign {0.0 77.831551402}
+editPin -pin {s_axi_awlen[0]} -layer M3 -assign {0.0 79.5253084114}
+editPin -pin {s_axi_awsize[2]} -layer M3 -assign {0.0 81.2190654207}
+editPin -pin {s_axi_awsize[1]} -layer M3 -assign {0.0 82.9128224301}
+editPin -pin {s_axi_awsize[0]} -layer M3 -assign {0.0 84.6065794395}
+editPin -pin {s_axi_awburst[1]} -layer M3 -assign {0.0 86.3003364488}
+editPin -pin {s_axi_awburst[0]} -layer M3 -assign {0.0 87.9940934582}
+editPin -pin s_axi_awlock -layer M3 -assign {0.0 89.6878504675}
+editPin -pin {s_axi_awcache[3]} -layer M3 -assign {0.0 91.3816074769}
+editPin -pin {s_axi_awcache[2]} -layer M3 -assign {0.0 93.0753644862}
+editPin -pin {s_axi_awcache[1]} -layer M3 -assign {0.0 94.7691214956}
+editPin -pin {s_axi_awcache[0]} -layer M3 -assign {0.0 96.4628785049}
+editPin -pin {s_axi_awprot[2]} -layer M3 -assign {0.0 98.1566355142}
+editPin -pin {s_axi_awprot[1]} -layer M3 -assign {0.0 99.8503925236}
+editPin -pin {s_axi_awprot[0]} -layer M3 -assign {0.0 101.544149533}
+editPin -pin {s_axi_awqos[3]} -layer M3 -assign {0.0 103.237906542}
+editPin -pin {s_axi_awqos[2]} -layer M3 -assign {0.0 104.931663552}
+editPin -pin {s_axi_awqos[1]} -layer M3 -assign {0.0 106.625420561}
+editPin -pin {s_axi_awqos[0]} -layer M3 -assign {0.0 108.31917757}
+editPin -pin {s_axi_awregion[3]} -layer M3 -assign {0.0 110.01293458}
+editPin -pin {s_axi_awregion[2]} -layer M3 -assign {0.0 111.706691589}
+editPin -pin {s_axi_awregion[1]} -layer M3 -assign {0.0 113.400448598}
+editPin -pin {s_axi_awregion[0]} -layer M3 -assign {0.0 115.094205608}
+editPin -pin s_axi_awvalid -layer M3 -assign {0.0 116.787962617}
+editPin -pin s_axi_awready -layer M3 -assign {0.0 118.481719626}
+editPin -pin {s_axi_wdata[31]} -layer M3 -assign {0.0 120.175476636}
+editPin -pin {s_axi_wdata[30]} -layer M3 -assign {0.0 121.869233645}
+editPin -pin {s_axi_wdata[29]} -layer M3 -assign {0.0 123.562990654}
+editPin -pin {s_axi_wdata[28]} -layer M3 -assign {0.0 125.256747664}
+editPin -pin {s_axi_wdata[27]} -layer M3 -assign {0.0 126.950504673}
+editPin -pin {s_axi_wdata[26]} -layer M3 -assign {0.0 128.644261683}
+editPin -pin {s_axi_wdata[25]} -layer M3 -assign {0.0 130.338018692}
+editPin -pin {s_axi_wdata[24]} -layer M3 -assign {0.0 132.031775701}
+editPin -pin {s_axi_wdata[23]} -layer M3 -assign {0.0 133.725532711}
+editPin -pin {s_axi_wdata[22]} -layer M3 -assign {0.0 135.41928972}
+editPin -pin {s_axi_wdata[21]} -layer M3 -assign {0.0 137.113046729}
+editPin -pin {s_axi_wdata[20]} -layer M3 -assign {0.0 138.806803739}
+editPin -pin {s_axi_wdata[19]} -layer M3 -assign {0.0 140.500560748}
+editPin -pin {s_axi_wdata[18]} -layer M3 -assign {0.0 142.194317757}
+editPin -pin {s_axi_wdata[17]} -layer M3 -assign {0.0 143.888074767}
+editPin -pin {s_axi_wdata[16]} -layer M3 -assign {0.0 145.581831776}
+editPin -pin {s_axi_wdata[15]} -layer M3 -assign {0.0 147.275588785}
+editPin -pin {s_axi_wdata[14]} -layer M3 -assign {0.0 148.969345795}
+editPin -pin {s_axi_wdata[13]} -layer M3 -assign {0.0 150.663102804}
+editPin -pin {s_axi_wdata[12]} -layer M3 -assign {0.0 152.356859813}
+editPin -pin {s_axi_wdata[11]} -layer M3 -assign {0.0 154.050616823}
+editPin -pin {s_axi_wdata[10]} -layer M3 -assign {0.0 155.744373832}
+editPin -pin {s_axi_wdata[9]} -layer M3 -assign {0.0 157.438130841}
+editPin -pin {s_axi_wdata[8]} -layer M3 -assign {0.0 159.131887851}
+editPin -pin {s_axi_wdata[7]} -layer M3 -assign {0.0 160.82564486}
+editPin -pin {s_axi_wdata[6]} -layer M3 -assign {0.0 162.51940187}
+editPin -pin {s_axi_wdata[5]} -layer M3 -assign {0.0 164.213158879}
+editPin -pin {s_axi_wdata[4]} -layer M3 -assign {0.0 165.906915888}
+editPin -pin {s_axi_wdata[3]} -layer M3 -assign {0.0 167.600672898}
+editPin -pin {s_axi_wdata[2]} -layer M3 -assign {0.0 169.294429907}
+editPin -pin {s_axi_wdata[1]} -layer M3 -assign {0.0 170.988186916}
+editPin -pin {s_axi_wdata[0]} -layer M3 -assign {0.0 172.681943926}
+editPin -pin {s_axi_wstrb[3]} -layer M3 -assign {0.0 174.375700935}
+editPin -pin {s_axi_wstrb[2]} -layer M3 -assign {0.0 176.069457944}
+editPin -pin {s_axi_wstrb[1]} -layer M3 -assign {0.0 177.763214954}
+editPin -pin {s_axi_wstrb[0]} -layer M3 -assign {0.0 179.456971963}
+editPin -pin s_axi_wlast -layer M3 -assign {0.0 181.150728972}
+editPin -pin s_axi_wvalid -layer M3 -assign {0.0 182.844485982}
+editPin -pin s_axi_wready -layer M3 -assign {0.0 184.538242991}
+editPin -pin {s_axi_arid[4]} -layer M3 -assign {191.952 5.0}
+editPin -pin {s_axi_arid[3]} -layer M3 -assign {191.952 6.64756363636}
+editPin -pin {s_axi_arid[2]} -layer M3 -assign {191.952 8.29512727272}
+editPin -pin {s_axi_arid[1]} -layer M3 -assign {191.952 9.94269090908}
+editPin -pin {s_axi_arid[0]} -layer M3 -assign {191.952 11.5902545454}
+editPin -pin {s_axi_araddr[31]} -layer M3 -assign {191.952 13.2378181818}
+editPin -pin {s_axi_araddr[30]} -layer M3 -assign {191.952 14.8853818182}
+editPin -pin {s_axi_araddr[29]} -layer M3 -assign {191.952 16.5329454545}
+editPin -pin {s_axi_araddr[28]} -layer M3 -assign {191.952 18.1805090909}
+editPin -pin {s_axi_araddr[27]} -layer M3 -assign {191.952 19.8280727272}
+editPin -pin {s_axi_araddr[26]} -layer M3 -assign {191.952 21.4756363636}
+editPin -pin {s_axi_araddr[25]} -layer M3 -assign {191.952 23.1232}
+editPin -pin {s_axi_araddr[24]} -layer M3 -assign {191.952 24.7707636363}
+editPin -pin {s_axi_araddr[23]} -layer M3 -assign {191.952 26.4183272727}
+editPin -pin {s_axi_araddr[22]} -layer M3 -assign {191.952 28.065890909}
+editPin -pin {s_axi_araddr[21]} -layer M3 -assign {191.952 29.7134545454}
+editPin -pin {s_axi_araddr[20]} -layer M3 -assign {191.952 31.3610181818}
+editPin -pin {s_axi_araddr[19]} -layer M3 -assign {191.952 33.0085818181}
+editPin -pin {s_axi_araddr[18]} -layer M3 -assign {191.952 34.6561454545}
+editPin -pin {s_axi_araddr[17]} -layer M3 -assign {191.952 36.3037090908}
+editPin -pin {s_axi_araddr[16]} -layer M3 -assign {191.952 37.9512727272}
+editPin -pin {s_axi_araddr[15]} -layer M3 -assign {191.952 39.5988363636}
+editPin -pin {s_axi_araddr[14]} -layer M3 -assign {191.952 41.2463999999}
+editPin -pin {s_axi_araddr[13]} -layer M3 -assign {191.952 42.8939636363}
+editPin -pin {s_axi_araddr[12]} -layer M3 -assign {191.952 44.5415272726}
+editPin -pin {s_axi_araddr[11]} -layer M3 -assign {191.952 46.189090909}
+editPin -pin {s_axi_araddr[10]} -layer M3 -assign {191.952 47.8366545454}
+editPin -pin {s_axi_araddr[9]} -layer M3 -assign {191.952 49.4842181817}
+editPin -pin {s_axi_araddr[8]} -layer M3 -assign {191.952 51.1317818181}
+editPin -pin {s_axi_araddr[7]} -layer M3 -assign {191.952 52.7793454544}
+editPin -pin {s_axi_araddr[6]} -layer M3 -assign {191.952 54.4269090908}
+editPin -pin {s_axi_araddr[5]} -layer M3 -assign {191.952 56.0744727272}
+editPin -pin {s_axi_araddr[4]} -layer M3 -assign {191.952 57.7220363635}
+editPin -pin {s_axi_araddr[3]} -layer M3 -assign {191.952 59.3695999999}
+editPin -pin {s_axi_araddr[2]} -layer M3 -assign {191.952 61.0171636362}
+editPin -pin {s_axi_araddr[1]} -layer M3 -assign {191.952 62.6647272726}
+editPin -pin {s_axi_araddr[0]} -layer M3 -assign {191.952 64.312290909}
+editPin -pin {s_axi_arlen[7]} -layer M3 -assign {191.952 65.9598545453}
+editPin -pin {s_axi_arlen[6]} -layer M3 -assign {191.952 67.6074181817}
+editPin -pin {s_axi_arlen[5]} -layer M3 -assign {191.952 69.254981818}
+editPin -pin {s_axi_arlen[4]} -layer M3 -assign {191.952 70.9025454544}
+editPin -pin {s_axi_arlen[3]} -layer M3 -assign {191.952 72.5501090908}
+editPin -pin {s_axi_arlen[2]} -layer M3 -assign {191.952 74.1976727271}
+editPin -pin {s_axi_arlen[1]} -layer M3 -assign {191.952 75.8452363635}
+editPin -pin {s_axi_arlen[0]} -layer M3 -assign {191.952 77.4927999998}
+editPin -pin {s_axi_arsize[2]} -layer M3 -assign {191.952 79.1403636362}
+editPin -pin {s_axi_arsize[1]} -layer M3 -assign {191.952 80.7879272726}
+editPin -pin {s_axi_arsize[0]} -layer M3 -assign {191.952 82.4354909089}
+editPin -pin {s_axi_arburst[1]} -layer M3 -assign {191.952 84.0830545453}
+editPin -pin {s_axi_arburst[0]} -layer M3 -assign {191.952 85.7306181816}
+editPin -pin s_axi_arlock -layer M3 -assign {191.952 87.378181818}
+editPin -pin {s_axi_arcache[3]} -layer M3 -assign {191.952 89.0257454544}
+editPin -pin {s_axi_arcache[2]} -layer M3 -assign {191.952 90.6733090907}
+editPin -pin {s_axi_arcache[1]} -layer M3 -assign {191.952 92.3208727271}
+editPin -pin {s_axi_arcache[0]} -layer M3 -assign {191.952 93.9684363634}
+editPin -pin {s_axi_arprot[2]} -layer M3 -assign {191.952 95.6159999998}
+editPin -pin {s_axi_arprot[1]} -layer M3 -assign {191.952 97.2635636362}
+editPin -pin {s_axi_arprot[0]} -layer M3 -assign {191.952 98.9111272725}
+editPin -pin {s_axi_arqos[3]} -layer M3 -assign {191.952 100.558690909}
+editPin -pin {s_axi_arqos[2]} -layer M3 -assign {191.952 102.206254545}
+editPin -pin {s_axi_arqos[1]} -layer M3 -assign {191.952 103.853818182}
+editPin -pin {s_axi_arqos[0]} -layer M3 -assign {191.952 105.501381818}
+editPin -pin {s_axi_arregion[3]} -layer M3 -assign {191.952 107.148945454}
+editPin -pin {s_axi_arregion[2]} -layer M3 -assign {191.952 108.796509091}
+editPin -pin {s_axi_arregion[1]} -layer M3 -assign {191.952 110.444072727}
+editPin -pin {s_axi_arregion[0]} -layer M3 -assign {191.952 112.091636363}
+editPin -pin s_axi_arvalid -layer M3 -assign {191.952 113.7392}
+editPin -pin s_axi_arready -layer M3 -assign {191.952 115.386763636}
+editPin -pin {s_axi_rid[4]} -layer M3 -assign {191.952 117.034327272}
+editPin -pin {s_axi_rid[3]} -layer M3 -assign {191.952 118.681890909}
+editPin -pin {s_axi_rid[2]} -layer M3 -assign {191.952 120.329454545}
+editPin -pin {s_axi_rid[1]} -layer M3 -assign {191.952 121.977018182}
+editPin -pin {s_axi_rid[0]} -layer M3 -assign {191.952 123.624581818}
+editPin -pin {s_axi_rdata[31]} -layer M3 -assign {191.952 125.272145454}
+editPin -pin {s_axi_rdata[30]} -layer M3 -assign {191.952 126.919709091}
+editPin -pin {s_axi_rdata[29]} -layer M3 -assign {191.952 128.567272727}
+editPin -pin {s_axi_rdata[28]} -layer M3 -assign {191.952 130.214836363}
+editPin -pin {s_axi_rdata[27]} -layer M3 -assign {191.952 131.8624}
+editPin -pin {s_axi_rdata[26]} -layer M3 -assign {191.952 133.509963636}
+editPin -pin {s_axi_rdata[25]} -layer M3 -assign {191.952 135.157527272}
+editPin -pin {s_axi_rdata[24]} -layer M3 -assign {191.952 136.805090909}
+editPin -pin {s_axi_rdata[23]} -layer M3 -assign {191.952 138.452654545}
+editPin -pin {s_axi_rdata[22]} -layer M3 -assign {191.952 140.100218182}
+editPin -pin {s_axi_rdata[21]} -layer M3 -assign {191.952 141.747781818}
+editPin -pin {s_axi_rdata[20]} -layer M3 -assign {191.952 143.395345454}
+editPin -pin {s_axi_rdata[19]} -layer M3 -assign {191.952 145.042909091}
+editPin -pin {s_axi_rdata[18]} -layer M3 -assign {191.952 146.690472727}
+editPin -pin {s_axi_rdata[17]} -layer M3 -assign {191.952 148.338036363}
+editPin -pin {s_axi_rdata[16]} -layer M3 -assign {191.952 149.9856}
+editPin -pin {s_axi_rdata[15]} -layer M3 -assign {191.952 151.633163636}
+editPin -pin {s_axi_rdata[14]} -layer M3 -assign {191.952 153.280727272}
+editPin -pin {s_axi_rdata[13]} -layer M3 -assign {191.952 154.928290909}
+editPin -pin {s_axi_rdata[12]} -layer M3 -assign {191.952 156.575854545}
+editPin -pin {s_axi_rdata[11]} -layer M3 -assign {191.952 158.223418181}
+editPin -pin {s_axi_rdata[10]} -layer M3 -assign {191.952 159.870981818}
+editPin -pin {s_axi_rdata[9]} -layer M3 -assign {191.952 161.518545454}
+editPin -pin {s_axi_rdata[8]} -layer M3 -assign {191.952 163.166109091}
+editPin -pin {s_axi_rdata[7]} -layer M3 -assign {191.952 164.813672727}
+editPin -pin {s_axi_rdata[6]} -layer M3 -assign {191.952 166.461236363}
+editPin -pin {s_axi_rdata[5]} -layer M3 -assign {191.952 168.1088}
+editPin -pin {s_axi_rdata[4]} -layer M3 -assign {191.952 169.756363636}
+editPin -pin {s_axi_rdata[3]} -layer M3 -assign {191.952 171.403927272}
+editPin -pin {s_axi_rdata[2]} -layer M3 -assign {191.952 173.051490909}
+editPin -pin {s_axi_rdata[1]} -layer M3 -assign {191.952 174.699054545}
+editPin -pin {s_axi_rdata[0]} -layer M3 -assign {191.952 176.346618181}
+editPin -pin {s_axi_rresp[1]} -layer M3 -assign {191.952 177.994181818}
+editPin -pin {s_axi_rresp[0]} -layer M3 -assign {191.952 179.641745454}
+editPin -pin s_axi_rlast -layer M3 -assign {191.952 181.289309091}
+editPin -pin s_axi_rvalid -layer M3 -assign {191.952 182.936872727}
+editPin -pin s_axi_rready -layer M3 -assign {191.952 184.584436363}
+editPin -pin {s_axi_bid[4]} -layer M4 -assign {5.0 191.232}
+editPin -pin {s_axi_bid[3]} -layer M4 -assign {25.2168888889 191.232}
+editPin -pin {s_axi_bid[2]} -layer M4 -assign {45.4337777778 191.232}
+editPin -pin {s_axi_bid[1]} -layer M4 -assign {65.6506666667 191.232}
+editPin -pin {s_axi_bid[0]} -layer M4 -assign {85.8675555556 191.232}
+editPin -pin {s_axi_bresp[1]} -layer M4 -assign {106.084444445 191.232}
+editPin -pin {s_axi_bresp[0]} -layer M4 -assign {126.301333333 191.232}
+editPin -pin s_axi_bvalid -layer M4 -assign {146.518222222 191.232}
+editPin -pin s_axi_bready -layer M4 -assign {166.735111111 191.232}
+editPin -pin clk -layer M4 -assign {65.6506666667 0.0}
+editPin -pin rst_n -layer M4 -assign {126.301333333 0.0}
 setPinAssignMode -pinEditInBatch false
 setPinConstraint -corner_to_pin_distance 18
-addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 8.0 -layer {top M9 bottom M9 left M10 right M10}
-createPGPin VSS -geom M10 0 0 0.8 0.8
-createPGPin VDD -geom M10 8.8 8.8 9.6 9.6
+addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 8.0 -layer {top M9 bottom M9 left M8 right M8}
+createPGPin VSS -geom M8 0 0 0.8 0.8
+createPGPin VDD -geom M8 8.8 8.8 9.6 9.6
 globalNetConnect VDD -type pgpin -pin VDD -inst * -module {}
 globalNetConnect VSS -type pgpin -pin VSS -inst * -module {}
 setSrouteMode -viaConnectToShape { ring stripe blockring }
@@ -276,7 +276,7 @@ sroute -nets { VSS VDD } -connect corePin -corePinCheckStdcellGeoms -allowJoggin
 clearDrc
 setAddStripeMode -break_at block_ring -allow_jog padcore_ring
 addStripe -nets {VSS VDD} -layer M9 -direction horizontal -width 0.8 -spacing 8.0 -set_to_set_distance 34.56 -start_from bottom -start_offset 32.48
-addStripe -nets {VSS VDD} -layer M10 -direction vertical -width 0.8 -spacing 8.0 -set_to_set_distance 34.56 -start_from left -start_offset 32.48
+addStripe -nets {VSS VDD} -layer M8 -direction vertical -width 0.8 -spacing 8.0 -set_to_set_distance 34.56 -start_from left -start_offset 32.48
 editTrim -nets {VSS VDD}
 setPlaceMode -reset
 setPlaceMode -place_global_uniform_density true -place_global_module_aware_spare true -place_global_auto_blockage_in_channel soft -place_detail_preroute_as_obs {2 3} -place_global_cong_effort high -place_design_refine_macro true
@@ -513,55 +513,10 @@ verifyConnectivity -type all -error 1000 -warning 50 -report ./verify_rpt/connec
 optDesign -postRoute -setup -hold -prefix postRoute
 win
 set enc_check_rename_command_name 1
-fit
-zoomBox -2.10750 1.55750 75.31175 71.70525
-zoomBox 11.59075 15.93700 52.00425 52.55475
-zoomBox 18.74100 23.44325 39.83750 42.55825
-zoomBox 21.75450 26.60650 34.71025 38.34550
-zoomBox 26.86600 29.05850 33.62900 35.18625
-zoomBox 29.02375 30.09150 33.17725 33.85500
-zoomBox 30.93425 31.00625 32.77725 32.67625
-zoomBox 31.52225 31.28750 32.65425 32.31325
-zoomBox 31.66250 31.35475 32.62500 32.22675
-selectWire 32.1360 31.7160 32.2320 32.0520 5 {s_axi_wdata[15]}
-zoomBox 31.47850 31.13950 32.81100 32.34675
-zoomBox 31.22375 30.84150 33.06825 32.51275
-zoomBox 30.64750 30.16675 33.65100 32.88825
-zoomBox 29.70900 29.06825 34.59975 33.49975
-zoomBox 28.77475 27.97475 35.54425 34.10850
-zoomBox 25.69200 24.36725 38.66050 36.11775
-zoomBox 21.64000 19.62525 42.75725 38.75900
-zoomBox 12.02475 8.37175 52.47900 45.02650
-zoomBox -0.61475 -6.42075 65.25850 53.26550
-zoomBox 15.77975 6.10250 63.37325 49.22600
-zoomBox -11.04100 -14.38475 66.45725 55.83475
-zoomBox -23.30675 -23.75425 67.86775 58.85700
-zoomBox -46.75200 -43.19550 79.44125 71.14525
-fit
-zoomBox -1.52725 5.62900 46.01775 48.70850
-zoomBox 0.88350 14.72000 21.97975 33.83475
-zoomBox 1.87100 18.32200 12.88375 28.30050
-zoomBox 5.10225 20.79075 10.85125 25.99975
-zoomBox 6.38275 22.07150 9.91350 25.27075
-zoomBox 6.68300 22.40025 9.68425 25.11950
-deselectAll
-selectVia 8.1280 24.5200 8.2880 24.6560 4 {s_axi_awaddr[7]}
-zoomBox 7.56225 23.62050 8.89425 24.82750
-zoomBox 7.87750 24.11475 8.57300 24.74500
-zoomBox 8.04200 24.37275 8.40525 24.70200
-zoomBox 8.13400 24.47050 8.35725 24.67275
-zoomBox 8.19050 24.53050 8.32775 24.65475
-select_obj {{net:top_axi_ram/s_axi_awaddr[7]}}
-select_obj {{net:top_axi_ram/s_axi_awaddr[7]}}
-deselectAll
-selectVia 8.1280 24.5200 8.2880 24.6560 4 {s_axi_awaddr[7]}
-deselectAll
-selectVia 8.1280 24.5200 8.2880 24.6560 4 {s_axi_awaddr[7]}
-deselectAll
-selectVia 8.1280 24.5200 8.2880 24.6560 4 {s_axi_awaddr[7]}
-deselectAll
-selectVia 8.1280 24.5200 8.2880 24.6560 4 {s_axi_awaddr[7]}
-fit
-zoomBox 14.72375 15.65150 62.26875 58.73100
-zoomBox 26.14950 25.77975 50.96850 48.26775
-zoomBox 32.11375 31.06700 45.06950 42.80600
+zoomBox -37.99900 -24.56875 193.45150 185.14325
+zoomBox -109.86925 -62.38675 210.47750 227.87225
+zoomBox -26.04825 -6.06950 205.40250 203.64275
+zoomBox 58.16375 50.51025 200.30375 179.30000
+zoomBox 42.59625 37.94525 209.81975 189.46275
+zoomBox 24.28125 23.16300 221.01500 201.41900
+zoomBox -22.61450 -14.68775 249.68125 232.03325
