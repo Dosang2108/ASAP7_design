@@ -26,10 +26,13 @@ close $fo
 
 place_design -concurrent_macros
 
+# L?nh chu?n xác d? ép Macro vào du?ng lu?i s?n xu?t:
+refine_macro_place
+
 addHaloToBlock 2 2 2 2 -allMacro
+setInstancePlacementStatus -allHardMacros -status fixed
 
-setObjFPlanBox Instance *u_sram_macro* -fixed true
-
+setInstancePlacementStatus -name u_sram_macro -status fixed
 source ./tcl/pins.tcl
 setPinConstraint -corner_to_pin_distance 18
 

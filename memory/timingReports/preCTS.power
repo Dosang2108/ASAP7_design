@@ -1,0 +1,110 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 22.17-s086_1 (64bit) 09/24/2024 10:51 (Linux 3.10.0-693.el7.x86_64)
+*	
+*
+* 	Date & Time:	2026-Apr-05 12:45:19 (2026-Apr-05 05:45:19 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: top_axi_ram
+*
+*	Liberty Libraries used: 
+*	        view_typical: ../../Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib
+*	        view_typical: ../../Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib
+*	        view_typical: ../../Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib
+*	        view_typical: ../../Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib
+*	        view_typical: ../../Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib
+*	        view_typical: ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x32_6t122.lib
+*
+*	Power Domain used: 
+*              Rail:        VDD      Voltage:        0.7 
+*
+*       Power View : view_typical
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile ./timingReports/preCTS.power
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        0.00767402 	   28.0395%
+Total Switching Power:       0.01963547 	   71.7445%
+Total Leakage Power:         0.00005910 	    0.2160%
+Total Power:                 0.02736859 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                      0.001233    1.07e-05   1.527e-05    0.001259       4.601 
+Macro                           0.006429           0           0    0.006429       23.49 
+IO                                     0           0           0           0           0 
+Combinational                  1.186e-05     0.01962   4.383e-05     0.01968       71.91 
+Clock (Combinational)                  0           0           0           0           0 
+Clock (Sequential)                     0           0           0           0           0 
+-----------------------------------------------------------------------------------------
+Total                           0.007674     0.01964    5.91e-05     0.02737         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       0.7   0.007674     0.01964    5.91e-05     0.02737         100 
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                             0.006429           0           0    0.006429       23.49 
+-----------------------------------------------------------------------------------------
+Total (excluding duplicates)    0.006429           0           0    0.006429       23.49 
+-----------------------------------------------------------------------------------------
+Clock: clk
+Clock Period: 2.000000 usec 
+Clock Toggle Rate:     1.0000 Mhz 
+Clock Static Probability:  0.5000
+
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power: u_sram_macro_u_sram_macro (srambank_256x4x32_6t122):         0.006429 
+*                Highest Leakage Power:      FE_OFC40_s_axi_bid_2 (BUFx24_ASAP7_75t_R):        1.432e-06 
+*          Total Cap:      8.01511e-10 F
+*          Total instances in design:   348
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+
+Total leakage power = 5.91038e-05 mW
+Cell usage statistics:  
+Library srambank_256x4x32_6t122 , 1 cells ( 0.287356%) , 0 mW ( 0.000000%  ) 
+Library asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 , 67 cells ( 19.252874%) , 2.42318e-05 mW ( 40.998703%  ) 
+Library asap7sc7p5t_SEQ_RVT_TT_nldm_220123 , 66 cells ( 18.965517%) , 1.52699e-05 mW ( 25.835716%  ) 
+Library asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 , 112 cells ( 32.183910%) , 1.04009e-05 mW ( 17.597746%  ) 
+Library asap7sc7p5t_AO_RVT_TT_nldm_211120 , 88 cells ( 25.287357%) , 7.9983e-06 mW ( 13.532626%  ) 
+Library asap7sc7p5t_OA_RVT_TT_nldm_211120 , 14 cells ( 4.022989%) , 1.20289e-06 mW ( 2.035211%  ) 
