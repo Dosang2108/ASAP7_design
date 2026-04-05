@@ -13,6 +13,9 @@ set BUFCells    {BUFx2_ASAP7_75t_R BUFx4_ASAP7_75t_R}
 set INVCells    {INVx2_ASAP7_75t_R INVx4_ASAP7_75t_R}
 set FILLERCells {FILLER_ASAP7_75t_R FILLER_ASAP7_75t_R_2 FILLER_ASAP7_75t_R_4}
 set DIODECells  {ANTENNA_ASAP7_75t_R}
+set TAPCells    {TAPCELL_ASAP7_75t_R}
+set TIEHICells  {TIEHI_ASAP7_75t_R}
+set TIELOCells  {TIELO_ASAP7_75t_R}
 
 # Calculate pitch based on ASAP7 site size
 set row   [dbGet head.sites.size_y]

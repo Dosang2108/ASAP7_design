@@ -2,7 +2,7 @@
 *	Innovus 22.17-s086_1 (64bit) 09/24/2024 10:51 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2026-Apr-05 20:42:27 (2026-Apr-05 13:42:27 GMT)
+* 	Date & Time:	2026-Apr-06 00:28:52 (2026-Apr-05 17:28:52 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -48,39 +48,39 @@
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:        0.00690968 	    8.6673%
-Total Switching Power:       0.07253980 	   90.9923%
-Total Leakage Power:         0.00027135 	    0.3404%
-Total Power:                 0.07972083 
+Total Internal Power:        0.00690658 	    8.6656%
+Total Switching Power:       0.07252167 	   90.9919%
+Total Leakage Power:         0.00027295 	    0.3425%
+Total Power:                 0.07970120 
 -----------------------------------------------------------------------------------------
 
 
 Group                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-Sequential                     4.302e-05   1.182e-05   1.527e-05   7.011e-05     0.08795 
-Macro                           0.006665   2.142e-05           0    0.006687       8.387 
+Sequential                     4.306e-05   1.312e-05   1.527e-05   7.145e-05     0.08965 
+Macro                           0.006665   1.881e-05           0    0.006684       8.386 
 IO                                     0           0           0           0           0 
-Combinational                  0.0001331     0.02051   0.0002107     0.02085       26.16 
-Clock (Combinational)          6.838e-05       0.052    4.54e-05     0.05211       65.37 
+Combinational                   0.000134     0.02049   0.0002121     0.02084       26.15 
+Clock (Combinational)          6.446e-05       0.052   4.554e-05     0.05211       65.38 
 Clock (Sequential)                     0           0           0           0           0 
 -----------------------------------------------------------------------------------------
-Total                            0.00691     0.07254   0.0002713     0.07972         100 
+Total                           0.006907     0.07252    0.000273      0.0797         100 
 -----------------------------------------------------------------------------------------
 
 
 Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-VDD                       0.7    0.00691     0.07254   0.0002713     0.07972         100 
+VDD                       0.7   0.006907     0.07252    0.000273      0.0797         100 
 
 
 Clock                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-clk                             0.006734     0.05202    4.54e-05      0.0588       73.75 
+clk                              0.00673     0.05201   4.554e-05     0.05879       73.76 
 -----------------------------------------------------------------------------------------
-Total (excluding duplicates)    0.006734     0.05202    4.54e-05      0.0588       73.75 
+Total (excluding duplicates)     0.00673     0.05201   4.554e-05     0.05879       73.76 
 -----------------------------------------------------------------------------------------
 Clock: clk
 Clock Period: 2.000000 usec 
@@ -91,20 +91,20 @@ Clock Static Probability:  0.5000
 
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
-*                Highest Average Power: u_sram_macro_u_sram_macro (srambank_256x4x32_6t122):         0.006687 
-*                Highest Leakage Power:      FE_OFC48_s_axi_rlast (BUFx24_ASAP7_75t_R):        1.432e-06 
-*          Total Cap:      2.43441e-09 F
-*          Total instances in design:  4633
+*                Highest Average Power: u_sram_macro_u_sram_macro (srambank_256x4x32_6t122):         0.006684 
+*                Highest Leakage Power:      FE_OFC47_s_axi_rlast (BUFx24_ASAP7_75t_R):        1.432e-06 
+*          Total Cap:      2.43388e-09 F
+*          Total instances in design:  4629
 *          Total instances in design with no power:     0
 *          Total instances in design with no activity:     0
 *          Total Fillers and Decap:     0
 -----------------------------------------------------------------------------------------
 
-Total leakage power = 0.000271348 mW
+Total leakage power = 0.00027295 mW
 Cell usage statistics:  
-Library srambank_256x4x32_6t122 , 1 cells ( 0.021584%) , 0 mW ( 0.000000%  ) 
-Library asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 , 4352 cells ( 93.934814%) , 0.000236564 mW ( 87.181087%  ) 
-Library asap7sc7p5t_SEQ_RVT_TT_nldm_220123 , 66 cells ( 1.424563%) , 1.52699e-05 mW ( 5.627410%  ) 
-Library asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 , 112 cells ( 2.417440%) , 1.03417e-05 mW ( 3.811221%  ) 
-Library asap7sc7p5t_AO_RVT_TT_nldm_211120 , 88 cells ( 1.899417%) , 7.96945e-06 mW ( 2.936982%  ) 
-Library asap7sc7p5t_OA_RVT_TT_nldm_211120 , 14 cells ( 0.302180%) , 1.20289e-06 mW ( 0.443300%  ) 
+Library srambank_256x4x32_6t122 , 1 cells ( 0.021603%) , 0 mW ( 0.000000%  ) 
+Library asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 , 4348 cells ( 93.929581%) , 0.000238091 mW ( 87.228758%  ) 
+Library asap7sc7p5t_SEQ_RVT_TT_nldm_220123 , 66 cells ( 1.425794%) , 1.52699e-05 mW ( 5.594386%  ) 
+Library asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 , 112 cells ( 2.419529%) , 1.0444e-05 mW ( 3.826329%  ) 
+Library asap7sc7p5t_AO_RVT_TT_nldm_211120 , 88 cells ( 1.901058%) , 7.96945e-06 mW ( 2.919746%  ) 
+Library asap7sc7p5t_OA_RVT_TT_nldm_211120 , 14 cells ( 0.302441%) , 1.17582e-06 mW ( 0.430781%  ) 
