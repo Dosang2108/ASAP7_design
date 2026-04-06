@@ -101,8 +101,8 @@ module top_axi_ram #(
     sram_macro #(
         .DATA_WIDTH(DATA_WIDTH),
         .ADDR_WIDTH(ADDR_WIDTH),
-        .MEM_DEPTH(MEM_DEPTH),
-        .INIT_FILE(INIT_FILE)
+        .MEM_DEPTH(MEM_DEPTH)
+//        .INIT_FILE(INIT_FILE)
     ) u_sram_macro (
         .clk(clk),
         .bram_we(bram_we_wire),

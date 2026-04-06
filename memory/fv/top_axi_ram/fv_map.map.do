@@ -249,6 +249,10 @@ add mapped point u_axi_ctrl/ar_addr_reg[8]/q u_axi_ctrl_ar_addr_reg_reg[8]/QN -t
 add mapped point u_axi_ctrl/ar_addr_reg[9]/q u_axi_ctrl_ar_addr_reg_reg[9]/QN -type DFF DFF
 add mapped point u_axi_ctrl/ar_addr_reg[10]/q u_axi_ctrl_ar_addr_reg_reg[10]/QN -type DFF DFF
 add mapped point u_axi_ctrl/ar_addr_reg[11]/q u_axi_ctrl_ar_addr_reg_reg[11]/QN -type DFF DFF
+add mapped point u_axi_ctrl/ar_addr_reg[12]/q u_axi_ctrl_ar_addr_reg_reg[12]/QN -type DFF DFF
+add mapped point u_axi_ctrl/ar_addr_reg[13]/q u_axi_ctrl_ar_addr_reg_reg[13]/QN -type DFF DFF
+add mapped point u_axi_ctrl/ar_addr_reg[14]/q u_axi_ctrl_ar_addr_reg_reg[14]/QN -type DFF DFF
+add mapped point u_axi_ctrl/ar_addr_reg[15]/q u_axi_ctrl_ar_addr_reg_reg[15]/QN -type DFF DFF
 add mapped point u_axi_ctrl/ar_len_reg[0]/q u_axi_ctrl_ar_len_reg_reg[0]/QN -type DFF DFF
 add mapped point u_axi_ctrl/ar_len_reg[1]/q u_axi_ctrl_ar_len_reg_reg[1]/QN -type DFF DFF
 add mapped point u_axi_ctrl/ar_len_reg[2]/q u_axi_ctrl_ar_len_reg_reg[2]/QN -type DFF DFF
@@ -272,6 +276,10 @@ add mapped point u_axi_ctrl/aw_addr_reg[8]/q u_axi_ctrl_aw_addr_reg_reg[8]/QN -t
 add mapped point u_axi_ctrl/aw_addr_reg[9]/q u_axi_ctrl_aw_addr_reg_reg[9]/QN -type DFF DFF
 add mapped point u_axi_ctrl/aw_addr_reg[10]/q u_axi_ctrl_aw_addr_reg_reg[10]/QN -type DFF DFF
 add mapped point u_axi_ctrl/aw_addr_reg[11]/q u_axi_ctrl_aw_addr_reg_reg[11]/QN -type DFF DFF
+add mapped point u_axi_ctrl/aw_addr_reg[12]/q u_axi_ctrl_aw_addr_reg_reg[12]/QN -type DFF DFF
+add mapped point u_axi_ctrl/aw_addr_reg[13]/q u_axi_ctrl_aw_addr_reg_reg[13]/QN -type DFF DFF
+add mapped point u_axi_ctrl/aw_addr_reg[14]/q u_axi_ctrl_aw_addr_reg_reg[14]/QN -type DFF DFF
+add mapped point u_axi_ctrl/aw_addr_reg[15]/q u_axi_ctrl_aw_addr_reg_reg[15]/QN -type DFF DFF
 add mapped point u_axi_ctrl/aw_size_reg[0]/q u_axi_ctrl_aw_size_reg_reg[0]/QN -type DFF DFF
 add mapped point u_axi_ctrl/aw_size_reg[1]/q u_axi_ctrl_aw_size_reg_reg[1]/QN -type DFF DFF
 add mapped point u_axi_ctrl/aw_size_reg[2]/q u_axi_ctrl_aw_size_reg_reg[2]/QN -type DFF DFF
@@ -303,11 +311,15 @@ add mapped point u_axi_ctrl/s_axi_rvalid/q u_axi_ctrl_s_axi_rvalid_reg/QN -type 
 add mapped point u_axi_ctrl/s_axi_wready/q u_axi_ctrl_s_axi_wready_reg/QN -type DFF DFF
 add mapped point u_axi_ctrl/w_state[0]/q u_axi_ctrl_w_state_reg[0]/QN -type DFF DFF
 add mapped point u_axi_ctrl/w_state[1]/q u_axi_ctrl_w_state_reg[1]/QN -type DFF DFF
+add mapped point u_sram_macro/bank_sel_r[0]/q u_sram_macro_bank_sel_r_reg[0]/QN -type DFF DFF
+add mapped point u_sram_macro/bank_sel_r[1]/q u_sram_macro_bank_sel_r_reg[1]/QN -type DFF DFF
+add mapped point u_sram_macro/bank_sel_r[2]/q u_sram_macro_bank_sel_r_reg[2]/QN -type DFF DFF
+add mapped point u_sram_macro/bank_sel_r[3]/q u_sram_macro_bank_sel_r_reg[3]/QN -type DFF DFF
 
 
 
 //Black Boxes
-add mapped point u_sram_macro/u_sram_macro u_sram_macro_u_sram_macro -type BBOX BBOX
+add mapped point u_sram_macro/sram_banks[0].u_bank u_sram_macro_sram_banks[0].u_bank -type BBOX BBOX
 
 
 
