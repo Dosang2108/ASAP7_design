@@ -1,0 +1,50 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[09:21:53.222113] Configured Lic search path (22.01-s003): 5280@172.28.10.187
+
+Version: 22.17-s071_1, built Wed Sep 11 22:37:05 PDT 2024
+Options: -files tcl/genus.tcl 
+Date:    Wed Apr 08 09:21:53 2026
+Host:    vlsiktmt (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (1core*2cpus*3physical cpus*Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz 22528KB) (32780644KB)
+PID:     29667
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis
+[09:21:53.426488] Periodic Lic check successful
+[09:21:53.426506] Feature usage summary:
+[09:21:53.426507] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (3 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (37 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source tcl/genus.tcl
+#@ Begin verbose source ./tcl/genus.tcl
+@file(genus.tcl) 1: set ASAP7_DIR "../../Asap7/asap7"
+@file(genus.tcl) 2: set LIB_PATH "${ASAP7_DIR}/asap7sc7p5t_28/LIB/NLDM"
+@file(genus.tcl) 3: set LEF_PATH "${ASAP7_DIR}/asap7sc7p5t_28/LEF/scaled"
+@file(genus.tcl) 6: set TECH_LEF [glob ${ASAP7_DIR}/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_*.lef]
+@file(genus.tcl) 7: set STD_LIB  [glob ${LIB_PATH}/*_RVT_TT_*.lib]
+#@ End verbose source ./tcl/genus.tcl
+no files matched glob pattern "../../Asap7/asap7/asap7sc7p5t_28/LIB/NLDM/*_RVT_TT_*.lib"
+Encountered problems processing file: tcl/genus.tcl
+WARNING: This version of the tool is 572 days old.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 48s, ST: 15s, FG: 15s, CPU: 9.2%}, MEM {curr: 1.1G, peak: 1.1G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 8.1, cpu: 2, total: 31.3G, free: 10.0G}
+Abnormal exit.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 49s, ST: -0s, FG: -0s, CPU: 9.2%}, MEM {curr: 1.1G, peak: 1.1G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 8.1, cpu: 2, total: 31.3G, free: 10.0G}

@@ -1,0 +1,165 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[15:52:59.222169] Configured Lic search path (22.01-s003): 5280@172.28.10.187
+
+Version: 22.17-s071_1, built Wed Sep 11 22:37:05 PDT 2024
+Options: 
+Date:    Tue Apr 07 15:52:59 2026
+Host:    vlsiktmt (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (1core*2cpus*3physical cpus*Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz 22528KB) (32780644KB)
+PID:     32530
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis
+[15:52:59.311603] Periodic Lic check successful
+[15:52:59.311627] Feature usage summary:
+[15:52:59.311627] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (6 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (69 seconds elapsed).
+
+WARNING: This version of the tool is 572 days old.
+@genus:root: 1> set ASAP7_DIR "../../Asap7/asap7"
+../../Asap7/asap7
+@genus:root: 2> set LIB_PATH "${ASAP7_DIR}/asap7sc7p5t_28/LIB/TEMP_LIBS"
+../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS
+@genus:root: 3> 
+@genus:root: 3> set LEF_PATH "${ASAP7_DIR}/asap7sc7p5t_28/LEF/scaled"
+../../Asap7/asap7/asap7sc7p5t_28/LEF/scaled
+@genus:root: 4> set TECH_LEF [glob ${ASAP7_DIR}/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_*.lef]
+../../Asap7/asap7/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef
+@genus:root: 5> set STD_LIB  [glob ${LIB_PATH}/*_RVT_TT_*.lib]
+../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS/asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120.lib ../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS/asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120.lib ../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS/asap7sc7p5t_SIMPLE_RVT_TT_ccsa_211120.lib
+@genus:root: 6> set SRAM_LIB [glob ${ASAP7_DIR}/asap7_sram_0p0/generated/LIB/srambank_256*.lib]
+../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x16_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x18_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x20_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x32_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x34_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x36_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x40_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x48_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x64_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x72_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x74_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x80_6t122.lib
+@genus:root: 7> set SRAM_LEF [glob ${ASAP7_DIR}/asap7_sram_0p0/generated/LEF/srambank_256*.lef]
+../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x16_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x18_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x20_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x34_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x36_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x40_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x48_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x64_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x72_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x74_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x80_6t122.lef ../../Asap7/asap7/asap7_sram_0p0/generated/LEF/srambank_256x4x32_6t122.lef
+@genus:root: 8> set_db library [list {*}$STD_LIB {*}$SRAM_LIB]
+
+  Message Summary for Library all 15 libraries:
+  *********************************************
+  An unsupported construct was detected in this library. [LBR-40]: 6
+  *********************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'asap7sc7p5t_SIMPLE_RVT_TT_ccsa_211120.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x16_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x18_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x20_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x32_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x34_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x36_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x40_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x48_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x64_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x72_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x74_6t122.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'srambank_256x4x80_6t122.lib'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x16_6t122/srambank_256x4x16_6t122'.
+        : Specify a valid area value for the libcell.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x18_6t122/srambank_256x4x18_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x20_6t122/srambank_256x4x20_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x32_6t122/srambank_256x4x32_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x34_6t122/srambank_256x4x34_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x36_6t122/srambank_256x4x36_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x40_6t122/srambank_256x4x40_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x48_6t122/srambank_256x4x48_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x64_6t122/srambank_256x4x64_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x72_6t122/srambank_256x4x72_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x74_6t122/srambank_256x4x74_6t122'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'srambank_256x4x80_6t122/srambank_256x4x80_6t122'.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND2x2_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND2x2_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND2x2_ASAP7_75t_R).
+        : Library cell names must be unique.  Any duplicates will be deleted.  Only the first (as determined by the order of libraries) will be retained.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND2x4_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND2x4_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND2x4_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND2x6_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND2x6_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND2x6_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND3x1_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND3x1_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND3x1_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND3x2_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND3x2_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND3x2_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND3x4_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND3x4_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND3x4_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND4x1_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND4x1_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND4x1_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND4x2_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND4x2_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND4x2_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND5x1_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND5x1_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND5x1_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/AND5x2_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND5x2_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/AND5x2_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/FAx1_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/FAx1_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/FAx1_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/HAxp5_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/HAxp5_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/HAxp5_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/MAJIxp5_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/MAJIxp5_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/MAJIxp5_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/MAJx2_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/MAJx2_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/MAJx2_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/MAJx3_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/MAJx3_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/MAJx3_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/NAND2x1_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2x1_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2x1_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/NAND2x1p5_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2x1p5_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2x1p5_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/NAND2x2_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2x2_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2x2_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/NAND2xp33_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2xp33_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2xp33_ASAP7_75t_R).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120/NAND2xp5_ASAP7_75t_R and asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2xp5_ASAP7_75t_R).  Deleting (asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120/NAND2xp5_ASAP7_75t_R).
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-22'.
+Warning : Inconsistency detected among the units specified in the timing libraries being used. [LBR-714]
+        : Libraries with inconsistent time/capacitance units were loaded.
+        : Default system time/capacitance unit will be used.
+  Setting attribute of root '/': 'library' = ../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS/asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120.lib ../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS/asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120.lib ../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS/asap7sc7p5t_SIMPLE_RVT_TT_ccsa_211120.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x16_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x18_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x20_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x32_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x34_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x36_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x40_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x48_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x64_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x72_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x74_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x80_6t122.lib
+1 {../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS/asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120.lib ../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS/asap7sc7p5t_SIMPLE_RVT_TT_ccsn_211120.lib ../../Asap7/asap7/asap7sc7p5t_28/LIB/TEMP_LIBS/asap7sc7p5t_SIMPLE_RVT_TT_ccsa_211120.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x16_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x18_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x20_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x32_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x34_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x36_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x40_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x48_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x64_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x72_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x74_6t122.lib ../../Asap7/asap7/asap7_sram_0p0/generated/LIB/srambank_256x4x80_6t122.lib}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 309s, ST: 18s, FG: 18s, CPU: 0.9%}, MEM {curr: 1.2G, peak: 1.6G, phys curr: 0.3G, phys peak: 0.4G}, SYS {load: 9.9, cpu: 2, total: 31.3G, free: 0.4G}
+Abnormal exit.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 310s, ST: -0s, FG: -0s, CPU: 0.9%}, MEM {curr: 1.2G, peak: 1.6G, phys curr: 0.3G, phys peak: 0.4G}, SYS {load: 9.9, cpu: 2, total: 31.3G, free: 0.4G}

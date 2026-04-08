@@ -1,17 +1,14 @@
 # Cadence Genus(TM) Synthesis Solution, Version 22.17-s071_1, built Sep 12 2024 12:37:05
 
-# Date: Tue Apr 07 09:27:14 2026
+# Date: Tue Apr 07 15:52:59 2026
 # Host: vlsiktmt (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (1core*2cpus*3physical cpus*Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz 22528KB)
 # OS:   CentOS Linux release 7.9.2009 (Core)
 
 set ASAP7_DIR "../../Asap7/asap7"
-set LIB_PATH "${ASAP7_DIR}/asap7sc7p5t_28/LIB/NLDM"
+set LIB_PATH "${ASAP7_DIR}/asap7sc7p5t_28/LIB/TEMP_LIBS"
 set LEF_PATH "${ASAP7_DIR}/asap7sc7p5t_28/LEF/scaled"
 set TECH_LEF [glob ${ASAP7_DIR}/asap7sc7p5t_28/techlef_misc/asap7_tech_4x_*.lef]
 set STD_LIB  [glob ${LIB_PATH}/*_RVT_TT_*.lib]
 set SRAM_LIB [glob ${ASAP7_DIR}/asap7_sram_0p0/generated/LIB/srambank_256*.lib]
 set SRAM_LEF [glob ${ASAP7_DIR}/asap7_sram_0p0/generated/LEF/srambank_256*.lef]
 set_db library [list {*}$STD_LIB {*}$SRAM_LIB]
-set_db lef_library [concat $TECH_LEF [glob ${LEF_PATH}/*.lef] $SRAM_LEF]
-EDGECAPACITANCEEDGECAPACITANCE> EDGECAPACITANCEEDGECAPACITANCE
-EDGECAPACITANEDGECAPACITAN
