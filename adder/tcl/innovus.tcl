@@ -39,10 +39,11 @@ set pitch [expr 32*$row]
 set Density 0.7
 
 # cells declaration
-set INVCells [list INVx1_ASAP7_75t_R  INVX2_ASAP7_75t_R INVX4_ASAP7_75t_R INVX8_ASAP7_75t_R INVX16_ASAP7_75t_R]
+set INVCells [list INVx1_ASAP7_75t_R  INVx2_ASAP7_75t_R INVx4_ASAP7_75t_R INVx8_ASAP7_75t_R INVx16_ASAP7_75t_R]
 set BUFCells [list BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx8_ASAP7_75t_R]
 #set DIODECells [list ]
 set FILLERCells    [list FILLER_ASAP7_75t_R ]
+setDesignMode -topRoutingLayer 9
 
 ####################################
 ## Floor Plan
@@ -52,11 +53,9 @@ set ring_width 0.8
 set ring_space 0.88
 set inner_halo 0.5
 set outer_halo 0.5
-
+set row_height [dbGet head.sites.size_y]
 set margin [expr ($ring_width * 2) + $ring_space + $inner_halo + $outer_halo]
-
-set safe_margin [expr ceil($margin)]
-
+set safe_margin [expr ceil($margin / $row_height) * $row_height]
 floorPlan -r 1.0 $Density $safe_margin $safe_margin $safe_margin $safe_margin
 
 # write out the floorplan size
@@ -74,7 +73,7 @@ close $fo
 ## Power planning
 ####################################
 
-setNanoRouteMode -routeTopRoutingLayer 9
+
 addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 0.88 \
 -layer {top M8 bottom M8 left M9 right M9}
 
@@ -133,9 +132,8 @@ refinePlace
 # report util after placement
 checkFPlan -reportUtil -outFile ./verify_rpt/reportUtil.rpt
 ###################################
-## Clock tree option (ASAP7 Fixed)
+## Clock tree option 
 ###################################
-# 1. declare layers (Ðã d?i toàn b? metalX thành MX cho kh?p LEF)
 create_route_type -name leaf_rule \
 -bottom_preferred_layer M2 -top_preferred_layer M3
 create_route_type -name trunk_rule -shield_net VSS \
@@ -196,8 +194,7 @@ routeDesign -viaOpt -wireOpt -trackOpt
 # change analysis mode for postRoute
 setAnalysisMode -analysisType onChipVariation -cppr both
 setNanoRouteMode -reset -drouteEndIteration
-setExtractRCMode -engine postRoute -effortLevel low \
--useShieldingInDetailMode true
+setExtractRCMode -engine postRoute -effortLevel signoff
 
 # optimize by postRoute
 deleteDanglingNet
@@ -286,8 +283,8 @@ saveNetlist -excludeLeafCell -includePowerGround -includePhysicalInst \
 setStreamOutMode -labelAllPinShape true -pinTextOrientation automatic \
 -virtualConnection false -textSize 1
 streamOut ./outputs/innovus.gds -mapFile \
-../../Asap7/asap7/asap7sc7p5t_28/gds/asap7_201209.map \
--merge ../../Asap7/asap7/asap7sc7p5t_28/gds/asap7sc7p5t_28_R_220121a.gds \
+../../Asap7/asap7/asap7_pdk_r1p7/cdslib/asap7_TechLib_10/asap7_TechLib_08.layermap \
+-merge ../../Asap7/asap7/asap7sc7p5t_28/GDS/asap7sc7p5t_28_R_220121a.gds \
 -dieAreaAsBoundary -outputMacros
 
 # export abstract (.lef file)

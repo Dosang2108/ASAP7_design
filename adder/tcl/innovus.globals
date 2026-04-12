@@ -6,7 +6,6 @@ set LEF $ASAP7_ROOT/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef
   
 set ::TimeLib::tsgMarkCellLatchConstructFlag 1
 set conf_qxconf_file {NULL}
-set conf_qxlib_file {NULL}
 set defHierChar {/}
 set distributed_client_message_echo {1}
 set distributed_mmmc_disable_reports_auto_redirection {0}

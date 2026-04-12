@@ -17,8 +17,8 @@ set MY_LIB [glob ${LIB_PATH}/*_RVT_TT_ccs_*.lib]
 set_db library $MY_LIB
 create_library_set -name libset -timing $MY_LIB
 
-create_rc_corner -name rccorner 
-  -qx_tech_file  "../../Asap7/asap7/asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06" \
+create_rc_corner -name rccorner \
+  -qrc_tech "../../Asap7/asap7/asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06" \
   -pre_route_res 1 -post_route_res 1 \
   -pre_route_cap 1 -post_route_cap 1 -post_route_cross_cap 1 \
   -pre_route_clock_res 0 -pre_route_clock_cap 0 -temperature 25
@@ -78,6 +78,7 @@ ungroup -all
 
 set_db / .syn_opt_effort extreme
 syn_opt
+write_hdl > outputs/synthesis_net.v
 
 ###############################################################
 ## write backend file set (verilog, SDC, config, etc.)

@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Sun Apr 12 11:14:08 2026                
+#  Created on Sun Apr 12 20:35:16 2026                
 #                                                     
 #######################################################
 
@@ -20,7 +20,6 @@ set auto_file_dir /data/tkvm2/innovus
 set init_design_uniquify 1
 set ::TimeLib::tsgMarkCellLatchConstructFlag 1
 set conf_qxconf_file NULL
-set conf_qxlib_file NULL
 set defHierChar /
 set distributed_client_message_echo 1
 set distributed_mmmc_disable_reports_auto_redirection 0
@@ -50,8 +49,8 @@ setDesignMode -process 7
 setMultiCpuUsage -acquireLicense 2
 setMultiCpuUsage -localCpu 2
 setDistributeHost -local
-floorPlan -r 1.0 0.7 4.0 4.0 4.0 4.0
-setNanoRouteMode -routeTopRoutingLayer 9
+setDesignMode -topRoutingLayer 9
+floorPlan -r 1.0 0.7 4.32 4.32 4.32 4.32
 addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 0.88 -layer {top M8 bottom M8 left M9 right M9}
 globalNetConnect VDD -type pgpin -pin VDD -inst * -module {}
 globalNetConnect VSS -type pgpin -pin VSS -inst * -module {}
@@ -85,7 +84,7 @@ set_ccopt_property -net_type top route_type top_rule
 set_ccopt_property routing_top_min_fanout 10000
 set_ccopt_property target_max_trans 1ns
 set_ccopt_property buffer_cells {BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx8_ASAP7_75t_R}
-set_ccopt_property inverter_cells {INVx1_ASAP7_75t_R INVX2_ASAP7_75t_R INVX4_ASAP7_75t_R INVX8_ASAP7_75t_R INVX16_ASAP7_75t_R}
+set_ccopt_property inverter_cells {INVx1_ASAP7_75t_R INVx2_ASAP7_75t_R INVx4_ASAP7_75t_R INVx8_ASAP7_75t_R INVx16_ASAP7_75t_R}
 set_ccopt_property use_inverters auto
 setOptMode -reclaimArea true -leakageToDynamicRatio 0.5 -powerEffort high -fixFanoutLoad true
 optDesign -prefix preCTS -preCTS
@@ -116,15 +115,4 @@ setNanoRouteMode -reset -drouteEndIteration
 setExtractRCMode -engine postRoute -effortLevel low -useShieldingInDetailMode true
 win
 set enc_check_rename_command_name 1
-zoomBox -13.55375 -11.57500 36.77075 33.47625
-zoomBox -8.49525 -7.51250 34.28050 30.78100
-zoomBox -2.54125 -0.38275 23.72850 23.13425
-zoomBox 2.14025 5.42625 15.85325 17.70225
-zoomBox 0.06875 2.59850 19.04875 19.58975
-zoomBox 1.99225 7.74350 13.64825 18.17800
-zoomBox 3.98450 11.47875 10.06925 16.92600
-zoomBox 5.91200 13.77950 8.20725 15.83425
-zoomBox 6.36800 14.25300 7.77775 15.51500
-zoomBox 6.63725 14.53300 7.50325 15.30825
-zoomBox 6.84200 14.74575 7.29450 15.15075
-zoomBox 6.78800 14.58425 7.52550 15.24450
+zoomBox -9.26825 -5.21900 29.45325 29.86575
