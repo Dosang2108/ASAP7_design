@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 1ps/1ps
 module Adder32(
 	input			iClk,
 	input		[31:0]	iA,

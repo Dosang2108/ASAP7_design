@@ -1,14 +1,27 @@
 set ASAP7_ROOT "../../Asap7/asap7/asap7sc7p5t_28"
 
-set tech_lef [glob $ASAP7_ROOT/techlef_misc/asap7_tech_4x_*.lef]
+set Tech_Lef $ASAP7_ROOT/techlef_misc/asap7_tech_4x_201209.lef
+set LEF $ASAP7_ROOT/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef
 
-set cell_lefs [glob $ASAP7_ROOT/LEF/scaled/*.lef]
-set init_lef_file [concat $tech_lef $cell_lefs]
-
-set init_verilog "outputs/synthesis_net.v"
-set init_top_cell "Adder32"
-set init_pwr_net {VDD}
+  
+set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+set conf_qxconf_file {NULL}
+set conf_qxlib_file {NULL}
+set defHierChar {/}
+set distributed_client_message_echo {1}
+set distributed_mmmc_disable_reports_auto_redirection {0}
+set init_abstract_view {abstract}
+set init_design_settop 0
 set init_gnd_net {VSS}
 set init_layout_view {layout}
-set init_abstract_view {abstract}
-set init_mmmc_file {./tcl/viewDefination.tcl}
+set init_mmmc_file {./tcl/viewDefinition.tcl}
+set init_lef_file [list $Tech_Lef \
+                        $LEF]
+                        
+set init_pwr_net {VDD}
+set init_verilog {./outputs/synthesis_net.v}
+set latch_time_borrow_mode max_borrow
+set pegDefaultResScaleFactor 1
+set pegDetailResScaleFactor 1
+set report_inactive_arcs_format {from to when arc_type sense reason}
+set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}

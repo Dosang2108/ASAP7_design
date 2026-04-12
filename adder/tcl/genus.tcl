@@ -13,13 +13,15 @@ set_db / .init_hdl_search_path {./rtl}
 
 set_db / .hdl_unconnected_value 0
 
-set MY_LIB [glob ${LIB_PATH}/*_TT_ccs_*.lib]
+set MY_LIB [glob ${LIB_PATH}/*_RVT_TT_ccs_*.lib]
 set_db library $MY_LIB
 create_library_set -name libset -timing $MY_LIB
 
-create_rc_corner -name rccorner -pre_route_res 1 -post_route_res 1 \
--pre_route_cap 1 -post_route_cap 1 -post_route_cross_cap 1 \
--pre_route_clock_res 0 -pre_route_clock_cap 0 -temperature 25
+create_rc_corner -name rccorner 
+  -qx_tech_file  "../../Asap7/asap7/asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06" \
+  -pre_route_res 1 -post_route_res 1 \
+  -pre_route_cap 1 -post_route_cap 1 -post_route_cross_cap 1 \
+  -pre_route_clock_res 0 -pre_route_clock_cap 0 -temperature 25
 
 create_opcond -name opcond -process 1.0 -voltage 0.7 -temperature 25
 create_timing_condition -name timecond -library_sets libset -opcond opcond
@@ -66,19 +68,16 @@ init_design
 # generic
 set_db / .syn_generic_effort high
 syn_generic
-write_hdl > outputs/synthesis_generic.v
 
 # map to gates
 set_db / .syn_map_effort high
 syn_map
-write_hdl > outputs/synthesis_map.v
 
 # flatten the design
 ungroup -all
 
 set_db / .syn_opt_effort extreme
 syn_opt
-write_hdl > outputs/synthesis_net.v
 
 ###############################################################
 ## write backend file set (verilog, SDC, config, etc.)

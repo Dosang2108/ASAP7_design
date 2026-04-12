@@ -1,0 +1,94 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 22.17-s086_1 (64bit) 09/24/2024 10:51 (Linux 3.10.0-693.el7.x86_64)
+*	
+*
+* 	Date & Time:	2026-Apr-12 11:07:20 (2026-Apr-12 04:07:20 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: Adder32
+*
+*	Liberty Libraries used: 
+*	        tt: ../../Asap7/asap7/asap7sc7p5t_28/LIB/CCS/asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120.lib
+*	        tt: ../../Asap7/asap7/asap7sc7p5t_28/LIB/CCS/asap7sc7p5t_SEQ_RVT_TT_ccs_220123.lib
+*	        tt: ../../Asap7/asap7/asap7sc7p5t_28/LIB/CCS/asap7sc7p5t_OA_RVT_TT_ccs_211120.lib
+*	        tt: ../../Asap7/asap7/asap7sc7p5t_28/LIB/CCS/asap7sc7p5t_INVBUF_RVT_TT_ccs_220122.lib
+*	        tt: ../../Asap7/asap7/asap7sc7p5t_28/LIB/CCS/asap7sc7p5t_AO_RVT_TT_ccs_211120.lib
+*
+*	Power Domain used: 
+*              Rail:        VDD      Voltage:        0.7 
+*
+*       Power View : tt
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-12 secs 
+*
+*       report_power -outfile ./timingReports/postRoute.power
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        0.05747790 	   72.9036%
+Total Switching Power:       0.02134048 	   27.0678%
+Total Leakage Power:         0.00002259 	    0.0287%
+Total Power:                 0.07884097 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                        0.0445    0.004113   7.351e-06     0.04862       61.67 
+Macro                                  0           0           0           0           0 
+IO                                     0           0           0           0           0 
+Combinational                    0.01298     0.01723   1.524e-05     0.03022       38.33 
+Clock (Combinational)                  0           0           0           0           0 
+Clock (Sequential)                     0           0           0           0           0 
+-----------------------------------------------------------------------------------------
+Total                            0.05748     0.02134   2.259e-05     0.07884         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       0.7    0.05748     0.02134   2.259e-05     0.07884         100 
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power:                 oS_reg[7] (DFFHQNx1_ASAP7_75t_R):         0.001535 
+*                Highest Leakage Power:                 oS_reg[0] (DFFHQNx1_ASAP7_75t_R):        2.298e-07 
+*          Total Cap:      3.07128e-13 F
+*          Total instances in design:   238
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+
+Total leakage power = 2.25886e-05 mW
+Cell usage statistics:  
+Library asap7sc7p5t_SEQ_RVT_TT_ccs_220123 , 32 cells ( 13.445379%) , 7.35136e-06 mW ( 32.544524%  ) 
+Library asap7sc7p5t_INVBUF_RVT_TT_ccs_211120 , 33 cells ( 13.865547%) , 9.58322e-07 mW ( 4.242502%  ) 
+Library asap7sc7p5t_SIMPLE_RVT_TT_ccs_211120 , 128 cells ( 53.781517%) , 9.89857e-06 mW ( 43.821069%  ) 
+Library asap7sc7p5t_AO_RVT_TT_ccs_211120 , 19 cells ( 7.983193%) , 1.56845e-06 mW ( 6.943548%  ) 
+Library asap7sc7p5t_OA_RVT_TT_ccs_211120 , 26 cells ( 10.924370%) , 2.81191e-06 mW ( 12.448356%  ) 
