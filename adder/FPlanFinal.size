@@ -1,2 +1,3 @@
 Core size: {X Y} = {25.2 23.76}
-Floorplan size: {X Y} = {33.84 32.4}
+Floorplan size: {X Y} = {32.976 31.536}
+Safe margin (snapped to 0.384): 3.84

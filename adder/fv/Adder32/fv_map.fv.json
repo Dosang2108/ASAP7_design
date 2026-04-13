@@ -402,20 +402,20 @@
 "object":"/designs/Adder32/instances_seq/oS_reg[11]",
 "type":"instance"},
 {"index": "1", 
- "date": "Sun Apr 12 13:33:43 UTC 2026",
- "seconds": 1776000823.3584719,
+ "date": "Mon Apr 13 07:40:29 UTC 2026",
+ "seconds": 1776066029.44672,
  "netlist": "fv/Adder32/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/data/tkvm2/Asap7design/adder/fv/Adder32/fv_map.v.gz", 
- "netlist_mtime": "1776000821", 
- "netlist_timestamp": "Sun Apr 12 13:33:41 UTC 2026", 
+ "netlist_mtime": "1776066027", 
+ "netlist_timestamp": "Mon Apr 13 07:40:27 UTC 2026", 
  "netlist_size": "5675", 
- "netlist_cksum": "1991711653", 
+ "netlist_cksum": "2506474453", 
  "design_name": "Adder32", 
  "synth_workdir": "/data/tkvm2/Asap7design/adder", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 1.692555 
+ "write_verif_file_runtime": 1.728788 
  }
 ]

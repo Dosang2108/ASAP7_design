@@ -31,25 +31,28 @@ catch { setOptMode -opt_setup_target_slack 0 }
 catch { setPathGroupOptions reg2reg -effortLevel high -weight 2 }
 catch { setPathGroupOptions reg2reg -late -slackAdjustment -0 }
 catch { setPathGroupOptions default -late -slackAdjustment -0 }
-catch { setExtractRCMode  -effortLevel signoff -engine postRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.1 }
+catch { setExtractRCMode  -effortLevel medium -engine postRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.1 }
 catch {setNanoRouteMode -quiet -drouteAntennaFactor 1.000000}
 catch {setNanoRouteMode -quiet -drouteAutoStop false}
-catch {setNanoRouteMode -quiet -drouteFixAntenna false}
+catch {setNanoRouteMode -quiet -drouteFixAntenna true}
 catch {setNanoRouteMode -quiet -droutePostRouteSpreadWire "auto"}
 catch {setNanoRouteMode -quiet -droutePostRouteSwapVia "true"}
 catch {setNanoRouteMode -quiet -drouteStartIteration 0}
 catch {setNanoRouteMode -quiet -drouteUseLefPinTaperRule true}
 catch {setNanoRouteMode -quiet -drouteUseMinSpacingForBlockage auto}
+catch {setNanoRouteMode -quiet -extractDesignSignature 54573405}
 catch {setNanoRouteMode -quiet -extractRcModelFile "${::IMEX::libVar}/misc/rc_model.bin"}
 catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
 catch {setNanoRouteMode -quiet -grouteExpTdUseTifTimingEngineForImportDesign true}
 catch {setNanoRouteMode -quiet -routeExpDesignModeTopRoutingLayer 9}
-catch {setNanoRouteMode -quiet -routeInsertAntennaDiode false}
-catch {setNanoRouteMode -quiet -routeInsertDiodeForClockNets false}
+catch {setNanoRouteMode -quiet -routeInsertAntennaDiode true}
+catch {setNanoRouteMode -quiet -routeInsertDiodeForClockNets true}
+catch {setNanoRouteMode -quiet -routeReInsertFillerCellList "FILLER_ASAP7_75t_R"}
+catch {setNanoRouteMode -quiet -routeReInsertFillerCellListFromFile false}
 catch {setNanoRouteMode -quiet -routeReserveSpaceForMultiCut true}
 catch {setNanoRouteMode -quiet -routeStrictlyHonorNonDefaultRule "false"}
 catch {setNanoRouteMode -quiet -routeWithSiPostRouteFix false}
-catch {setNanoRouteMode -quiet -timingEngine ".timing_file_12143.tif.gz"}
+catch {setNanoRouteMode -quiet -timingEngine ".timing_file_6386.tif.gz"}
 
 catch { setPlaceMode -macroPlaceMode 0 }
 catch { setPlaceMode -place_design_refine_macro true }

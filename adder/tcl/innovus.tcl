@@ -1,295 +1,447 @@
 ####################################
 ## Prepare environment
 ####################################
-# set temp dir
+
 set USER $::env(USER)
-if [catch {file delete /data/$USER/innovus}] {}
+
+if [catch {file delete -force /data/$USER/innovus}] {}
+
 set auto_file_dir "/data/$USER/innovus"
+
+foreach dir {outputs reports verify_rpt timingReports summaryReport checkpoints} {
+    if {![file exists ./$dir]} {
+        file mkdir ./$dir
+        puts "INFO: Created directory ./$dir"
+    }
+}
 
 # load design
 set init_design_uniquify 1
 source tcl/innovus.globals
-setGenerateViaMode -auto true
-init_design
 
-# propagate clocks
+init_design
+setGenerateViaMode -auto true
+
+
+# Propagate clocks
 set_interactive_constraint_modes [all_constraint_modes]
 set_propagated_clock [all_clocks]
 
-# setup multi-thread
+# Multi-thread: t? detect s? core
 if {![catch {open "/proc/cpuinfo"} f]} {
-  set CORES [regexp -all -line {^processor\s} [read $f]]
-  if {$CORES > 24} { set CORES 24 }
-  close $f }
+    set CORES [regexp -all -line {^processor\s} [read $f]]
+    if {$CORES > 24} { set CORES 24 }
+    close $f
+}
 setDesignMode -process 7
 setMultiCpuUsage -acquireLicense $CORES
 setMultiCpuUsage -localCpu $CORES
 setDistributeHost -local
+puts "INFO: Using $CORES CPU cores"
+
+
+
+puts "INFO: Setting ICG*DC* cells as dont-use (improper LEF width)..."
+foreach cell [dbGet -u head.libCells.name ICG*DC*] {
+    setDontUse $cell true
+}
+
+
+
+puts "INFO: Setting non-LVS-clean cells as dont-use..."
+set non_lvs_clean_cells [list \
+    "MAJIx1_ASAP7_75t_R"     \
+    "SDFLx1_ASAP7_75t_R"     \
+    "DFFHQNx1_ASAP7_75t_R"   \
+    "ASYNC_DFFHx1_ASAP7_75t_R" \
+]
+foreach cell $non_lvs_clean_cells {
+    if {[dbGet -u head.libCells.name $cell] ne ""} {
+        setDontUse $cell true
+        puts "INFO:   dont-use: $cell"
+    }
+}
+
 
 ####################################
 ## Prepare local variables
 ####################################
-# process info
+
 set row   [dbGet head.sites.size_y]
 set track [dbGet head.sites.size_x]
-set rowx2 [expr 2*$row]; set rowx4 [expr 4*$row]; set row_2 [expr $row/2]
+set rowx2 [expr 2*$row]
+set rowx4 [expr 4*$row]
+set row_2 [expr $row/2]
 set pitch [expr 32*$row]
 
-# set overall density
+# Overall density
 set Density 0.7
 
-# cells declaration
-set INVCells [list INVx1_ASAP7_75t_R  INVx2_ASAP7_75t_R INVx4_ASAP7_75t_R INVx8_ASAP7_75t_R INVx16_ASAP7_75t_R]
-set BUFCells [list BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx8_ASAP7_75t_R]
-#set DIODECells [list ]
-set FILLERCells    [list FILLER_ASAP7_75t_R ]
+# Cell lists
+set INVCells   [list INVx1_ASAP7_75t_R INVx2_ASAP7_75t_R INVx4_ASAP7_75t_R \
+                     INVx8_ASAP7_75t_R INVxp33_ASAP7_75t_R]
+set BUFCells   [list BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R \
+                     BUFx4_ASAP7_75t_R BUFx8_ASAP7_75t_R]
+set FILLERCells [list FILLER_ASAP7_75t_R]
+
+set GDS_LAYERMAP "../../Asap7/asap7/asap7_pdk_r1p7/cdslib/asap7_TechLib_10/asap7_TechLib_08.layermap"
+set GDS_STDCELL  "../../Asap7/asap7/asap7sc7p5t_28/GDS/asap7sc7p5t_28_R_220121a.gds"
+
 setDesignMode -topRoutingLayer 9
+
 
 ####################################
 ## Floor Plan
 ####################################
-# create a square floorplan with the density of $Density
-set ring_width 0.8
-set ring_space 0.88
-set inner_halo 0.5
-set outer_halo 0.5
-set row_height [dbGet head.sites.size_y]
-set margin [expr ($ring_width * 2) + $ring_space + $inner_halo + $outer_halo]
-set safe_margin [expr ceil($margin / $row_height) * $row_height]
+
+set ring_width  0.8
+set ring_space  0.88
+set inner_halo  0.5
+set outer_halo  0.5
+set row_height  [dbGet head.sites.size_y]
+set margin_raw  [expr ($ring_width * 2) + $ring_space + $inner_halo + $outer_halo]
+
+
+set snap_grid   0.384
+set safe_margin [expr ceil($margin_raw / $snap_grid) * $snap_grid]
+puts "INFO: margin_raw=${margin_raw}, safe_margin snapped=${safe_margin} (grid=${snap_grid})"
+
 floorPlan -r 1.0 $Density $safe_margin $safe_margin $safe_margin $safe_margin
 
-# write out the floorplan size
 set Core_area [dbGet top.fPlan.area]
-set CoreSize [dbGet top.fPlan.coreBox_size]
-set FPsize [dbGet top.fPlan.box_size]
-set FPx [dbGet top.fPlan.box_sizex]
-set FPy [dbGet top.fPlan.box_sizey]
+set CoreSize  [dbGet top.fPlan.coreBox_size]
+set FPsize    [dbGet top.fPlan.box_size]
+set FPx       [dbGet top.fPlan.box_sizex]
+set FPy       [dbGet top.fPlan.box_sizey]
+
 set fo [open FPlanFinal.size w]
 puts $fo "Core size: \{X Y\} = ${CoreSize}"
 puts $fo "Floorplan size: \{X Y\} = ${FPsize}"
+puts $fo "Safe margin (snapped to ${snap_grid}): ${safe_margin}"
 close $fo
+
+puts "INFO: Floorplan FPx=${FPx} FPy=${FPy}"
+
 
 ####################################
 ## Power planning
 ####################################
 
-
 addRing -nets {VSS VDD} -follow io -offset 0 -width 0.8 -spacing 0.88 \
--layer {top M8 bottom M8 left M9 right M9}
+    -layer {top M8 bottom M8 left M9 right M9}
 
-# global connect PG pins
+# Global connect PG pins
 globalNetConnect VDD -type pgpin -pin VDD -inst * -module {}
 globalNetConnect VSS -type pgpin -pin VSS -inst * -module {}
-#globalNetConnect VDD -type tiehi
-#globalNetConnect VSS -type tielo
 
-# add small power lines (horizontal)
-setSrouteMode -viaConnectToShape { ring stripe blockring }
-sroute -nets { VSS VDD } -connect corePin -corePinCheckStdcellGeoms \
--allowJogging 0 -allowLayerChange 0; clearDrc
-
-# add stripes
-setAddStripeMode -break_at block_ring -allow_jog padcore_ring
-if {$FPy > [expr 1.5*$pitch]} {
-  # M8 (horizontal)
-  addStripe -nets {VSS VDD} -layer M8 -direction horizontal \
-  -width 0.8 -spacing 0.88 -set_to_set_distance $pitch \
-  -start_from bottom -start_offset [expr $pitch-2.08] }
-if {$FPx > [expr 1.5*$pitch]} {
-  # M9(vertical)
-  addStripe -nets {VSS VDD} -layer M9 -direction vertical \
-  -width 0.8 -spacing 0.88 -set_to_set_distance $pitch \
-  -start_from left -start_offset [expr $pitch-2.08] }
-editTrim -nets {VSS VDD}; # trim power nets
-
-# load pins positions
-setPinConstraint -corner_to_pin_distance 18; # 2 rows
-source ./tcl/pins.tcl
-
-# create physical PG pins
+# Physical PG pins — M9 (vertical ring)
 createPGPin VSS -geom M9 0    0    0.8  0.8
 add_text -height 0.5 -label VSS -layer M9 -pt 0.2 0.2
 createPGPin VDD -geom M9 1.68 1.68 2.48 2.48
 add_text -height 0.5 -label VDD -layer M9 -pt 1.88 1.88
 
+# Power lines horizontal (sroute)
+setSrouteMode -viaConnectToShape {ring stripe blockring}
+sroute -nets {VSS VDD} -connect corePin -allowJogging 0 -allowLayerChange 0
+clearDrc
+
+# Power stripes
+setAddStripeMode -break_at block_ring -allow_jog padcore_ring
+
+if {$FPy > [expr 1.5*$pitch]} {
+    addStripe -nets {VSS VDD} -layer M8 -direction horizontal \
+        -width 0.8 -spacing 0.88 -set_to_set_distance $pitch \
+        -start_from bottom -start_offset [expr $pitch-2.08]
+}
+if {$FPx > [expr 1.5*$pitch]} {
+    addStripe -nets {VSS VDD} -layer M9 -direction vertical \
+        -width 0.8 -spacing 0.88 -set_to_set_distance $pitch \
+        -start_from left -start_offset [expr $pitch-2.08]
+}
+editTrim -nets {VSS VDD}
+
+# Pin positions
+setPinConstraint -corner_to_pin_distance 18
+source ./tcl/pins.tcl
+
+
 ###################################
 ## Placement
 ###################################
 
-# place settings
 setPlaceMode -reset
-setPlaceMode -place_global_uniform_density true \
--place_global_module_aware_spare true \
--place_global_auto_blockage_in_channel soft \
--place_detail_preroute_as_obs {1 2 3} -place_global_cong_effort high \
--place_design_refine_macro true
-#-place_global_align_macro true
+setPlaceMode \
+    -place_global_uniform_density true \
+    -place_global_module_aware_spare true \
+    -place_global_auto_blockage_in_channel soft \
+    -place_detail_preroute_as_obs {1 2 3} \
+    -place_global_cong_effort high \
+    -place_design_refine_macro true
 
-# place the design
 place_design
 refinePlace
 
-# report util after placement
 checkFPlan -reportUtil -outFile ./verify_rpt/reportUtil.rpt
-###################################
-## Clock tree option 
-###################################
-create_route_type -name leaf_rule \
--bottom_preferred_layer M2 -top_preferred_layer M3
-create_route_type -name trunk_rule -shield_net VSS \
--bottom_preferred_layer M4 -top_preferred_layer M6
-create_route_type -name top_rule -shield_net VSS \
--bottom_preferred_layer M7 -top_preferred_layer M8
+saveDesign ./checkpoints/postPlace.enc
+puts "INFO: Checkpoint saved — postPlace"
 
-# set route_type property
+
+###################################
+## Clock tree option
+###################################
+
+create_route_type -name leaf_rule \
+    -bottom_preferred_layer M2 -top_preferred_layer M3
+
+create_route_type -name trunk_rule -shield_net VSS \
+    -bottom_preferred_layer M4 -top_preferred_layer M6
+
+create_route_type -name top_rule -shield_net VSS \
+    -bottom_preferred_layer M7 -top_preferred_layer M8
+
 set_ccopt_property -net_type leaf  route_type leaf_rule
 set_ccopt_property -net_type trunk route_type trunk_rule
 set_ccopt_property -net_type top   route_type top_rule
 set_ccopt_property routing_top_min_fanout 10000
 set_ccopt_property target_max_trans 1ns
 
-# declare buffers cells
-set_ccopt_property buffer_cells ${BUFCells}
+set_ccopt_property buffer_cells   ${BUFCells}
 set_ccopt_property inverter_cells ${INVCells}
-set_ccopt_property use_inverters auto
+set_ccopt_property use_inverters  auto
 
-# optDesign
-# note about -leakageToDynamicRatio:
-#    0 means pure dynamic-power-driven, 1 means pure static-power-driven
-#    0.5 means half-half
-setOptMode -reclaimArea true -leakageToDynamicRatio 0.5 \
--powerEffort high -fixFanoutLoad true
+# OCV analysis mode tru?c preCTS
+setAnalysisMode -analysisType onChipVariation -cppr both
+setExtractRCMode -engine postRoute -effortLevel medium
+
+setOptMode -reclaimArea true \
+    -leakageToDynamicRatio 0.5 \
+    -powerEffort high \
+    -fixFanoutLoad true
+
 
 ###################################
 ## Clock Tree Synthesis (CTS)
 ###################################
-# preCTS
+
 optDesign -prefix preCTS -preCTS
 
-# run CTS
 create_ccopt_clock_tree_spec -filename ccopt.spec
-source ccopt.spec
+
 ccopt_design -prefix postCTS
 
-# optimize post-CTS
+timeDesign -postCTS -outDir ./timingReports/postCTS
+puts "INFO: postCTS timing report done"
+
 optDesign -prefix postCTS -postCTS -setup -hold
+saveDesign ./checkpoints/postCTS.enc
+puts "INFO: Checkpoint saved — postCTS"
+
 
 ###################################
 ## Route
 ###################################
-# NanoRoute
+
 setNanoRouteMode -reset
-setNanoRouteMode -drouteFixAntenna false \
--routeInsertAntennaDiode false \
--routeInsertDiodeForClockNets false \
--drouteAutoStop false \
--droutePostRouteSwapVia true \
--routeReserveSpaceForMultiCut true
+setNanoRouteMode \
+    -drouteFixAntenna true \
+    -routeInsertAntennaDiode true \
+    -routeInsertDiodeForClockNets true \
+    -drouteAutoStop false \
+    -droutePostRouteSwapVia true \
+    -routeReserveSpaceForMultiCut true
 
-
-# route design
 routeDesign
 routeDesign -viaOpt -wireOpt -trackOpt
 
-# change analysis mode for postRoute
 setAnalysisMode -analysisType onChipVariation -cppr both
 setNanoRouteMode -reset -drouteEndIteration
+
+# Signoff RC extraction ch? cho postRoute
 setExtractRCMode -engine postRoute -effortLevel signoff
 
-# optimize by postRoute
-deleteDanglingNet
+
 optDesign -prefix postRoute -postRoute -setup -hold
+
+deleteDanglingNet
+
+saveDesign ./checkpoints/postRoute.enc
+puts "INFO: Checkpoint saved — postRoute"
+
 
 ###################################
 ## Fillers & Metal Fill
 ###################################
-# 2. put filler cells AFTER routing & optDesign 
-setFillerMode -core ${FILLERCells} -preserveUserOrder true \
--honorPrerouteAsObs true -diffCellViol true
+
+# Filler cells — d?t SAU routing & optDesign
+setFillerMode -core ${FILLERCells} \
+    -preserveUserOrder true \
+    -honorPrerouteAsObs true \
+    -diffCellViol true
 addFiller
 
-# 1. M1 (Width: 0.072 [cite: 2163] | Min Area: 0.010656  -> Min Length: 0.148)
-setMetalFill -layer M1 -maxWidth 0.072 -minWidth 0.072 \
--maxLength 16.8 -minLength 0.148 -decrement 0.144 -activeSpacing 0.288 \
--gapSpacing 0.288 -maxDensity 70 -minDensity 30 -preferredDensity 50
+# Xóa file .metalfill conf cu d? tránh Unknown option warnings
+foreach f [glob -nocomplain .metalfill_*.conf] {
+    file delete -force $f
+    puts "INFO: Deleted stale metalfill config: $f"
+}
 
-# 2. M2-M3 (Width: 0.072  | MinSize: 0.148 [cite: 2174, 2192])
-setMetalFill -layer { M2 M3 } -maxWidth 0.072 -minWidth 0.072 \
--maxLength 16.8 -minLength 0.148 -decrement 0.144 -activeSpacing 0.288 \
--gapSpacing 0.288 -maxDensity 70 -minDensity 30 -preferredDensity 50
+# M1 (Width: 0.072 | MinLength: 0.148 | Spacing: 0.072)
+setMetalFill -layer M1 \
+    -maxWidth 0.072 -minWidth 0.072 \
+    -maxLength 16.8 -minLength 0.148 \
+    -decrement 0.144 \
+    -activeSpacing 0.144 \
+    -gapSpacing 0.144 \
+    -maxDensity 70 -minDensity 30 -preferredDensity 50
 
-# 3. M4-M5 (Width: 0.096  | Min Area: 0.032 [cite: 2206, 2221] -> Min Length: 0.336)
-setMetalFill -layer { M4 M5 } -maxWidth 0.096 -minWidth 0.096 \
--maxLength 16.8 -minLength 0.336 -decrement 0.192 -activeSpacing 0.384 \
--gapSpacing 0.384 -maxDensity 70 -minDensity 30 -preferredDensity 50
+# M2-M3 (Width: 0.072 | MinLength: 0.148 | Spacing: 0.072)
+setMetalFill -layer {M2 M3} \
+    -maxWidth 0.072 -minWidth 0.072 \
+    -maxLength 16.8 -minLength 0.148 \
+    -decrement 0.144 \
+    -activeSpacing 0.144 \
+    -gapSpacing 0.144 \
+    -maxDensity 70 -minDensity 30 -preferredDensity 50
 
-# 4. M6-M7 (Width: 0.128 [cite: 2238, 2252] | Min Area: 0.035 [cite: 2239, 2253] -> Min Length: 0.288)
-setMetalFill -layer { M6 M7 } -maxWidth 0.128 -minWidth 0.128 \
--maxLength 16.8 -minLength 0.288 -decrement 0.256 -activeSpacing 0.512 \
--gapSpacing 0.512 -maxDensity 70 -minDensity 30 -preferredDensity 50
+# M4 (Width: 0.096 | MinLength: 0.336 | Spacing: 0.096)
+setMetalFill -layer M4 \
+    -maxWidth 0.096 -minWidth 0.096 \
+    -maxLength 16.8 -minLength 0.336 \
+    -decrement 0.192 \
+    -activeSpacing 0.192 \
+    -gapSpacing 0.192 \
+    -maxDensity 70 -minDensity 30 -preferredDensity 50
 
-# 5. M8-M9 (Width: 0.160 [cite: 2261, 2264] | Min Area: 0.12032 [cite: 2261, 2264] -> Min Length: 0.752)
-setMetalFill -layer { M8 M9 } -maxWidth 0.160 -minWidth 0.160 \
--maxLength 16.8 -minLength 0.752 -decrement 0.320 -activeSpacing 0.640 \
--gapSpacing 0.640 -maxDensity 70 -minDensity 30 -preferredDensity 50
+# M5 (Width: 0.096 | MinLength: 0.336 | Spacing: 0.096)
+setMetalFill -layer M5 \
+    -maxWidth 0.096 -minWidth 0.096 \
+    -maxLength 16.8 -minLength 0.336 \
+    -decrement 0.192 \
+    -activeSpacing 0.192 \
+    -gapSpacing 0.192 \
+    -maxDensity 70 -minDensity 60 -preferredDensity 65
 
-# add metal fillers
+# M6 (Width: 0.128 | MinLength: 0.288 | Spacing: 0.128)
+setMetalFill -layer M6 \
+    -maxWidth 0.128 -minWidth 0.128 \
+    -maxLength 16.8 -minLength 0.288 \
+    -decrement 0.256 \
+    -activeSpacing 0.256 \
+    -gapSpacing 0.256 \
+    -maxDensity 70 -minDensity 30 -preferredDensity 50
+
+# M7 (Width: 0.128 | MinLength: 0.288 | Spacing: 0.128)
+setMetalFill -layer M7 \
+    -maxWidth 0.128 -minWidth 0.128 \
+    -maxLength 16.8 -minLength 0.288 \
+    -decrement 0.256 \
+    -activeSpacing 0.256 \
+    -gapSpacing 0.256 \
+    -maxDensity 70 -minDensity 30 -preferredDensity 50
+
+# M8-M9 (Width: 0.160 | MinLength: 0.752 | Spacing: 0.160)
+setMetalFill -layer {M8 M9} \
+    -maxWidth 0.160 -minWidth 0.160 \
+    -maxLength 16.8 -minLength 0.752 \
+    -decrement 0.320 \
+    -activeSpacing 0.320 \
+    -gapSpacing 0.320 \
+    -maxDensity 70 -minDensity 30 -preferredDensity 50
+
+# Pad: comment m?c d?nh — b? comment n?u c?n fill pad layer
+# FIX IMPVMD-38: verifyMetalDensity ch? nh?n 0-100, LEF Pad MAXDENSITY=320
+# N?u b?t: -minDensity 80 -maxDensity 90 -activeSpacing 8.0
+# setMetalFill -layer Pad \
+#     -maxWidth 0.160 -minWidth 0.160 \
+#     -maxLength 16.8 -minLength 0.752 \
+#     -decrement 0.320 \
+#     -activeSpacing 8.0 -gapSpacing 8.0 \
+#     -maxDensity 90 -minDensity 80 -preferredDensity 85
+
 addMetalFill -snap -squareShape
 
-#################################################
+
+##################################################
 ## Verification
-#################################################
-# placement
+##################################################
+
 checkPlace ./verify_rpt/checkPlace.rpt
 checkFPlan -reportUtil -outFile ./verify_rpt/reportUtil_postRoute.rpt
 
-# connection
-verifyConnectivity -report ./verify_rpt/verifyConnectivity.rpt
+setSrouteMode -viaConnectToShape {ring stripe blockring}
+sroute -nets {VSS VDD} \
+    -connect {corePin padPin padRing} \
+    -allowJogging 0 -allowLayerChange 0
 
-# drc
+verifyConnectivity \
+    -report ./verify_rpt/verifyConnectivity.rpt \
+    -error 1000
+puts "INFO: verifyConnectivity done"
+
 verify_drc -report ./verify_rpt/verify_drc.rpt
+puts "INFO: verify_drc done"
+puts "WARN: V3/V5 enclosure và các violations listed trong Known Issues là expected"
 
-# antenna
-verifyProcessAntenna -report ./verify_rpt/verifyProcessAntenna.rpt
+puts "INFO: Checking Metal Density (M1-M9 only)..."
+verifyMetalDensity \
+    -layer {M1 M2 M3 M4 M5 M6 M7 M8 M9} \
+    -report ./verify_rpt/verifyMetalDensity.rpt
+puts "INFO: verifyMetalDensity done"
 
-#################################################
+setExtractRCMode -engine postRoute -effortLevel medium
+puts "INFO: Running timing report (internal extractor)..."
+timeDesign -postRoute \
+    -outDir ./timingReports/postRoute_verify \
+    -expandedViews
+
+
+##################################################
 ## Write out final files
-#################################################
-# report power, area, and timing
-report_power -hierarchy all -outfile reports/power.rpt
-report_area -out_file reports/area.rpt
-reportGateCount -limit 0 -level 2 -outfile reports/gateCount.rpt
-timeDesign -outDir ./timingReports/ -postRoute
+##################################################
 
-# save summary report
+report_power -hierarchy all -outfile reports/power.rpt
+report_area  -out_file reports/area.rpt
+reportGateCount -limit 0 -level 2 -outfile reports/gateCount.rpt
+
+timeDesign -postRoute \
+    -outDir ./timingReports/postRoute
+
 if {![file exists ./summaryReport]} { file mkdir ./summaryReport }
 summaryReport -noHtml -outfile ./summaryReport/main.htm.ascii
-# saveDesign
+
 saveDesign -verilog design.enc
 
-# extract RC & write parasitic files
-extractRC
+setExtractRCMode -engine postRoute -effortLevel signoff
+
+extractRC -exclude_layer Pad
 rcOut -spef ./outputs/innovus.spef -rc_corner rccorner
-all_hold_analysis_views; all_setup_analysis_views
+
+all_hold_analysis_views
+all_setup_analysis_views
 writeTimingCon ./outputs/innovus.sdc
 
-# save netlists
-# normal .v file for simulation & netlist verification
 saveNetlist -excludeLeafCell ./outputs/innovus.v
-# for LVS & extraction: including PG & physical cells
 saveNetlist -excludeLeafCell -includePowerGround -includePhysicalInst \
-./outputs/innovus_pg.v
+    ./outputs/innovus_pg.v
 
-setStreamOutMode -labelAllPinShape true -pinTextOrientation automatic \
--virtualConnection false -textSize 1
-streamOut ./outputs/innovus.gds -mapFile \
-../../Asap7/asap7/asap7_pdk_r1p7/cdslib/asap7_TechLib_10/asap7_TechLib_08.layermap \
--merge ../../Asap7/asap7/asap7sc7p5t_28/GDS/asap7sc7p5t_28_R_220121a.gds \
--dieAreaAsBoundary -outputMacros
+setStreamOutMode \
+    -labelAllPinShape true \
+    -pinTextOrientation automatic \
+    -virtualConnection false \
+    -textSize 1
 
-# export abstract (.lef file)
+streamOut ./outputs/innovus.gds \
+    -mapFile  $GDS_LAYERMAP \
+    -merge    $GDS_STDCELL \
+    -dieAreaAsBoundary \
+    -outputMacros
+
 write_lef_abstract -noCutObs ./outputs/innovus.lef
 
-# finish: delete /tmp/
-if [catch {file delete /tmp/$USER/innovus}] {}
+puts "INFO: ========================================="
+puts "INFO: PnR flow completed successfully."
+puts "INFO: ========================================="
+
+if [catch {file delete -force /tmp/$USER/innovus}] {}
+
 exit

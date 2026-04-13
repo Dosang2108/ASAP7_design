@@ -2,7 +2,7 @@
 *	Innovus 22.17-s086_1 (64bit) 09/24/2024 10:51 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2026-Apr-12 21:08:19 (2026-Apr-12 14:08:19 GMT)
+* 	Date & Time:	2026-Apr-13 14:53:32 (2026-Apr-13 07:53:32 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -47,39 +47,39 @@
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:        0.05726344 	   72.6009%
-Total Switching Power:       0.02158797 	   27.3701%
-Total Leakage Power:         0.00002284 	    0.0290%
-Total Power:                 0.07887425 
+Total Internal Power:        0.05737364 	   72.8253%
+Total Switching Power:       0.02138626 	   27.1459%
+Total Leakage Power:         0.00002269 	    0.0288%
+Total Power:                 0.07878259 
 -----------------------------------------------------------------------------------------
 
 
 Group                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-Sequential                       0.04414    0.004122   7.351e-06     0.04827        61.2 
+Sequential                       0.04445    0.004108   7.351e-06     0.04856       61.64 
 Macro                                  0           0           0           0           0 
 IO                                     0           0           0           0           0 
-Combinational                    0.01313     0.01747   1.549e-05     0.03061        38.8 
+Combinational                    0.01293     0.01728   1.534e-05     0.03022       38.36 
 Clock (Combinational)                  0           0           0           0           0 
 Clock (Sequential)                     0           0           0           0           0 
 -----------------------------------------------------------------------------------------
-Total                            0.05726     0.02159   2.284e-05     0.07887         100 
+Total                            0.05737     0.02139   2.269e-05     0.07878         100 
 -----------------------------------------------------------------------------------------
 
 
 Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-VDD                       0.7    0.05726     0.02159   2.284e-05     0.07887         100 
+VDD                       0.7    0.05737     0.02139   2.269e-05     0.07878         100 
 
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:        0.05726344 	   72.6009%
-Total Switching Power:       0.02158797 	   27.3701%
-Total Leakage Power:         0.00002284 	    0.0290%
-Total Power:                 0.07887425 
+Total Internal Power:        0.05737364 	   72.8253%
+Total Switching Power:       0.02138626 	   27.1459%
+Total Leakage Power:         0.00002269 	    0.0288%
+Total Power:                 0.07878259 
 -----------------------------------------------------------------------------------------
 
 
@@ -90,10 +90,10 @@ Hierarchy                       Internal   Switching     Leakage       Total  Pe
 
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
-*                Highest Average Power:                 oS_reg[9] (DFFHQNx1_ASAP7_75t_R):          0.00153 
+*                Highest Average Power:                 oS_reg[9] (DFFHQNx1_ASAP7_75t_R):         0.001539 
 *                Highest Leakage Power:                 oS_reg[0] (DFFHQNx1_ASAP7_75t_R):        2.298e-07 
-*          Total Cap:      3.12341e-13 F
-*          Total instances in design:   244
+*          Total Cap:      3.08503e-13 F
+*          Total instances in design:   240
 *          Total instances in design with no power:     0
 *          Total instances in design with no activity:     0
 *          Total Fillers and Decap:     0
